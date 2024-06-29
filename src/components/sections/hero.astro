@@ -1,0 +1,28 @@
+---
+import chromoIsotype from "@/assets/images/chromo-isotype.avif";
+import Button from "../common/button.astro";
+import HappyClients from "../common/happy-clients.astro";
+import { SECTIONS } from "@/constants/sections";
+---
+
+<section class="container">
+  <div
+    class="relative h-[clamp(19.375rem,_65vw,_38.75rem)] aspect-square mx-auto text-sm flex justify-center items-center flex-col"
+  >
+    <img
+      src={chromoIsotype.src}
+      alt="Chromo Logo"
+      class="absolute -z-20 h-full w-full animate-spin-slow ease-linear"
+    />
+
+    <div
+      class="backdrop-blur-xl h-full w-[calc(50%_+_1.25rem)] translate-x-5 absolute right-0 -z-10 ml-auto"
+    >
+    </div>
+
+    <p class="text-brand-gray">Design & Development</p>
+    <h1 class="text-4xl mt-2.5 mb-10 text-center">Building your future</h1>
+    <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
+  </div>
+  <HappyClients />
+</section>

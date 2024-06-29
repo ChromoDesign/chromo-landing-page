@@ -1,0 +1,22 @@
+---
+interface Props {
+  text: string;
+  href?: string;
+}
+
+const { text, href } = Astro.props;
+
+const isLink = Boolean(href);
+const style =
+  "border border-solid border-brand-white/50 rounded-full px-5 py-2.5 text-sm bg-transparent text-brand-white";
+---
+
+{
+  isLink ? (
+    <a href={href} class={style}>
+      {text}
+    </a>
+  ) : (
+    <button class={style}>{text}</button>
+  )
+}

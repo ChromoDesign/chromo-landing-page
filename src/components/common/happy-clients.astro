@@ -1,0 +1,60 @@
+---
+import gradeSvg from "@/assets/icons/grade.svg";
+import arrowRightAltSvg from "@/assets/icons/arrow-right-alt.svg";
+import { SECTIONS } from "@/constants/sections";
+
+const happyClients = [
+  {
+    img: {
+      src: "/assets/happy-clients/1.png",
+      alt: "Happy Client 1",
+    },
+  },
+  {
+    img: {
+      src: "/assets/happy-clients/2.png",
+      alt: "Happy Client 2",
+    },
+  },
+  {
+    img: {
+      src: "/assets/happy-clients/3.png",
+      alt: "Happy Client 3",
+    },
+  },
+];
+---
+
+<a href={SECTIONS.TESTIMONIALS.href} class="w-max block">
+  <div
+    class="py-2 relative px-2.5 border border-solid border-brand-white/50 rounded-3xl flex items-center"
+  >
+    <div class="w-[5.25rem] flex">
+      {
+        happyClients.map(({ img }, index) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            style={{ transform: `translateX(-${index * 12}px)` }}
+            class="size-8 shrink-0 border border-solid border-brand-white/50 rounded-full"
+            loading="lazy"
+          />
+        ))
+      }
+    </div>
+
+    <div>
+      <p>15+ Happy Clients</p>
+      <p class="flex gap-1">
+        <span>4.7</span>
+        <img src={gradeSvg.src} />
+      </p>
+    </div>
+
+    <div
+      class="absolute -right-2.5 -bottom-2.5 border border-solid border-brand-white p-2 rounded-full flex gap-1 items-center"
+    >
+      <img src={arrowRightAltSvg.src} class="size-3.5" />
+    </div>
+  </div>
+</a>
