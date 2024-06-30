@@ -6,19 +6,19 @@ import { SECTIONS } from "@/constants/sections";
 const happyClients = [
   {
     img: {
-      src: "/assets/happy-clients/1.png",
+      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
       alt: "Happy Client 1",
     },
   },
   {
     img: {
-      src: "/assets/happy-clients/2.png",
+      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
       alt: "Happy Client 2",
     },
   },
   {
     img: {
-      src: "/assets/happy-clients/3.png",
+      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
       alt: "Happy Client 3",
     },
   },
@@ -27,34 +27,36 @@ const happyClients = [
 
 <a href={SECTIONS.TESTIMONIALS.href} class="w-max block">
   <div
-    class="py-2 relative px-2.5 border border-solid border-brand-white/50 rounded-3xl flex items-center"
+    class="bg-gradient-to-br from-20% to-90% from-brand-white/50 to-transparent p-px rounded-3xl relative"
   >
-    <div class="w-[5.25rem] flex">
-      {
-        happyClients.map(({ img }, index) => (
-          <img
-            src={img.src}
-            alt={img.alt}
-            style={{ transform: `translateX(-${index * 12}px)` }}
-            class="size-8 shrink-0 border border-solid border-brand-white/50 rounded-full"
-            loading="lazy"
-          />
-        ))
-      }
-    </div>
+    <div class="py-2 bg-brand-background rounded-3xl px-2.5 flex items-center">
+      <div class="w-[5.25rem] flex">
+        {
+          happyClients.map(({ img }, index) => (
+            <img
+              src={img.src}
+              alt={img.alt}
+              style={{ transform: `translateX(-${index * 12}px)` }}
+              class="size-8 shrink-0 border border-solid border-brand-white/50 rounded-full object-cover"
+              loading="lazy"
+            />
+          ))
+        }
+      </div>
 
-    <div>
-      <p>15+ Happy Clients</p>
-      <p class="flex gap-1">
-        <span>4.7</span>
-        <img src={gradeSvg.src} />
-      </p>
-    </div>
+      <div>
+        <p>15+ Happy Clients</p>
+        <p class="flex gap-1">
+          <span>4.7</span>
+          <img src={gradeSvg.src} />
+        </p>
+      </div>
 
-    <div
-      class="absolute -right-2.5 -bottom-2.5 border border-solid border-brand-white p-2 rounded-full flex gap-1 items-center"
-    >
-      <img src={arrowRightAltSvg.src} class="size-3.5" />
+      <div
+        class="absolute -right-2.5 -bottom-2.5 border border-solid bg-brand-background border-brand-white p-2 rounded-full flex gap-1 items-center"
+      >
+        <img src={arrowRightAltSvg.src} class="size-3.5" />
+      </div>
     </div>
   </div>
 </a>

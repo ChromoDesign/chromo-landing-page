@@ -21,7 +21,6 @@ export default {
           fontSize: 18,
         },
       ],
-
       lg: [
         "1.44rem",
         {
@@ -29,27 +28,17 @@ export default {
         },
       ],
       xl: [
-        "1.7281rem",
+        "3.75rem",
         {
           fontWeight: 500,
+          lineHeight: "1.2",
         },
       ],
       "2xl": [
-        "2.0737rem",
+        "4.375rem",
         {
           fontWeight: 500,
-        },
-      ],
-      "3xl": [
-        "2.4881rem",
-        {
-          fontWeight: 500,
-        },
-      ],
-      "4xl": [
-        "2.9863rem",
-        {
-          fontWeight: 500,
+          lineHeight: "1.2",
         },
       ],
     },
@@ -60,15 +49,29 @@ export default {
           white: "#ECEDEE",
           gray: "#7C7C7C",
           yellow: "#EBB700",
+          "light-yellow": "#EBB700",
           red: "#E3342D",
+          "light-red": "#E3342D",
           blue: "#2A4BC0",
+          "light-blue": "#0072E3",
           green: "#03A100",
+          "light-green": "#00F80A",
+          "light-orange": "#FF6B00",
+          "light-purple": "#8F00FF",
+          "light-cyan": "#90F7FE",
         },
       },
+      boxShadow: {
+        "solution-card": "12px 0px 65px -2px rgba(0, 0, 0, 0.1)",
+        "inner-solution-card": "10px 0px 20px rgba(0, 0, 0, 0.1)",
+      },
       animation: {
-        "spin-slow": "spin 60s linear infinite",
+        "spin-slow": "spin 120s linear infinite",
       },
     },
   },
   plugins: [],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };

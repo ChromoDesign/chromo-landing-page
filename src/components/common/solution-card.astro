@@ -1,0 +1,37 @@
+---
+import type { Solution } from "@/constants/solutions";
+
+interface Props extends Solution {}
+
+const COLORS: Record<Solution["color"], string> = {
+  red: "bg-brand-red shadow-brand-red/30 group-hover:shadow-brand-red/75",
+  blue: "bg-brand-blue shadow-brand-blue/30 group-hover:shadow-brand-blue/75",
+  green:
+    "bg-brand-green shadow-brand-green/30 group-hover:shadow-brand-green/75",
+  yellow:
+    "bg-brand-yellow shadow-brand-yellow/30 group-hover:shadow-brand-yellow/75",
+};
+
+const { title, description, icon, color } = Astro.props;
+---
+
+<article
+  class="flex bg-white/5 border border-solid border-brand-white/15 rounded-3xl group"
+>
+  <div
+    class={"h-full flex shrink-0 justify-center items-center rounded-full px-2.5 shadow-solution-card duration-200 ease-in-out" +
+      " " +
+      COLORS[color]}
+  >
+    <img src={icon.src} alt={icon.alt} class="size-5 shrink-0" />
+  </div>
+
+  <div class="space-y-3 p-5 grow">
+    <h3 class="text-2l">{title}</h3>
+    <div
+      class="w-1/2 h-px bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] max-w-64 lg:hidden"
+    >
+    </div>
+    <p class="text-brand-gray">{description}</p>
+  </div>
+</article>

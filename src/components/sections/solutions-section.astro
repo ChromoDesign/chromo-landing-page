@@ -1,0 +1,22 @@
+---
+import { SOLUTIONS } from "@/constants/solutions";
+import SolutionCard from "@/components/common/solution-card.astro";
+import GradientSpan from "@/components/common/gradient-span.astro";
+---
+
+<section class="mb-52">
+  <div class="text-center space-y-5 mb-20">
+    <h2 class="text-2xl w-1/2 mx-auto">
+      Innovative solutions tailored <GradientSpan color="blue"
+        >for you.</GradientSpan
+      >
+    </h2>
+    <p class="text-brand-gray">
+      Transforming ideas into remarkable digital experiences.
+    </p>
+  </div>
+
+  <section class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+    {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
+  </section>
+</section>

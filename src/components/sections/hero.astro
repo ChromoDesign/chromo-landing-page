@@ -5,7 +5,7 @@ import HappyClients from "../common/happy-clients.astro";
 import { SECTIONS } from "@/constants/sections";
 ---
 
-<section class="container">
+<section class="container mb-32">
   <div
     class="relative h-[clamp(19.375rem,_65vw,_38.75rem)] aspect-square mx-auto text-sm flex justify-center items-center flex-col"
   >
@@ -21,7 +21,9 @@ import { SECTIONS } from "@/constants/sections";
     </div>
 
     <p class="text-brand-gray">Design & Development</p>
-    <h1 class="text-4xl mt-2.5 mb-10 text-center">Building your future</h1>
+    <h1 class="text-2xl mt-2.5 mb-10 text-center whitespace-nowrap">
+      Building your future
+    </h1>
     <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
   </div>
   <HappyClients />

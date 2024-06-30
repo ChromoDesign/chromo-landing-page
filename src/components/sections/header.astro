@@ -3,7 +3,10 @@ import chromoLogo from "@/assets/images/chromo-logo.svg";
 import { SECTIONS_LIST } from "@/constants/sections";
 ---
 
-<header class="bg-[#010100] text-white p-7 mb-10 sticky top-0 left-0">
+<header
+  class="text-white p-7 mb-10 sticky top-0 left-0 transition-colors duration-200 z-50"
+  id="header"
+>
   <div class="flex justify-between items-center container mx-auto">
     <img src={chromoLogo.src} alt="Chromo Logo" class="h-7" />
 
@@ -12,7 +15,7 @@ import { SECTIONS_LIST } from "@/constants/sections";
         {
           SECTIONS_LIST.map(({ href, title }) => (
             <li>
-              <a href={href} class="text-brand-gray hover:text-brand-white">
+              <a href={href} class="text-brand-gray hover:text-brand-white ">
                 {title}
               </a>
             </li>
@@ -22,3 +25,25 @@ import { SECTIONS_LIST } from "@/constants/sections";
     </nav>
   </div>
 </header>
+<script>
+  const header = document.getElementById("header")!;
+  const scrollThreshold = 100;
+  const scrolledClasses = ["backdrop-blur-xl", "bg-brand-gray/10"];
+
+  window.addEventListener("load", function () {
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add(...scrolledClasses);
+    }
+  });
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > scrollThreshold * 2) return; // optimization
+
+    if (window.scrollY > scrollThreshold) {
+      header.classList.add(...scrolledClasses);
+      console.log("scrolled");
+    } else {
+      header.classList.remove(...scrolledClasses);
+    }
+  });
+</script>
