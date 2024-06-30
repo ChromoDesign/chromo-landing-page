@@ -7,7 +7,7 @@ import { SECTIONS } from "@/constants/sections";
 
 <section class="container mb-32">
   <div
-    class="relative h-[clamp(19.375rem,_65vw,_38.75rem)] aspect-square mx-auto text-sm flex justify-center items-center flex-col"
+    class="relative max-w-full w-[clamp(310px,_65vw,_620px)] aspect-square mx-auto text-sm flex justify-center items-center flex-col"
   >
     <img
       src={chromoIsotype.src}
@@ -16,15 +16,20 @@ import { SECTIONS } from "@/constants/sections";
     />
 
     <div
-      class="backdrop-blur-xl h-full w-[calc(50%_+_1.25rem)] translate-x-5 absolute right-0 -z-10 ml-auto"
+      class="backdrop-blur md:backdrop-blur-xl w-[110%] h-full md:w-[calc(50%_+_1.25rem)] translate-x-5 absolute right-0 -z-10 ml-auto"
     >
     </div>
 
     <p class="text-brand-gray">Design & Development</p>
-    <h1 class="text-2xl mt-2.5 mb-10 text-center whitespace-nowrap">
+    <h1
+      class="text-lg md:text-2xl mt-2.5 mb-10 text-center md:whitespace-nowrap"
+    >
       Building your future
     </h1>
     <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
   </div>
-  <HappyClients />
+
+  <div class="flex justify-center mt-40 lg:mt-0 lg:justify-start">
+    <HappyClients />
+  </div>
 </section>

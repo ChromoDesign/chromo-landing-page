@@ -10,7 +10,7 @@ import { SECTIONS_LIST } from "@/constants/sections";
   <div class="flex justify-between items-center container mx-auto">
     <img src={chromoLogo.src} alt="Chromo Logo" class="h-7" />
 
-    <nav>
+    <nav class="lg:block hidden">
       <ul class="flex items-center gap-12">
         {
           SECTIONS_LIST.map(({ href, title }) => (

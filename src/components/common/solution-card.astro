@@ -3,13 +3,15 @@ import type { Solution } from "@/constants/solutions";
 
 interface Props extends Solution {}
 
+// Shadow opacity -- Mobile: 75%, Desktop: 30%
+// Shadow opacity on hover -- Mobile: 75%, Desktop: 75%
 const COLORS: Record<Solution["color"], string> = {
-  red: "bg-brand-red shadow-brand-red/30 group-hover:shadow-brand-red/75",
-  blue: "bg-brand-blue shadow-brand-blue/30 group-hover:shadow-brand-blue/75",
+  red: "bg-brand-red shadow-brand-red/75 lg:shadow-brand-red/30 group-hover:shadow-brand-red/75",
+  blue: "bg-brand-blue shadow-brand-blue/75 lg:shadow-brand-blue/30 group-hover:shadow-brand-blue/75",
   green:
-    "bg-brand-green shadow-brand-green/30 group-hover:shadow-brand-green/75",
+    "bg-brand-green shadow-brand-green/75 lg:shadow-brand-green/30 group-hover:shadow-brand-green/75",
   yellow:
-    "bg-brand-yellow shadow-brand-yellow/30 group-hover:shadow-brand-yellow/75",
+    "bg-brand-yellow shadow-brand-yellow/75 lg:shadow-brand-yellow/30 group-hover:shadow-brand-yellow/75",
 };
 
 const { title, description, icon, color } = Astro.props;

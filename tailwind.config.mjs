@@ -22,7 +22,7 @@ export default {
         },
       ],
       lg: [
-        "1.44rem",
+        "2.125rem",
         {
           fontWeight: 500,
         },
