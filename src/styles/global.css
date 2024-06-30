@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h1 {
+    @apply text-lg md:text-2xl text-balance;
+  }
+
+  h2 {
+    @apply text-lg md:text-xl text-balance;
+  }
+
+  p {
+    @apply text-sm md:text-base text-pretty;
+  }
+}
