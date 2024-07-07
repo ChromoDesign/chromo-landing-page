@@ -1,0 +1,31 @@
+---
+interface Props {
+  subtitle?: string;
+}
+
+const { subtitle } = Astro.props;
+---
+
+<div class="text-center space-y-5">
+  <h2 class="lg:w-1/2 mx-auto">
+    <slot name="title">
+      <span>Empty Title</span>
+    </slot>
+  </h2>
+
+  <div class="flex items-center justify-between gap-5">
+    <slot name="subtitle-left">
+      <div class="size-px"></div>
+    </slot>
+
+    {subtitle && <p class="text-brand-gray text-center">{subtitle}</p>}
+
+    <slot name="subtitle-center" />
+
+    <slot name="subtitle-right">
+      <div class="size-px"></div>
+    </slot>
+  </div>
+
+  <slot />
+</div>

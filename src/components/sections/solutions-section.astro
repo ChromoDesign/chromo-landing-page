@@ -2,21 +2,23 @@
 import { SOLUTIONS } from "@/constants/solutions";
 import SolutionCard from "@/components/common/solution-card.astro";
 import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
 ---
 
-<section class="mb-52 space-y-10 md:space-y-20">
-  <div class="text-center space-y-5">
-    <h2 class="lg:w-1/2 mx-auto">
+<Section id={SECTIONS.OUR_SERVICES.id}>
+  <SectionHeader
+    subtitle="Transforming ideas into remarkable digital experiences."
+  >
+    <span slot="title">
       Innovative solutions tailored <GradientSpan color="blue"
         >for you.</GradientSpan
       >
-    </h2>
-    <p class="text-brand-gray">
-      Transforming ideas into remarkable digital experiences.
-    </p>
-  </div>
+    </span>
+  </SectionHeader>
 
   <section class="grid grid-cols-1 lg:grid-cols-2 gap-10">
     {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
   </section>
-</section>
+</Section>

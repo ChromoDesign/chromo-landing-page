@@ -1,0 +1,27 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
+---
+
+<Section id={SECTIONS.PROJECTS.id}>
+  <SectionHeader subtitle="Real-World Applications of Our Expertise">
+    <span slot="title">
+      Showcasing <GradientSpan color="green">excellence</GradientSpan> in every endeavor.
+    </span>
+  </SectionHeader>
+
+  <ul
+    class="grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-10 auto-rows-fr"
+  >
+    {
+      SHOWCASE_PROJECTS.map(({ image }) => (
+        <li class="border border-solid border-brand-white/15 rounded-3xl px-16 py-12 flex justify-center items-center">
+          <img src={image.src} alt={image.alt} class="object-cover max-h-32" />
+        </li>
+      ))
+    }
+  </ul>
+</Section>

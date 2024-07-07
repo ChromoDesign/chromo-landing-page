@@ -1,0 +1,22 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import Button from "@/components/common/button.astro";
+import { SECTIONS } from "@/constants/sections";
+---
+
+<section>
+  <SectionHeader>
+    <span slot="title">
+      Have
+      <GradientSpan color="red">
+        <span>Questions?</span>
+      </GradientSpan>
+      We're Here.
+    </span>
+  </SectionHeader>
+
+  <div class="flex justify-center">
+    <Button text="Get In Touch" href={SECTIONS.CONTACT.href} />
+  </div>
+</section>

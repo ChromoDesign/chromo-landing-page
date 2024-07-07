@@ -2,9 +2,17 @@
 import Layout from "../layouts/layout.astro";
 import Hero from "@/components/sections/hero.astro";
 import SolutionsSection from "@/components/sections/solutions-section.astro";
+import ShowcaseSection from "@/components/sections/showcase-section.astro";
+import QuestionsSection from "@/components/sections/questions-section.astro";
 ---
 
 <Layout title="Chromo Design">
-  <Hero />
-  <SolutionsSection />
+  <div class="mb-32">
+    <Hero />
+  </div>
+  <div class="space-y-52 my-20">
+    <SolutionsSection />
+    <ShowcaseSection />
+    <QuestionsSection />
+  </div>
 </Layout>

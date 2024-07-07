@@ -1,6 +1,8 @@
 ---
 import "@/styles/global.css";
 import Header from "@/components/sections/header.astro";
+import { SECTIONS } from "@/constants/sections";
+
 interface Props {
   title: string;
 }
@@ -9,7 +11,7 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +20,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
-  <body class="bg-brand-background text-brand-white">
+  <body class="bg-brand-background text-brand-white" id={SECTIONS.HOME.id}>
     <Header />
     <main class="container mx-auto px-7">
       <slot />
