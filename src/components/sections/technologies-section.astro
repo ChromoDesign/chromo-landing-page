@@ -1,0 +1,34 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
+import { TECHNOLOGIES } from "@/constants/technologies";
+import Button from "../common/button.astro";
+---
+
+<Section id={SECTIONS.OUR_TEAM.id}>
+  <div class="flex flex-col gap-10 items-center md:justify-between md:flex-row">
+    <div class="space-y-14 grow">
+      <h2 class="w-[15ch]">
+        Dedicated to <GradientSpan color="purple">the best.</GradientSpan>
+      </h2>
+      <div>
+        <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
+      </div>
+    </div>
+
+    <ul class="flex items-center justify-end flex-wrap gap-x-36 gap-y-20">
+      {
+        TECHNOLOGIES.map((technology) => (
+          <li class="rounded-3xl">
+            <img
+              src={technology.icon.src}
+              alt={technology.icon.alt}
+              class="object-cover w-24"
+            />
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>
