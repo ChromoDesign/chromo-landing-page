@@ -1,0 +1,28 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
+import TestimonialCard from "@/components/common/testimonial-card.astro";
+import { TESTIMONIALS } from "@/constants/testimonials";
+---
+
+<Section id={SECTIONS.TESTIMONIALS.id}>
+  <SectionHeader subtitle="See what our satisfied clients have to say">
+    <span slot="title">
+      Client <GradientSpan color="orange">Stories</GradientSpan>
+    </span>
+  </SectionHeader>
+
+  <ul
+    class="grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-10 auto-rows-fr"
+  >
+    {
+      TESTIMONIALS.map((testimonial) => (
+        <li class="list-none">
+          <TestimonialCard testimonal={testimonial} />
+        </li>
+      ))
+    }
+  </ul>
+</Section>

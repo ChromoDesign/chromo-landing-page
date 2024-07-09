@@ -1,0 +1,36 @@
+---
+import type { Testimonial } from "@/constants/testimonials";
+import formatIconSvg from "@/assets/icons/format_quote.svg";
+
+interface Props {
+  testimonal: Testimonial;
+}
+
+const { testimonal } = Astro.props;
+---
+
+<div class="relative group">
+  <img
+    src={testimonal.image.src}
+    alt={testimonal.image.alt}
+    class="absolute group-hover:translate-x-1.5 group-hover:-rotate-6 opacity-0 group-hover:opacity-100 transition duration-200 -z-10 h-full top-0 left-0 w-full object-cover rounded-3xl"
+  />
+  <article
+    class="bg-brand-background group-hover:bg-brand-background/75 group-hover:translate-y-28 group-hover:rotate-12 transition-transform duration-200 p-5 border border-solid border-brand-white/15 rounded-3xl"
+  >
+    <div class="mb-24 space-y-1.5">
+      <h3 class="text-base">{testimonal.name}</h3>
+      <p class="text-brand-gray text-sm">{testimonal.website}</p>
+    </div>
+
+    <div class="space-y-2.5">
+      <img
+        src={formatIconSvg.src}
+        alt="Quote Icon"
+        class="size-5 rotate-[-11deg]"
+      />
+
+      <p class="text-sm">{testimonal.description}</p>
+    </div>
+  </article>
+</div>

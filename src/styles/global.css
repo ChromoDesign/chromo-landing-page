@@ -11,6 +11,10 @@
     @apply text-lg md:text-xl text-balance;
   }
 
+  h3 {
+    @apply text-base  text-balance;
+  }
+
   p {
     @apply text-sm md:text-base text-pretty;
   }
