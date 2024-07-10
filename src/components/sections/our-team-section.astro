@@ -1,0 +1,27 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
+import TeamMemberCard from "@/components/common/team-member-card.astro";
+import { TEAM_MEMBERS } from "@/constants/team-members";
+---
+
+<Section id={SECTIONS.OUR_TEAM.id}>
+  <SectionHeader>
+    <span slot="title">
+      Collaborative mastery,
+      <GradientSpan color="yellow"> creative harmony. </GradientSpan>
+    </span>
+  </SectionHeader>
+
+  <ul
+    class="grid grid-cols-[repeat(auto-fill,_minmax(20rem,_1fr))] gap-10 auto-rows-fr"
+  >
+    {
+      TEAM_MEMBERS.map((teamMember) => (
+        <TeamMemberCard teamMember={teamMember} />
+      ))
+    }
+  </ul>
+</Section>

@@ -7,17 +7,21 @@ import Button from "../common/button.astro";
 ---
 
 <Section id={SECTIONS.OUR_TEAM.id}>
-  <div class="flex flex-col gap-10 items-center md:justify-between md:flex-row">
-    <div class="space-y-14 grow">
-      <h2 class="w-[15ch]">
+  <div
+    class="flex flex-col gap-40 xl:gap-10 items-center md:justify-between xl:flex-row"
+  >
+    <div class="space-y-14">
+      <h2 class="w-[15ch] text-center xl:text-start">
         Dedicated to <GradientSpan color="purple">the best.</GradientSpan>
       </h2>
-      <div>
+      <div class="hidden xl:block">
         <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
       </div>
     </div>
 
-    <ul class="flex items-center justify-end flex-wrap gap-x-36 gap-y-20">
+    <ul
+      class="grid w-full grow place-items-end grid-cols-[repeat(auto-fill,_minmax(100px,_1fr))] gap-x-20 gap-y-8 2xl:gap-x-32 2xl:gap-y-20 auto-rows-fr"
+    >
       {
         TECHNOLOGIES.map((technology) => (
           <li class="rounded-3xl">
@@ -30,5 +34,9 @@ import Button from "../common/button.astro";
         ))
       }
     </ul>
+
+    <div class="block xl:hidden">
+      <Button text="Book an Appointment" href={SECTIONS.OUR_SERVICES.href} />
+    </div>
   </div>
 </Section>
