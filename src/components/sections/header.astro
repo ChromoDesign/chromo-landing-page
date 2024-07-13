@@ -1,6 +1,6 @@
 ---
-import chromoLogo from "@/assets/images/chromo-logo.svg";
 import { SECTIONS_LIST } from "@/constants/sections";
+import ChromoLogo from "@/components/common/chromo-logo.astro";
 ---
 
 <header
@@ -8,7 +8,7 @@ import { SECTIONS_LIST } from "@/constants/sections";
   id="header"
 >
   <div class="flex justify-between items-center container mx-auto">
-    <img src={chromoLogo.src} alt="Chromo Logo" class="h-7" />
+    <ChromoLogo />
 
     <nav class="lg:block hidden">
       <ul class="flex items-center gap-12">
