@@ -1,0 +1,44 @@
+---
+import GradientSpan from "@/components/common/gradient-span.astro";
+import SectionHeader from "@/components/common/section-header.astro";
+import { SECTIONS } from "@/constants/sections";
+import Section from "@/components/common/section.astro";
+import Button from "@/components/common/button.astro";
+import arrorRightAltSvg from "@/assets/icons/arrow-right-alt.svg";
+import Label from "@/components/forms/label.astro";
+import Input from "@/components/forms/input.astro";
+import Textarea from "@/components/forms/textarea.astro";
+---
+
+<Section id={SECTIONS.CONTACT.id}>
+  <SectionHeader>
+    <span slot="title">
+      Let's build something <GradientSpan color="cyan"
+        >extraordinary</GradientSpan
+      > together.
+    </span>
+  </SectionHeader>
+
+  <form
+    class="rounded-xl mx-auto w-full lg:w-2/3 bg-brand-white/5 border border-solid border-brand-white/15 p-7 lg:p-14 flex flex-col items-center lg:items-end gap-10"
+  >
+    <div class="flex flex-col gap-5 w-full">
+      <div class="flex flex-col gap-2">
+        <Label for="name">Name</Label>
+        <Input id="name" placeholder="Your Name" />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <Label for="email">Email</Label>
+        <Input id="email" type="email" placeholder="Your Email" />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <Label for="message">Message</Label>
+        <Textarea id="message" placeholder="Your Email" />
+      </div>
+    </div>
+
+    <Button text="Book an Appointment" iconSrc={arrorRightAltSvg.src} />
+  </form>
+</Section>

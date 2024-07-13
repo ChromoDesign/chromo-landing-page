@@ -8,7 +8,7 @@ import Button from "../common/button.astro";
 
 <Section id={SECTIONS.OUR_TEAM.id}>
   <div
-    class="flex flex-col gap-40 xl:gap-10 items-center md:justify-between xl:flex-row"
+    class="flex flex-col lg:gap-40 gap-20 xl:gap-10 items-center md:justify-between xl:flex-row"
   >
     <div class="space-y-14">
       <h2 class="w-[15ch] text-center xl:text-start">
@@ -20,7 +20,7 @@ import Button from "../common/button.astro";
     </div>
 
     <ul
-      class="grid w-full grow place-items-end grid-cols-[repeat(auto-fill,_minmax(100px,_1fr))] gap-x-20 gap-y-8 2xl:gap-x-32 2xl:gap-y-20 auto-rows-fr"
+      class="grid w-full grow place-items-center xl:place-items-end grid-cols-[repeat(auto-fill,_minmax(100px,_1fr))] gap-x-20 gap-y-8 2xl:gap-x-32 2xl:gap-y-20 auto-rows-fr"
     >
       {
         TECHNOLOGIES.map((technology) => (

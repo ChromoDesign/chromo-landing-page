@@ -1,0 +1,16 @@
+---
+interface Props {
+  id: string;
+  type?: astroHTML.JSX.HTMLInputTypeAttribute;
+  placeholder?: string;
+}
+
+const { id, type = "text", placeholder } = Astro.props;
+---
+
+<input
+  id={id}
+  type={type}
+  class="bg-brand-background border border-solid border-brand-white/15 rounded-lg px-2.5 py-2 placeholder:text-brand-gray"
+  placeholder={placeholder}
+/>

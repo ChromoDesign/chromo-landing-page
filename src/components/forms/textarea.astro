@@ -1,0 +1,13 @@
+---
+interface Props {
+  id: string;
+  placeholder?: string;
+}
+
+const { id, placeholder } = Astro.props;
+---
+
+<textarea
+  id={id}
+  class="bg-brand-background border border-solid border-brand-white/15 rounded-lg px-5 py-2.5 placeholder:text-brand-gray"
+  placeholder={placeholder}></textarea>

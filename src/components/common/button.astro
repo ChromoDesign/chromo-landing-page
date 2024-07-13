@@ -2,13 +2,16 @@
 interface Props {
   text: string;
   href?: string;
+  iconSrc?: string;
+  type?: "button" | "submit" | "reset";
 }
 
-const { text, href } = Astro.props;
+const { text, href, iconSrc, type = "button" } = Astro.props;
 
 const isLink = Boolean(href);
+
 const style =
-  "border w-max block border-solid border-brand-white/50 rounded-full px-5 py-2.5 text-sm bg-transparent text-brand-white";
+  "border w-max border-solid border-brand-white/50 flex items-center rounded-full px-7 py-3.5 text-sm bg-transparent text-brand-white";
 ---
 
 {
@@ -17,6 +20,15 @@ const style =
       {text}
     </a>
   ) : (
-    <button class={style}>{text}</button>
+    <button class={style} type={type}>
+      <span class="leading-none">{text}</span>
+      {iconSrc && (
+        <img
+          src={iconSrc}
+          alt="Icon"
+          class="size-4 ml-2.5 fill-current rotate-[-35.555deg]"
+        />
+      )}
+    </button>
   )
 }
