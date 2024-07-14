@@ -4,7 +4,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "http://chromo.design/",
+  site: "https://chromo.design/",
   server: {
     host: "0.0.0.0",
   },
