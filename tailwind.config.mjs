@@ -25,6 +25,7 @@ export default {
         "2.125rem",
         {
           fontWeight: 500,
+          lineHeight: "1.2",
         },
       ],
       xl: [
