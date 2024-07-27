@@ -1,4 +1,13 @@
 {
-  "cSpell.words": ["astro", "Laravel", "tailwindcss", "torq", "villalobos"],
+  "cSpell.words": [
+    "astro",
+    "astrojs",
+    "Laravel",
+    "tailwindcss",
+    "torq",
+    "tsconfigs",
+    "tseslint",
+    "villalobos"
+  ],
   "typescript.tsdk": "node_modules/typescript/lib"
 }
