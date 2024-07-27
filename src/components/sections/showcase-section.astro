@@ -14,12 +14,12 @@ import Section from "@/components/common/section.astro";
   </SectionHeader>
 
   <ul
-    class="grid grid-cols-[repeat(auto-fill,_minmax(17.5rem,_1fr))] gap-10 auto-rows-fr"
+    class="grid auto-rows-fr grid-cols-[repeat(auto-fill,_minmax(17.5rem,_1fr))] gap-10"
   >
     {
       SHOWCASE_PROJECTS.map(({ image }) => (
-        <li class="border border-solid border-brand-white/15 rounded-3xl px-16 py-12 flex justify-center items-center">
-          <img src={image.src} alt={image.alt} class="object-cover max-h-32" />
+        <li class="flex items-center justify-center rounded-3xl border border-solid border-brand-white/15 px-16 py-12">
+          <img src={image.src} alt={image.alt} class="max-h-32 object-cover" />
         </li>
       ))
     }

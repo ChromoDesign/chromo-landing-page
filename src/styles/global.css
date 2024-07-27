@@ -4,18 +4,18 @@
 
 @layer base {
   h1 {
-    @apply text-lg md:text-2xl text-balance;
+    @apply text-balance text-lg md:text-2xl;
   }
 
   h2 {
-    @apply text-lg md:text-xl text-balance;
+    @apply text-balance text-lg md:text-xl;
   }
 
   h3 {
-    @apply text-base  text-balance;
+    @apply text-balance text-base;
   }
 
   p {
-    @apply text-sm md:text-base text-pretty;
+    @apply text-pretty text-sm md:text-base;
   }
 }

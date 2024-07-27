@@ -18,7 +18,7 @@ const { title, description, icon, color } = Astro.props;
 ---
 
 <article
-  class="flex bg-white/5 border border-solid border-brand-white/15 rounded-3xl group"
+  class="group flex rounded-3xl border border-solid border-brand-white/15 bg-white/5"
 >
   <div
     class={"h-full flex shrink-0 justify-center items-center rounded-full px-2.5 shadow-solution-card duration-200 ease-in-out" +
@@ -28,10 +28,10 @@ const { title, description, icon, color } = Astro.props;
     <img src={icon.src} alt={icon.alt} class="size-5 shrink-0" />
   </div>
 
-  <div class="space-y-3 p-5 grow">
+  <div class="grow space-y-3 p-5">
     <h3>{title}</h3>
     <div
-      class="w-1/2 h-px bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] max-w-64 lg:hidden"
+      class="h-px w-1/2 max-w-64 bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] lg:hidden"
     >
     </div>
     <p class="text-brand-gray">{description}</p>

@@ -1,6 +1,6 @@
-import jsLogo from "@/assets/images/js-logo.webp";
 import figmaLogo from "@/assets/images/figma-logo.webp";
 import flutterLogo from "@/assets/images/flutter-logo.webp";
+import jsLogo from "@/assets/images/js-logo.webp";
 import laravelLogo from "@/assets/images/laravel-logo.webp";
 import nestLogo from "@/assets/images/nest-logo.webp";
 import nodeJsLogo from "@/assets/images/nodejs-logo.webp";

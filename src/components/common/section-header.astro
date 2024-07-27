@@ -6,8 +6,8 @@ interface Props {
 const { subtitle } = Astro.props;
 ---
 
-<div class="text-center space-y-5">
-  <h2 class="lg:w-1/2 mx-auto">
+<div class="space-y-5 text-center">
+  <h2 class="mx-auto lg:w-1/2">
     <slot name="title">
       <span>Empty Title</span>
     </slot>
@@ -18,7 +18,7 @@ const { subtitle } = Astro.props;
       <div class="size-px"></div>
     </slot>
 
-    {subtitle && <p class="text-brand-gray text-center">{subtitle}</p>}
+    {subtitle && <p class="text-center text-brand-gray">{subtitle}</p>}
 
     <slot name="subtitle-center" />
 

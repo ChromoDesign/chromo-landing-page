@@ -9,18 +9,18 @@ interface Props {
 const { testimonal } = Astro.props;
 ---
 
-<div class="relative group">
+<div class="group relative">
   <img
     src={testimonal.image.src}
     alt={testimonal.image.alt}
-    class="absolute group-hover:translate-x-1.5 delay-75 group-hover:-rotate-6 opacity-0 group-hover:opacity-100 transition duration-200 -z-10 h-full top-0 left-0 w-full object-cover rounded-3xl"
+    class="absolute left-0 top-0 -z-10 h-full w-full rounded-3xl object-cover opacity-0 transition delay-75 duration-200 group-hover:translate-x-1.5 group-hover:-rotate-6 group-hover:opacity-100"
   />
   <article
-    class="bg-brand-background group-hover:bg-brand-background/75 delay-75 group-hover:translate-y-28 group-hover:rotate-12 transition-transform duration-200 p-5 border border-solid border-brand-white/15 rounded-3xl"
+    class="rounded-3xl border border-solid border-brand-white/15 bg-brand-background p-5 transition-transform delay-75 duration-200 group-hover:translate-y-28 group-hover:rotate-12 group-hover:bg-brand-background/75"
   >
     <div class="mb-24 space-y-1.5">
       <h3 class="text-base">{testimonal.name}</h3>
-      <p class="text-brand-gray text-sm">{testimonal.website}</p>
+      <p class="text-sm text-brand-gray">{testimonal.website}</p>
     </div>
 
     <div class="space-y-2.5">

@@ -1,8 +1,8 @@
-import torqLogo from "@/assets/images/torq-logo.avif";
-import toroLogo from "@/assets/images/toro-logo.avif";
-import rockUltraSoundLogo from "@/assets/images/rock-ultra-sound-logo.avif";
-import villalobosTileLogo from "@/assets/images/villalobos-tile-logo.avif";
 import mightyShieldLogo from "@/assets/images/mighty-shield-logo.avif";
+import rockUltraSoundLogo from "@/assets/images/rock-ultra-sound-logo.avif";
+import toroLogo from "@/assets/images/toro-logo.avif";
+import torqLogo from "@/assets/images/torq-logo.avif";
+import villalobosTileLogo from "@/assets/images/villalobos-tile-logo.avif";
 
 type ShowcaseProject = {
   title: string;
