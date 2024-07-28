@@ -5,6 +5,7 @@ export default {
     "prettier-plugin-organize-imports",
     "prettier-plugin-tailwindcss",
   ],
+  tailwindFunctions: ["tw"],
   overrides: [
     {
       files: "*.astro",

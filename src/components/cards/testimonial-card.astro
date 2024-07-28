@@ -1,6 +1,7 @@
 ---
 import type { Testimonial } from "@/constants/testimonials";
 import formatIconSvg from "@/assets/icons/format_quote.svg";
+import GlowEffect from "../common/glow-effect.astro";
 
 interface Props {
   testimonal: Testimonial;
@@ -15,22 +16,27 @@ const { testimonal } = Astro.props;
     alt={testimonal.image.alt}
     class="absolute left-0 top-0 -z-10 h-full w-full rounded-3xl object-cover opacity-0 transition delay-75 duration-200 group-hover:translate-x-1.5 group-hover:-rotate-6 group-hover:opacity-100"
   />
-  <article
-    class="rounded-3xl border border-solid border-brand-white/15 bg-brand-background p-5 transition-transform delay-75 duration-200 group-hover:translate-y-28 group-hover:rotate-12 group-hover:bg-brand-background/75"
+
+  <div
+    class="rounded-xl bg-brand-background transition-transform delay-75 duration-200 group-hover:translate-y-28 group-hover:rotate-12 group-hover:bg-brand-background/75"
   >
-    <div class="mb-24 space-y-1.5">
-      <h3 class="text-base">{testimonal.name}</h3>
-      <p class="text-sm text-brand-gray">{testimonal.website}</p>
-    </div>
+    <GlowEffect>
+      <article class="p-5">
+        <div class="mb-24 space-y-1.5">
+          <h3 class="text-base">{testimonal.name}</h3>
+          <p class="text-sm text-brand-gray">{testimonal.website}</p>
+        </div>
 
-    <div class="space-y-2.5">
-      <img
-        src={formatIconSvg.src}
-        alt="Quote Icon"
-        class="size-5 rotate-[-11deg]"
-      />
+        <div class="space-y-2.5">
+          <img
+            src={formatIconSvg.src}
+            alt="Quote Icon"
+            class="size-5 rotate-[-11deg]"
+          />
 
-      <p class="text-sm">{testimonal.description}</p>
-    </div>
-  </article>
+          <p class="text-sm">{testimonal.description}</p>
+        </div>
+      </article>
+    </GlowEffect>
+  </div>
 </div>

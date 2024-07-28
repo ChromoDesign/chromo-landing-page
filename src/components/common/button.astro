@@ -1,4 +1,6 @@
 ---
+import tw from "@/utils/tw";
+
 interface Props {
   text: string;
   href?: string;
@@ -10,8 +12,7 @@ const { text, href, iconSrc, type = "button" } = Astro.props;
 
 const isLink = Boolean(href);
 
-const style =
-  "border w-max border-solid border-brand-white/50 flex items-center rounded-full px-7 py-3.5 text-sm bg-transparent text-brand-white";
+const style = tw`group flex w-max items-center rounded-full border border-solid border-brand-white/50 bg-transparent px-7 py-3.5 text-sm text-brand-white transition-colors duration-100 hover:bg-brand-white/5`;
 ---
 
 {
@@ -26,7 +27,7 @@ const style =
         <img
           src={iconSrc}
           alt="Icon"
-          class="ml-2.5 size-4 rotate-[-35.555deg] fill-current"
+          class="ml-2.5 size-4 rotate-[-35.555deg] fill-current transition-transform duration-200 group-hover:translate-x-1"
         />
       )}
     </button>

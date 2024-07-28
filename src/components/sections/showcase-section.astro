@@ -4,6 +4,7 @@ import SectionHeader from "@/components/common/section-header.astro";
 import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
+import ShowcaseCard from "../cards/showcase-card.astro";
 ---
 
 <Section id={SECTIONS.PROJECTS.id}>
@@ -16,12 +17,6 @@ import Section from "@/components/common/section.astro";
   <ul
     class="grid auto-rows-fr grid-cols-[repeat(auto-fill,_minmax(17.5rem,_1fr))] gap-10"
   >
-    {
-      SHOWCASE_PROJECTS.map(({ image }) => (
-        <li class="flex items-center justify-center rounded-3xl border border-solid border-brand-white/15 px-16 py-12">
-          <img src={image.src} alt={image.alt} class="max-h-32 object-cover" />
-        </li>
-      ))
-    }
+    {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
   </ul>
 </Section>

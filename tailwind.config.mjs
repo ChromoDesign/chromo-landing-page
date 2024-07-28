@@ -64,7 +64,7 @@ export default {
       },
       boxShadow: {
         "solution-card": "12px 0px 65px -2px rgba(0, 0, 0, 0.1)",
-        "inner-solution-card": "10px 0px 20px rgba(0, 0, 0, 0.1)",
+        "inner-solution-card": "10px 0px 30px 2px rgba(0, 0, 0, 0.1)",
       },
       animation: {
         "spin-slow": "spin 120s linear infinite",

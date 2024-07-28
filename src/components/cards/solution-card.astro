@@ -1,5 +1,6 @@
 ---
 import type { Solution } from "@/constants/solutions";
+import GlowEffect from "../common/glow-effect.astro";
 
 interface Props extends Solution {}
 
@@ -17,23 +18,26 @@ const COLORS: Record<Solution["color"], string> = {
 const { title, description, icon, color } = Astro.props;
 ---
 
-<article
-  class="group flex rounded-3xl border border-solid border-brand-white/15 bg-white/5"
->
-  <div
-    class={"h-full flex shrink-0 justify-center items-center rounded-full px-2.5 shadow-solution-card duration-200 ease-in-out" +
-      " " +
-      COLORS[color]}
-  >
-    <img src={icon.src} alt={icon.alt} class="size-5 shrink-0" />
-  </div>
-
-  <div class="grow space-y-3 p-5">
-    <h3>{title}</h3>
+<GlowEffect>
+  <article class="group relative flex rounded-xl bg-white/5">
     <div
-      class="h-px w-1/2 max-w-64 bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] lg:hidden"
+      class={`flex shrink-0 justify-center relative items-center transition-shadow duration-200 rounded-s-xl shadow-solution-card px-3.5 ease-in-out ${COLORS[color]}`}
+    >
+      <img src={icon.src} alt={icon.alt} class="size-5 shrink-0" />
+    </div>
+
+    <div class="grow space-y-3 p-5">
+      <h3>{title}</h3>
+      <div
+        class="h-px w-1/2 max-w-64 bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] lg:hidden"
+      >
+      </div>
+      <p class="text-brand-gray">{description}</p>
+    </div>
+
+    <div
+      class={`absolute bottom-0 left-20 top-0 my-auto h-2/3 transition-shadow duration-200 shadow-inner-solution-card opacity-0 group-hover:opacity-100 ${COLORS[color]}`}
     >
     </div>
-    <p class="text-brand-gray">{description}</p>
-  </div>
-</article>
+  </article>
+</GlowEffect>

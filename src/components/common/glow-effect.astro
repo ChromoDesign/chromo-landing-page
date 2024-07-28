@@ -1,0 +1,164 @@
+<div class="glow-container">
+  <div class="glows"></div>
+
+  <slot />
+</div>
+
+<style>
+  :root {
+    --spread: 40;
+    --border: hsl(280 10% 50% / 1);
+    --border-width: 2px;
+    --border-radius: theme(borderRadius.xl);
+    --gradient: white;
+  }
+
+  .glow-container {
+    --active: 0.15;
+    --start: 0;
+    border-radius: var(--border-radius);
+    border: 1px solid theme(colors.brand.white / 15%);
+    position: relative;
+  }
+
+  .glow-container:is(:hover, :focus-visible) {
+    z-index: 2;
+  }
+
+  .glows {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    filter: blur(calc(var(--blur) * 1px));
+  }
+
+  .glows::after,
+  .glows::before {
+    --alpha: 0;
+    content: "";
+    background: var(--gradient);
+    background-attachment: fixed;
+    position: absolute;
+    inset: -5px;
+    border: 10px solid transparent;
+    border-radius: var(--border-radius);
+    mask: linear-gradient(#0000, #0000),
+      conic-gradient(
+        from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+        #000 0deg,
+        white,
+        #0000 calc(var(--spread) * 1deg)
+      );
+    mask-composite: intersect;
+    opacity: var(--active);
+    transition: opacity 1s;
+  }
+
+  .glow-container::before {
+    position: absolute;
+    inset: 0;
+    border: var(--border-width) solid transparent;
+    content: "";
+    border-radius: var(--border-radius);
+    pointer-events: none;
+    background: var(--border);
+    background-attachment: fixed;
+    border-radius: var(--border-radius);
+    mask: linear-gradient(#0000, #0000),
+      conic-gradient(
+        from
+          calc(
+            ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
+              1deg
+          ),
+        hsl(0 0% 100% / 0.15) 0deg,
+        white,
+        hsl(0 0% 100% / 0.15) calc(var(--spread) * 2.5deg)
+      );
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+    opacity: var(--active);
+    transition: opacity 1s;
+  }
+
+  .glow-container::after {
+    --bg-size: 100%;
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    background: var(--gradient);
+    background-attachment: fixed;
+    border-radius: var(--border-radius);
+    opacity: var(--active, 0);
+    transition: opacity 1s;
+    --alpha: 0;
+    inset: 0;
+    border: var(--border-width) solid transparent;
+    mask: linear-gradient(#0000, #0000),
+      conic-gradient(
+        from
+          calc(
+            ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) *
+              1deg
+          ),
+        #0000 0deg,
+        white,
+        #0000 calc(var(--spread) * 0.5deg)
+      );
+    filter: brightness(1.5);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+  }
+</style>
+
+<script>
+  const GLOW_CONTAINERS = document.querySelectorAll(
+    ".glow-container"
+  ) as NodeListOf<HTMLElement>;
+
+  const CONFIG = {
+    proximity: 40,
+    spread: 80,
+    blur: 20,
+    gap: 32,
+    vertical: false,
+    opacity: 0,
+  };
+
+  const UPDATE = (event: MouseEvent) => {
+    // get the angle based on the center point of the card and pointer position
+    // Check the card against the proximity and then start updating
+    for (const glowContainer of GLOW_CONTAINERS) {
+      const containerBounds = glowContainer.getBoundingClientRect();
+      // Get distance between pointer and outerbounds of card
+      if (
+        event?.x > containerBounds.left - CONFIG.proximity &&
+        event?.x <
+          containerBounds.left + containerBounds.width + CONFIG.proximity &&
+        event?.y > containerBounds.top - CONFIG.proximity &&
+        event?.y <
+          containerBounds.top + containerBounds.height + CONFIG.proximity
+      ) {
+        // If within proximity set the active opacity
+        glowContainer.style.setProperty("--active", "1");
+      } else {
+        glowContainer.style.setProperty("--active", CONFIG.opacity + "");
+      }
+      const CARD_CENTER = [
+        containerBounds.left + containerBounds.width * 0.5,
+        containerBounds.top + containerBounds.height * 0.5,
+      ];
+      let ANGLE =
+        (Math.atan2(event?.y - CARD_CENTER[1], event?.x - CARD_CENTER[0]) *
+          180) /
+        Math.PI;
+      ANGLE = ANGLE < 0 ? ANGLE + 360 : ANGLE;
+      glowContainer.style.setProperty("--start", ANGLE + 90 + "");
+    }
+  };
+
+  document.body.addEventListener("pointermove", UPDATE);
+
+  // @ts-expect-error que ladilla
+  UPDATE();
+</script>

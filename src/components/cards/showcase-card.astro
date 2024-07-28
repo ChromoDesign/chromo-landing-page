@@ -1,0 +1,23 @@
+---
+import GlowEffect from "../common/glow-effect.astro";
+
+interface Props {
+  image: {
+    src: string;
+    alt: string;
+  };
+}
+
+const { image } = Astro.props;
+---
+
+<GlowEffect>
+  <li class="flex h-full items-center justify-center px-16 py-12">
+    <img
+      src={image.src}
+      alt={image.alt}
+      title={image.alt}
+      class="max-h-32 object-cover"
+    />
+  </li>
+</GlowEffect>

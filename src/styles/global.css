@@ -19,3 +19,23 @@
     @apply text-pretty text-sm md:text-base;
   }
 }
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: theme("colors.brand.white / 15%");
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: theme("colors.brand.white / 25%");
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: theme("colors.brand.white / 50%");
+}
