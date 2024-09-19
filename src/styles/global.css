@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 @layer base {
+  * {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+  }
+
+  h1,
+  h2 {
+    font-family: "Plus Jakarta Sans", Geneva, sans-serif;
+  }
+
   h1 {
     @apply text-balance text-lg md:text-2xl;
   }

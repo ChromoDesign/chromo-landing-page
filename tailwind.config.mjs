@@ -75,6 +75,11 @@ export default {
       animation: {
         "spin-slow": "spin 120s linear infinite",
       },
+      fontFamily: {
+        "plus-jakarta-sans": ["Plus Jakarta Sans", "Geneva", "sans-serif"],
+        "jetbrains-mono": ["JetBrains Mono", "monospace"],
+        inter: ["Inter", "Arial", "Helvetica", "sans-serif"],
+      },
     },
   },
   plugins: [],
