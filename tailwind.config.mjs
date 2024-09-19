@@ -62,6 +62,12 @@ export default {
           "light-cyan": "#90F7FE",
         },
       },
+      gridTemplateColumns: {
+        "list-xs": "repeat(auto-fill, minmax(6.25rem, 1fr))",
+        "list-sm": "repeat(auto-fill, minmax(14.75rem, 1fr))",
+        "list-md": "repeat(auto-fill, minmax(17.75rem, 1fr))",
+        "list-lg": "repeat(auto-fill, minmax(22.75rem, 1fr))",
+      },
       boxShadow: {
         "solution-card": "12px 0px 65px -2px rgba(0, 0, 0, 0.1)",
         "inner-solution-card": "10px 0px 30px 2px rgba(0, 0, 0, 0.1)",

@@ -15,7 +15,7 @@ import ResultCard from "../cards/result-card.astro";
   </SectionHeader>
 
   <section
-    class="grid grow auto-rows-fr grid-cols-[repeat(auto-fill,_minmax(17.75rem,_1fr))] gap-10"
+    class="grid-cols-list-md lg:grid-cols-list-lg grid grow auto-rows-fr gap-10"
   >
     {RESULTS.map((result) => <ResultCard result={result} />)}
   </section>
