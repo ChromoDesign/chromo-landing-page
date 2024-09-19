@@ -1,9 +1,11 @@
+<!-- HTML -->
 <div class="glow-container">
   <div class="glows"></div>
 
   <slot />
 </div>
 
+<!-- CSS -->
 <style>
   :root {
     --spread: 40;
@@ -111,6 +113,7 @@
   }
 </style>
 
+<!-- JS -->
 <script>
   const GLOW_CONTAINERS = document.querySelectorAll(
     ".glow-container"
@@ -157,7 +160,7 @@
     }
   };
 
-  document.body.addEventListener("pointermove", UPDATE);
+  document.body.addEventListener("mousemove", UPDATE);
 
   // @ts-expect-error que ladilla
   UPDATE();

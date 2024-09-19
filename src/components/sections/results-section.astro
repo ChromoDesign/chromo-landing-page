@@ -1,10 +1,10 @@
 ---
-import { SOLUTIONS } from "@/constants/solutions";
-import SolutionCard from "@/components/cards/solution-card.astro";
+import { RESULTS } from "@/constants/results";
 import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
+import ResultCard from "../cards/result-card.astro";
 ---
 
 <Section id={SECTIONS.OUR_SERVICES.id}>
@@ -14,7 +14,9 @@ import Section from "@/components/common/section.astro";
     </span>
   </SectionHeader>
 
-  <section class="grid grid-cols-1 gap-10 lg:grid-cols-2">
-    {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
+  <section
+    class="grid grow auto-rows-fr grid-cols-[repeat(auto-fill,_minmax(17.75rem,_1fr))] gap-10"
+  >
+    {RESULTS.map((result) => <ResultCard result={result} />)}
   </section>
 </Section>
