@@ -1,11 +1,11 @@
 ---
+import arrowRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
 import type { Solution } from "@/constants/solutions";
 import GlowEffect from "../common/glow-effect.astro";
 import tw from "@/utils/tw";
 import Icon from "../common/icon.astro";
 import sparklingStarsSvg from "@/assets/images/sparkling-stars.svg";
 import Button from "../common/button.astro";
-import arrowRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
 import { SECTIONS } from "@/constants/sections";
 
 interface Props extends Solution {}
@@ -60,6 +60,7 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
       src={sparklingStarsSvg.src}
       alt="Sparcking Stars"
       class="absolute left-2 top-1 -z-10 max-h-20 w-4/5 object-cover opacity-0 transition-opacity group-hover:opacity-100"
+      loading="lazy"
     />
   </article>
 </GlowEffect>

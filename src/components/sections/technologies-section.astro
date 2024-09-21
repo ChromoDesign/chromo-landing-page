@@ -20,7 +20,7 @@ import Button from "../common/button.astro";
     </div>
 
     <ul
-      class="grid-cols-list-xs grid w-full grow auto-rows-fr place-items-center gap-x-20 gap-y-8 xl:place-items-end 2xl:gap-x-32 2xl:gap-y-20"
+      class="grid w-full grow auto-rows-fr grid-cols-list-xs place-items-center gap-x-20 gap-y-8 xl:place-items-end 2xl:gap-x-32 2xl:gap-y-20"
     >
       {
         TECHNOLOGIES.map((technology) => (
@@ -29,6 +29,7 @@ import Button from "../common/button.astro";
               src={technology.icon.src}
               alt={technology.icon.alt}
               class="w-24 object-cover"
+              loading="lazy"
             />
           </li>
         ))

@@ -3,6 +3,7 @@ import type { Result } from "@/constants/results";
 import GlowEffect from "../common/glow-effect.astro";
 import sparklingStarsSvg from "@/assets/images/sparkling-stars.svg";
 import tw from "@/utils/tw";
+import Icon from "../common/icon.astro";
 
 interface Props {
   result: Result;
@@ -16,13 +17,9 @@ const { result } = Astro.props;
     class="group relative h-full overflow-hidden rounded-2xl p-5 transition-colors duration-200 hover:bg-white hover:bg-opacity-3"
   >
     <figure
-      class={tw`relative flex size-10 items-center justify-center rounded-xl bg-brand-white shadow-[0_0_45px_25px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out before:absolute before:inset-0 before:rounded-[inherit] before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] before:content-[''] group-hover:shadow-[0_0_45px_28px_rgba(255,255,255,0.6)] ${result.icon.alt}`}
+      class={tw`relative flex size-10 items-center justify-center rounded-xl bg-brand-white shadow-[0_0_45px_25px_rgba(255,255,255,0.4)] transition-shadow duration-500 ease-in-out before:absolute before:inset-0 before:rounded-[inherit] before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] before:content-[''] group-hover:shadow-[0_0_45px_28px_rgba(255,255,255,0.6)]`}
     >
-      <img
-        src={result.icon.src}
-        alt={result.icon.alt}
-        class="size-5 shrink-0"
-      />
+      <Icon icon={result.icon} class="size-5 shrink-0" />
     </figure>
 
     <h3 class="mb-2 mt-4">{result.title}</h3>
@@ -33,6 +30,7 @@ const { result } = Astro.props;
       src={sparklingStarsSvg.src}
       alt="Sparcking Stars"
       class="absolute left-2 top-1 -z-10 max-h-20 w-2/3 object-cover opacity-0 transition-opacity group-hover:opacity-100"
+      loading="lazy"
     />
   </article>
 </GlowEffect>
