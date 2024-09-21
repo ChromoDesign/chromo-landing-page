@@ -6,6 +6,12 @@ import "@fontsource/jetbrains-mono";
 import Header from "@/components/sections/header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Footer from "@/components/sections/footer.astro";
+import { getImage } from "astro:assets";
+import image from "@/assets/images/chromo-isotype.avif";
+
+const optimizedIsotype = await getImage({
+  src: image,
+});
 
 interface Props {
   title: string;
@@ -21,6 +27,7 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Astro description" />
     <title>{title}</title>
+    <link rel="preload" as="image" href={optimizedIsotype.src} />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>

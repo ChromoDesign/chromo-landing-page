@@ -3,6 +3,11 @@ import chromoIsotype from "@/assets/images/chromo-isotype.avif";
 import Button from "../common/button.astro";
 import HappyClients from "../common/happy-clients.astro";
 import { SECTIONS } from "@/constants/sections";
+import { getImage } from "astro:assets";
+
+const optimizedIsotype = await getImage({
+  src: chromoIsotype,
+});
 ---
 
 <section class="container">
@@ -11,7 +16,7 @@ import { SECTIONS } from "@/constants/sections";
   >
     <div class="absolute -z-20 size-full overflow-hidden">
       <img
-        src={chromoIsotype.src}
+        src={optimizedIsotype.src}
         alt="Chromo Logo"
         class="size-full animate-spin-slow ease-linear"
       />
