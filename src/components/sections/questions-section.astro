@@ -2,6 +2,7 @@
 import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import Button from "@/components/common/button.astro";
+import chromoSvg from "@/assets/icons/chromo.svg";
 import { SECTIONS } from "@/constants/sections";
 ---
 
@@ -20,3 +21,5 @@ import { SECTIONS } from "@/constants/sections";
     <Button text="Get In Touch" href={SECTIONS.CONTACT.href} />
   </div>
 </section>
+
+<img src={chromoSvg.src} alt="Chromo Logo" class="w-full" />
