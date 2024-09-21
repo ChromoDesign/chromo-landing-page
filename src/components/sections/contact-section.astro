@@ -4,7 +4,7 @@ import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 import Button from "@/components/common/button.astro";
-import arrorRightAltSvg from "@/assets/icons/arrow-right-alt.svg";
+import arrorRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
 import Label from "@/components/forms/label.astro";
 import Input from "@/components/forms/input.astro";
 import Textarea from "@/components/forms/textarea.astro";
@@ -39,6 +39,6 @@ import Textarea from "@/components/forms/textarea.astro";
       </div>
     </div>
 
-    <Button text="Book an Appointment" iconSrc={arrorRightAltSvg.src} />
+    <Button text="Book an Appointment" icon={arrorRightAltSvg} />
   </form>
 </Section>
