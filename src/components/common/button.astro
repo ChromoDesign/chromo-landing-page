@@ -1,35 +1,40 @@
 ---
 import tw from "@/utils/tw";
+import Icon from "./icon.astro";
+
+type ButtonWidth = "min" | "max" | "full" | "auto";
 
 interface Props {
+  width?: ButtonWidth;
   text: string;
   href?: string;
-  iconSrc?: string;
   type?: "button" | "submit" | "reset";
+  icon?: string;
 }
 
-const { text, href, iconSrc, type = "button" } = Astro.props;
+const { text, href, icon, type = "button", width = "max" } = Astro.props;
 
 const isLink = Boolean(href);
 
-const style = tw`group flex w-max items-center rounded-full border border-solid border-brand-white/50 bg-transparent px-7 py-3.5 text-sm text-brand-white transition-colors duration-100 hover:bg-brand-white/5`;
+const BUTTON_WIDTHS: Record<ButtonWidth, string> = {
+  min: "w-min",
+  max: "w-max",
+  full: "w-full",
+  auto: "w-auto",
+};
+
+const buttonStyles = tw`${BUTTON_WIDTHS[width]} flex items-center justify-center rounded-full bg-transparent px-6 py-3 text-center text-sm text-brand-white ring-1 ring-brand-white/50 transition duration-200 hover:bg-brand-white hover:text-brand-background hover:ring-brand-white`;
 ---
 
 {
   isLink ? (
-    <a href={href} class={style}>
+    <a href={href} class={buttonStyles}>
       {text}
     </a>
   ) : (
-    <button class={style} type={type}>
+    <button class={buttonStyles} type={type}>
       <span class="leading-none">{text}</span>
-      {iconSrc && (
-        <img
-          src={iconSrc}
-          alt="Icon"
-          class="ml-2.5 size-4 rotate-[-35.555deg] fill-current transition-transform duration-200 group-hover:translate-x-1"
-        />
-      )}
+      {icon && <Icon icon={icon} class="ml-2.5 size-6 fill-current" />}
     </button>
   )
 }

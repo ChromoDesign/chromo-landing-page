@@ -1,43 +1,65 @@
 ---
 import type { Solution } from "@/constants/solutions";
 import GlowEffect from "../common/glow-effect.astro";
+import tw from "@/utils/tw";
+import Icon from "../common/icon.astro";
+import sparklingStarsSvg from "@/assets/images/sparkling-stars.svg";
+import Button from "../common/button.astro";
+import arrowRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
+import { SECTIONS } from "@/constants/sections";
 
 interface Props extends Solution {}
 
-// Shadow opacity -- Mobile: 75%, Desktop: 30%
-// Shadow opacity on hover -- Mobile: 75%, Desktop: 75%
-const COLORS: Record<Solution["color"], string> = {
-  red: "bg-brand-red shadow-brand-red/75 lg:shadow-brand-red/30 group-hover:shadow-brand-red/75",
-  blue: "bg-brand-blue shadow-brand-blue/75 lg:shadow-brand-blue/30 group-hover:shadow-brand-blue/75",
-  green:
-    "bg-brand-green shadow-brand-green/75 lg:shadow-brand-green/30 group-hover:shadow-brand-green/75",
-  yellow:
-    "bg-brand-yellow shadow-brand-yellow/75 lg:shadow-brand-yellow/30 group-hover:shadow-brand-yellow/75",
+const COLORS_CLASSES: Record<Solution["color"], string> = {
+  red: tw`bg-brand-red shadow-brand-red/40 before:shadow-brand-red/75 group-hover:shadow-brand-red/60`,
+  blue: tw`bg-brand-blue shadow-brand-blue/40 before:shadow-brand-blue/75 group-hover:shadow-brand-blue/60`,
+  green: tw`bg-brand-green shadow-brand-green/40 before:shadow-brand-green/75 group-hover:shadow-brand-green/60`,
+  yellow: tw`bg-brand-yellow shadow-brand-yellow/40 before:shadow-brand-yellow/75 group-hover:shadow-brand-yellow/60`,
+  orange: tw`bg-brand-light-orange shadow-brand-light-orange/40 before:shadow-brand-light-orange/75 group-hover:shadow-brand-light-orange/60`,
+  purple: tw`bg-brand-light-purple shadow-brand-light-purple/40 before:shadow-brand-light-purple/75 group-hover:shadow-brand-light-purple/60`,
 };
 
-const { title, description, icon, color } = Astro.props;
+const { title, description, icon, color, bulletPoints } = Astro.props;
 ---
 
-<GlowEffect>
-  <article class="group relative flex rounded-xl bg-white/5">
-    <div
-      class={`flex shrink-0 justify-center relative items-center transition-shadow duration-200 rounded-s-xl shadow-solution-card px-3.5 ease-in-out ${COLORS[color]}`}
+<GlowEffect color={color}>
+  <article
+    class="group relative overflow-hidden rounded-xl p-4 hover:bg-white hover:bg-opacity-3"
+  >
+    <figure
+      class={tw`relative flex w-fit items-center justify-center rounded-2xl p-3 shadow-[0_0_50px_30px_rgb(0,0,0)] transition-shadow duration-500 before:absolute before:inset-0 before:rounded-[inherit] before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] before:content-[''] ${COLORS_CLASSES[color]}`}
     >
-      <img src={icon.src} alt={icon.alt} class="size-5 shrink-0" />
+      <Icon icon={icon} class="size-6 fill-brand-white" />
+    </figure>
+
+    <h3 class="relative mb-2.5 mt-4">{title}</h3>
+
+    <p class="text-sm text-brand-gray">{description}</p>
+
+    <div class="my-5">
+      <Button
+        text="Book an Appointment"
+        width="full"
+        icon={arrowRightAltSvg}
+        href={SECTIONS.CONTACT.href}
+      />
     </div>
 
-    <div class="grow space-y-3 p-5">
-      <h3>{title}</h3>
-      <div
-        class="h-px w-1/2 max-w-64 bg-[linear-gradient(to_right,_#0000,_#7A7A7A,_#0000)] lg:hidden"
-      >
-      </div>
-      <p class="text-brand-gray">{description}</p>
-    </div>
+    <ul class="mt-4 space-y-2.5 text-sm text-brand-gray">
+      {
+        bulletPoints.map((bulletPoint) => (
+          <li class="flex items-center gap-2">
+            <Icon icon={bulletPoint.icon} class="size-4 fill-current" />
+            <span>{bulletPoint.title}</span>
+          </li>
+        ))
+      }
+    </ul>
 
-    <div
-      class={`absolute bottom-0 left-20 top-0 my-auto h-2/3 transition-shadow duration-200 shadow-inner-solution-card opacity-0 group-hover:opacity-100 ${COLORS[color]}`}
-    >
-    </div>
+    <img
+      src={sparklingStarsSvg.src}
+      alt="Sparcking Stars"
+      class="absolute left-2 top-1 -z-10 max-h-20 w-4/5 object-cover opacity-0 transition-opacity group-hover:opacity-100"
+    />
   </article>
 </GlowEffect>

@@ -1,7 +1,7 @@
 ---
 import type { Result } from "@/constants/results";
 import GlowEffect from "../common/glow-effect.astro";
-import sparckingStarsSvg from "@/assets/images/sparkling-stars.svg";
+import sparklingStarsSvg from "@/assets/images/sparkling-stars.svg";
 import tw from "@/utils/tw";
 
 interface Props {
@@ -30,7 +30,7 @@ const { result } = Astro.props;
     <p class="text-sm text-brand-gray">{result.description}</p>
 
     <img
-      src={sparckingStarsSvg.src}
+      src={sparklingStarsSvg.src}
       alt="Sparcking Stars"
       class="absolute left-2 top-1 -z-10 max-h-20 w-2/3 object-cover opacity-0 transition-opacity group-hover:opacity-100"
     />

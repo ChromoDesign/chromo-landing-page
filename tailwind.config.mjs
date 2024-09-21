@@ -62,6 +62,9 @@ export default {
           "light-cyan": "#90F7FE",
         },
       },
+      backgroundOpacity: {
+        3: "3%",
+      },
       gridTemplateColumns: {
         "list-xs": "repeat(auto-fill, minmax(6.25rem, 1fr))",
         "list-sm": "repeat(auto-fill, minmax(14.75rem, 1fr))",

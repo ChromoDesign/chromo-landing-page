@@ -1,5 +1,23 @@
+---
+type GlowColor =
+  | "white"
+  | "red"
+  | "blue"
+  | "green"
+  | "yellow"
+  | "orange"
+  | "purple"
+  | "cyan";
+
+interface Props {
+  color?: GlowColor;
+}
+
+const { color = "white" } = Astro.props;
+---
+
 <!-- HTML -->
-<div class="glow-container">
+<div class:list={["glow-container", color]}>
   <div class="glows"></div>
 
   <slot />
@@ -9,17 +27,64 @@
 <style>
   :root {
     --spread: 40;
-    --border: hsl(280 10% 50% / 1);
+    --border: hsl(281, 10%, 50%);
     --border-width: 2px;
     --border-radius: theme(borderRadius.xl);
-    --gradient: white;
+  }
+
+  .white {
+    --gradient: theme(colors.brand.white);
+    --border-color: theme(colors.brand.white / 15%);
+    --glow-color: theme(colors.brand.white / 45%);
+  }
+
+  .red {
+    --gradient: theme(colors.brand.red);
+    --border-color: theme(colors.brand.red / 20%);
+    --glow-color: theme(colors.brand.red / 45%);
+  }
+
+  .blue {
+    --gradient: theme(colors.brand.blue);
+    --border-color: theme(colors.brand.blue / 20%);
+    --glow-color: theme(colors.brand.blue / 45%);
+  }
+
+  .green {
+    --gradient: theme(colors.brand.green);
+    --border-color: theme(colors.brand.green / 20%);
+    --glow-color: theme(colors.brand.green / 45%);
+  }
+
+  .yellow {
+    --gradient: theme(colors.brand.yellow);
+    --border-color: theme(colors.brand.yellow / 20%);
+    --glow-color: theme(colors.brand.yellow / 45%);
+  }
+
+  .orange {
+    --gradient: theme(colors.brand.light-orange);
+    --border-color: theme(colors.brand.light-orange / 20%);
+    --glow-color: theme(colors.brand.light-orange / 45%);
+  }
+
+  .purple {
+    --gradient: theme(colors.brand.light-purple);
+    --border-color: theme(colors.brand.light-purple / 20%);
+    --glow-color: theme(colors.brand.light-purple / 45%);
+  }
+
+  .cyan {
+    --gradient: theme(colors.brand.light-cyan);
+    --border-color: theme(colors.brand.light-cyan / 20%);
+    --glow-color: theme(colors.brand.light-cyan / 45%);
   }
 
   .glow-container {
     --active: 0.15;
     --start: 0;
     border-radius: var(--border-radius);
-    border: 1px solid theme(colors.brand.white / 15%);
+    border: 1px solid var(--border-color);
     position: relative;
   }
 
@@ -48,7 +113,7 @@
       conic-gradient(
         from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
         #000 0deg,
-        white,
+        var(--gradient),
         #0000 calc(var(--spread) * 1deg)
       );
     mask-composite: intersect;
@@ -63,7 +128,7 @@
     content: "";
     border-radius: var(--border-radius);
     pointer-events: none;
-    background: var(--border);
+    background: var(--glow-color);
     background-attachment: fixed;
     border-radius: var(--border-radius);
     mask: linear-gradient(#0000, #0000),
@@ -74,7 +139,7 @@
               1deg
           ),
         hsl(0 0% 100% / 0.15) 0deg,
-        white,
+        var(--gradient),
         hsl(0 0% 100% / 0.15) calc(var(--spread) * 2.5deg)
       );
     mask-clip: padding-box, border-box;
@@ -104,7 +169,7 @@
               1deg
           ),
         #0000 0deg,
-        white,
+        var(--gradient),
         #0000 calc(var(--spread) * 0.5deg)
       );
     filter: brightness(1.5);
@@ -116,7 +181,7 @@
 <!-- JS -->
 <script>
   const GLOW_CONTAINERS = document.querySelectorAll(
-    ".glow-container"
+    ".glow-container",
   ) as NodeListOf<HTMLElement>;
 
   const CONFIG = {
