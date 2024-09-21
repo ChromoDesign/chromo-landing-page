@@ -1,65 +1,36 @@
 ---
-import gradeSvg from "@/assets/icons/grade.svg";
-import arrowRightAltSvg from "@/assets/icons/arrow-right-alt.svg";
+import gradeSvg from "@material-symbols/svg-400/rounded/grade-fill.svg?raw";
+import arrowRightAltSvg from "@material-symbols/svg-700/rounded/arrow_right_alt.svg?raw";
+import clientAvatarImg from "@/assets/images/client-avatar.png";
 import { SECTIONS } from "@/constants/sections";
 import GlowEffect from "./glow-effect.astro";
-
-const happyClients = [
-  {
-    img: {
-      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
-      alt: "Happy Client 1",
-    },
-  },
-  {
-    img: {
-      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
-      alt: "Happy Client 2",
-    },
-  },
-  {
-    img: {
-      src: "https://imgs.search.brave.com/EjiiauPCadJaLEmBmc-Zg3OFwQhwICuyH1eCZOTV_dc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/emRmLmRlL2Fzc2V0/cy9lbG9uLW11c2st/a29uZmVyZW56LTEw/MH4zODQweDIxNjA_/Y2I9MTcxODMxNzk3/OTA5NA",
-      alt: "Happy Client 3",
-    },
-  },
-];
+import Icon from "./icon.astro";
 ---
 
-<GlowEffect>
-  <a href={SECTIONS.TESTIMONIALS.href} class="w-max">
-    <div class="relative p-px">
-      <div
-        class="flex items-center rounded-3xl bg-brand-background px-2.5 py-2"
-      >
-        <div class="flex w-[5.25rem]">
-          {
-            happyClients.map(({ img }, index) => (
-              <img
-                src={img.src}
-                alt={img.alt}
-                style={{ transform: `translateX(-${index * 12}px)` }}
-                class="size-8 shrink-0 rounded-full border border-solid border-brand-white/50 object-cover"
-                loading="lazy"
-              />
-            ))
-          }
-        </div>
+<GlowEffect radius="full">
+  <a
+    href={SECTIONS.TESTIMONIALS.href}
+    class="relative inline-flex w-max items-center gap-3 px-5 py-2"
+  >
+    <img
+      src={clientAvatarImg.src}
+      alt="avatar"
+      class="size-10 shrink-0 rounded-full object-cover ring-1 ring-brand-white/30"
+      loading="lazy"
+    />
 
-        <div>
-          <p>15+ Happy Clients</p>
-          <p class="flex gap-1">
-            <span>4.7</span>
-            <img src={gradeSvg.src} />
-          </p>
-        </div>
+    <div>
+      <p>15+ Happy Clients</p>
+      <p class="flex items-center gap-1">
+        <span>4.7</span>
+        <Icon icon={gradeSvg} class="size-5 fill-brand-yellow" />
+      </p>
+    </div>
 
-        <div
-          class="absolute -bottom-2.5 -right-2.5 z-20 flex items-center gap-1 rounded-full border border-solid border-brand-white/30 bg-brand-background p-2"
-        >
-          <img src={arrowRightAltSvg.src} class="size-3.5" />
-        </div>
-      </div>
+    <div
+      class="absolute -bottom-2.5 -right-2.5 z-20 flex items-center gap-1 rounded-full border border-solid border-brand-white/15 bg-brand-background p-1.5"
+    >
+      <Icon icon={arrowRightAltSvg} class="size-5 rotate-45 fill-brand-white" />
     </div>
   </a>
 </GlowEffect>

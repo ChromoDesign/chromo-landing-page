@@ -26,6 +26,9 @@ importers:
       '@material-symbols/svg-400':
         specifier: ^0.18.0
         version: 0.18.0
+      '@material-symbols/svg-700':
+        specifier: ^0.23.0
+        version: 0.23.0
       astro:
         specifier: ^4.15.7
         version: 4.15.7(rollup@4.21.3)(typescript@5.5.2)
@@ -596,6 +599,9 @@ packages:
 
   '@material-symbols/svg-400@0.18.0':
     resolution: {integrity: sha512-DYTmDk2BDFwns4lTsqQ/M+6tZxEfwDnIIdA7zAdpRUYxQw2QjJtNMu8f0/3U9cN8XNK8oCXUTIXW6V6uVPlkEg==}
+
+  '@material-symbols/svg-700@0.23.0':
+    resolution: {integrity: sha512-iIvVm4M4+lYiJq/0kX6NuPPHQPvaakgexftSJL8x6obgS4u41hMdv/om6ZX3uYYKHATEJ+Ah0qiqoIqVCINCCg==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3629,6 +3635,8 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.4.15
 
   '@material-symbols/svg-400@0.18.0': {}
+
+  '@material-symbols/svg-700@0.23.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:

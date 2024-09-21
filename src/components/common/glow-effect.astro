@@ -9,15 +9,26 @@ type GlowColor =
   | "purple"
   | "cyan";
 
+type GlowBorderRadius =
+  | "none"
+  | "sm"
+  | "md"
+  | "lg"
+  | "xl"
+  | "xll"
+  | "xlll"
+  | "full";
+
 interface Props {
   color?: GlowColor;
+  radius?: GlowBorderRadius;
 }
 
-const { color = "white" } = Astro.props;
+const { color = "white", radius = "xl" } = Astro.props;
 ---
 
 <!-- HTML -->
-<div class:list={["glow-container", color]}>
+<div class:list={["glow-container", color, radius]}>
   <div class="glows"></div>
 
   <slot />
@@ -30,6 +41,38 @@ const { color = "white" } = Astro.props;
     --border: hsl(281, 10%, 50%);
     --border-width: 2px;
     --border-radius: theme(borderRadius.xl);
+  }
+
+  .none {
+    --border-radius: 0;
+  }
+
+  .sm {
+    --border-radius: theme(borderRadius.sm);
+  }
+
+  .md {
+    --border-radius: theme(borderRadius.md);
+  }
+
+  .lg {
+    --border-radius: theme(borderRadius.lg);
+  }
+
+  .xl {
+    --border-radius: theme(borderRadius.xl);
+  }
+
+  .xll {
+    --border-radius: theme(borderRadius.2xl);
+  }
+
+  .xlll {
+    --border-radius: theme(borderRadius.3xl);
+  }
+
+  .full {
+    --border-radius: 9999px;
   }
 
   .white {
