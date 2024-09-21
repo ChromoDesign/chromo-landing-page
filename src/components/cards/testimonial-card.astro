@@ -1,7 +1,9 @@
 ---
+import formatIconSvg from "@material-symbols/svg-400/rounded/format_quote-fill.svg?raw";
 import type { Testimonial } from "@/constants/testimonials";
-import formatIconSvg from "@/assets/icons/format_quote.svg";
 import GlowEffect from "../common/glow-effect.astro";
+import CardTranslateEffect from "../common/card-translate-effect.astro";
+import Icon from "../common/icon.astro";
 
 interface Props {
   testimonal: Testimonial;
@@ -10,33 +12,19 @@ interface Props {
 const { testimonal } = Astro.props;
 ---
 
-<div class="group relative">
-  <img
-    src={testimonal.image.src}
-    alt={testimonal.image.alt}
-    class="absolute left-0 top-0 -z-10 h-full w-full rounded-3xl object-cover opacity-0 transition delay-75 duration-200 group-hover:translate-x-1.5 group-hover:-rotate-6 group-hover:opacity-100"
-  />
+<CardTranslateEffect img={testimonal.image}>
+  <GlowEffect>
+    <article class="p-5">
+      <div class="mb-24 space-y-1.5">
+        <h3 class="text-base">{testimonal.name}</h3>
+        <p class="text-sm text-brand-gray">{testimonal.website}</p>
+      </div>
 
-  <div
-    class="rounded-xl bg-brand-background transition-transform delay-75 duration-200 group-hover:translate-y-28 group-hover:rotate-12 group-hover:bg-brand-background/75"
-  >
-    <GlowEffect>
-      <article class="p-5">
-        <div class="mb-24 space-y-1.5">
-          <h3 class="text-base">{testimonal.name}</h3>
-          <p class="text-sm text-brand-gray">{testimonal.website}</p>
-        </div>
+      <div class="space-y-2.5">
+        <Icon icon={formatIconSvg} class="size-7 rotate-180 fill-brand-gray" />
 
-        <div class="space-y-2.5">
-          <img
-            src={formatIconSvg.src}
-            alt="Quote Icon"
-            class="size-5 rotate-[-11deg]"
-          />
-
-          <p class="text-sm">{testimonal.description}</p>
-        </div>
-      </article>
-    </GlowEffect>
-  </div>
-</div>
+        <p class="text-sm">{testimonal.description}</p>
+      </div>
+    </article>
+  </GlowEffect>
+</CardTranslateEffect>

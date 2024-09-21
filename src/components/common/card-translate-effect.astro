@@ -1,0 +1,48 @@
+---
+type Img = {
+  src: string;
+  alt: string;
+};
+
+interface Props {
+  img: Img;
+  rotate?: number;
+  translate?: number;
+}
+
+const { img, translate = 6, rotate = 6 } = Astro.props;
+---
+
+<div class="group relative">
+  <!-- Should replace for Image component when local images are added -->
+  <img
+    src={img.src}
+    alt={img.alt}
+    decoding="async"
+    loading="lazy"
+    class="absolute left-0 top-0 -z-10 h-full w-full rounded-3xl object-cover opacity-0 transition duration-200 group-hover:opacity-100"
+  />
+
+  <div
+    class="rounded-xl transition-transform duration-200 group-hover:bg-brand-background/75"
+  >
+    <slot />
+  </div>
+</div>
+
+<style define:vars={{ translate: `${translate}px`, rotate: `${rotate}deg` }}>
+  :root {
+    --translate-proportion: 18.67;
+    --rotate-proportion: 2;
+  }
+
+  div:hover img {
+    transform: translateX(var(--translate)) rotate(calc(var(--rotate) * -1));
+  }
+
+  div:hover div {
+    transform: translateY(calc(var(--translate) * var(--translate-proportion)))
+      rotate(calc(var(--rotate) * var(--rotate-proportion)));
+  }
+  /**/
+</style>
