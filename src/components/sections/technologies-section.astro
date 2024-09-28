@@ -11,7 +11,7 @@ import Button from "../common/button.astro";
     class="flex flex-col items-center gap-20 md:justify-between lg:gap-40 xl:flex-row xl:gap-10"
   >
     <div class="space-y-14">
-      <h2 class="w-[15ch] text-center xl:text-start">
+      <h2 class="w-[15ch] px-2.5 text-center lg:px-0 xl:text-start">
         Dedicated to <GradientSpan color="purple">the best.</GradientSpan>
       </h2>
       <div class="hidden xl:block">
@@ -20,7 +20,7 @@ import Button from "../common/button.astro";
     </div>
 
     <ul
-      class="grid w-full grow auto-rows-fr grid-cols-list-xs place-items-center gap-x-20 gap-y-8 xl:place-items-end 2xl:gap-x-32 2xl:gap-y-20"
+      class="grid w-full grow auto-rows-fr grid-cols-list-xs place-items-center gap-x-20 gap-y-14 lg:gap-y-8 xl:place-items-end 2xl:gap-x-32 2xl:gap-y-20"
     >
       {
         TECHNOLOGIES.map((technology) => (
@@ -28,7 +28,7 @@ import Button from "../common/button.astro";
             <img
               src={technology.icon.src}
               alt={technology.icon.alt}
-              class="w-24 object-cover"
+              class="w-[20vw] max-w-24 object-cover"
               loading="lazy"
             />
           </li>
