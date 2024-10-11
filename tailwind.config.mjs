@@ -1,52 +1,23 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  darkMode: ["selector"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     fontSize: {
-      xs: [
-        ".8125rem",
-        {
-          fontSize: 13,
-        },
-      ],
-      sm: [
-        "1rem",
-        {
-          fontSize: 16,
-        },
-      ],
-      base: [
-        "1.125rem",
-        {
-          fontSize: 18,
-        },
-      ],
-      lg: [
-        "2.125rem",
-        {
-          fontWeight: 500,
-          lineHeight: "1.2",
-        },
-      ],
-      xl: [
-        "3.75rem",
-        {
-          fontWeight: 500,
-          lineHeight: "1.2",
-        },
-      ],
-      "2xl": [
-        "4.375rem",
-        {
-          fontWeight: 500,
-          lineHeight: "1.2",
-        },
-      ],
+      xs: [".8125rem", { fontSize: 13 }],
+      sm: ["1rem", { fontSize: 16 }],
+      base: ["1.125rem", { fontSize: 18 }],
+      lg: ["2.125rem", { fontWeight: 500, lineHeight: "1.2" }],
+      xl: ["3.75rem", { fontWeight: 500, lineHeight: "1.2" }],
+      "2xl": ["4.375rem", { fontWeight: 500, lineHeight: "1.2" }],
     },
     extend: {
       colors: {
+        background: {
+          white: "#FAFAFA00",
+          dark: "#010100",
+        },
         brand: {
-          background: "#010100",
           white: "#ECEDEE",
           gray: "#7C7C7C",
           yellow: "#EBB700",
@@ -83,7 +54,12 @@ export default {
         "jetbrains-mono": ["JetBrains Mono", "monospace"],
         inter: ["Inter", "Arial", "Helvetica", "sans-serif"],
       },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
