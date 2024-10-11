@@ -1,38 +1,64 @@
 ---
-import { SECTIONS_LIST } from "@/constants/sections";
-import ChromoLogo from "@/components/common/chromo-logo.astro";
+import { SECTIONS_LIST, SECTIONS } from "@/constants/sections";
+import AlamoLogo from "@/components/common/alamo-logo.astro";
+import Icon from "../common/icon.astro";
+import { Link } from "../common/link";
+
+const sectionLinks = SECTIONS_LIST.filter(
+  (section) => section.id !== SECTIONS.CONTACT.id,
+);
 ---
 
 <header
-  class="sticky left-0 top-0 z-50 mb-10 p-7 text-white transition-colors duration-100"
+  class="sticky left-0 top-0 z-50 mb-10 border-b-2 border-dashed p-5 transition duration-200"
   id="header"
 >
-  <div class="container mx-auto flex items-center justify-between">
-    <ChromoLogo />
+  <div class="container mx-auto flex items-center justify-between gap-5">
+    <AlamoLogo />
 
-    <nav class="hidden lg:block">
-      <ul class="flex items-center gap-12">
+    <nav class="hidden grow lg:block">
+      <ul class="flex items-center gap-5">
         {
-          SECTIONS_LIST.map(({ href, title }) => (
+          sectionLinks.map(({ href, title, svg }) => (
             <li>
-              <a href={href} class="text-brand-gray hover:text-brand-white">
+              <Link
+                href={href}
+                variant="link"
+                className="flex items-center gap-2"
+              >
+                <Icon icon={svg} class="size-6 fill-current" />
                 {title}
-              </a>
+              </Link>
             </li>
           ))
         }
       </ul>
     </nav>
+
+    <Link
+      href={SECTIONS.CONTACT.href}
+      className="transition dark:bg-gradient-to-r dark:from-brand-light-orange dark:to-brand-light-yellow dark:text-white dark:hover:brightness-110"
+    >
+      Let's chat
+    </Link>
   </div>
 </header>
+
 <script>
   const header = document.getElementById("header")!;
   const scrollThreshold = 100;
-  const scrolledClasses = ["backdrop-blur-xl", "bg-brand-gray/10"];
+  const notScrolledClasses: string[] =
+    "border-brand-gray/35 bg-white dark:bg-transparent".split(" ");
+  const scrolledClasses: string[] =
+    "backdrop-blur-xl bg-white/50 dark:bg-brand-gray/10 border-transparent".split(
+      " ",
+    );
 
   window.addEventListener("load", function () {
     if (window.scrollY > scrollThreshold) {
       header.classList.add(...scrolledClasses);
+    } else {
+      header.classList.add(...notScrolledClasses);
     }
   });
 
@@ -40,8 +66,10 @@ import ChromoLogo from "@/components/common/chromo-logo.astro";
     if (window.scrollY > scrollThreshold * 2) return; // optimization
 
     if (window.scrollY > scrollThreshold) {
+      header.classList.remove(...notScrolledClasses);
       header.classList.add(...scrolledClasses);
     } else {
+      header.classList.add(...notScrolledClasses);
       header.classList.remove(...scrolledClasses);
     }
   });

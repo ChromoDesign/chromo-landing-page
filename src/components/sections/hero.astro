@@ -1,8 +1,8 @@
 ---
 import chromoIsotype from "@/assets/images/chromo-isotype.avif";
-import Button from "../common/button.astro";
-import HappyClients from "../common/happy-clients.astro";
 import { SECTIONS } from "@/constants/sections";
+import { Link } from "../common/link";
+import HappyClients from "../common/happy-clients.astro";
 ---
 
 <section class="container">
@@ -26,7 +26,8 @@ import { SECTIONS } from "@/constants/sections";
     <h1 class="mb-10 mt-2.5 text-center sm:whitespace-nowrap">
       Building your future
     </h1>
-    <Button text="Book an Appointment" href={SECTIONS.CONTACT.href} />
+    <!-- <Button text="Book an Appointment" href={SECTIONS.CONTACT.href} /> -->
+    <Link href={SECTIONS.CONTACT.href}> Book an Appointment </Link>
   </div>
 
   <div class="mt-40 flex justify-center lg:mt-0 lg:justify-start">

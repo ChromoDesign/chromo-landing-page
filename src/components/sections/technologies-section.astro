@@ -1,9 +1,11 @@
 ---
-import GradientSpan from "@/components/common/gradient-span.astro";
+import arrowRightAltSvg from "@material-symbols/svg-700/rounded/arrow_right_alt.svg?raw";
 import { SECTIONS } from "@/constants/sections";
-import Section from "@/components/common/section.astro";
 import { TECHNOLOGIES } from "@/constants/technologies";
-import Button from "../common/button.astro";
+import { Link } from "../common/link";
+import GradientSpan from "@/components/common/gradient-span.astro";
+import Section from "@/components/common/section.astro";
+import Icon from "../common/icon.astro";
 ---
 
 <Section id={SECTIONS.OUR_TEAM.id}>
@@ -15,7 +17,13 @@ import Button from "../common/button.astro";
         Dedicated to <GradientSpan color="purple">the best.</GradientSpan>
       </h2>
       <div class="hidden xl:block">
-        <Button text="Book an Appointment" href={SECTIONS.CONTACT.href} />
+        <Link
+          href={SECTIONS.CONTACT.href}
+          className="inline-flex items-center gap-2"
+        >
+          Book an Appointment
+          <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+        </Link>
       </div>
     </div>
 
@@ -37,7 +45,10 @@ import Button from "../common/button.astro";
     </ul>
 
     <div class="block xl:hidden">
-      <Button text="Book an Appointment" href={SECTIONS.CONTACT.href} />
+      <Link href={SECTIONS.CONTACT.href}>
+        Book an Appointment
+        <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+      </Link>
     </div>
   </div>
 </Section>

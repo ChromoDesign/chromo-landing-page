@@ -4,9 +4,9 @@ import type { Solution } from "@/constants/solutions";
 import GlowEffect from "../common/glow-effect.astro";
 import tw from "@/utils/tw";
 import Icon from "../common/icon.astro";
-import sparklingStarsSvg from "@/assets/images/sparkling-stars.svg";
-import Button from "../common/button.astro";
+import sparklingStarsSvg from "@/assets/images/backgrounds/sparkling-stars.svg?raw";
 import { SECTIONS } from "@/constants/sections";
+import { Link } from "../common/link";
 
 interface Props extends Solution {}
 
@@ -37,12 +37,10 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
     <p class="text-sm text-brand-gray">{description}</p>
 
     <div class="my-5">
-      <Button
-        text="Book an Appointment"
-        width="full"
-        icon={arrowRightAltSvg}
-        href={SECTIONS.CONTACT.href}
-      />
+      <Link href={SECTIONS.CONTACT.href}>
+        <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+        Book an Appointment
+      </Link>
     </div>
 
     <ul class="mt-4 space-y-2.5 text-sm text-brand-gray">
@@ -56,11 +54,9 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
       }
     </ul>
 
-    <img
-      src={sparklingStarsSvg.src}
-      alt="Sparcking Stars"
-      class="absolute left-2 top-1 -z-10 max-h-20 w-4/5 object-cover opacity-0 transition-opacity group-hover:opacity-100"
-      loading="lazy"
+    <Icon
+      icon={sparklingStarsSvg}
+      class="absolute left-2 top-1 -z-10 max-h-20 w-4/5 fill-black object-cover opacity-0 transition-opacity group-hover:opacity-100 dark:fill-white"
     />
   </article>
 </GlowEffect>

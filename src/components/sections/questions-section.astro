@@ -1,9 +1,9 @@
 ---
 import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
-import Button from "@/components/common/button.astro";
 import chromoSvg from "@/assets/icons/chromo.svg";
 import { SECTIONS } from "@/constants/sections";
+import { Link } from "../common/link";
 ---
 
 <section>
@@ -18,7 +18,7 @@ import { SECTIONS } from "@/constants/sections";
   </SectionHeader>
 
   <div class="flex justify-center">
-    <Button text="Get In Touch" href={SECTIONS.CONTACT.href} />
+    <Link href={SECTIONS.CONTACT.href}>Get In Touch</Link>
   </div>
 </section>
 

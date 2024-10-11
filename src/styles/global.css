@@ -27,6 +27,10 @@
   p {
     @apply text-pretty text-sm md:text-base;
   }
+
+  :root {
+    --radius: 0.5rem;
+  }
 }
 
 /* width */
