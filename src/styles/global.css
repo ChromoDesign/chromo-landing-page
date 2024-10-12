@@ -5,11 +5,13 @@
 @layer base {
   body {
     font-family: "Inter", Arial, Helvetica, sans-serif;
+    @apply text-brand-gray;
   }
 
   h1,
   h2 {
     font-family: "Plus Jakarta Sans", Geneva, sans-serif;
+    @apply text-black dark:text-white;
   }
 
   h1 {

@@ -1,0 +1,64 @@
+---
+import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
+import ShowcaseCard from "../cards/showcase-card.astro";
+---
+
+<section class="relative overflow-hidden whitespace-nowrap *:px-10">
+  <ul class="animate-carousel inline-flex gap-20">
+    {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
+  </ul>
+
+  <ul class="animate-carousel inline-flex gap-20">
+    {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
+  </ul>
+</section>
+
+<style>
+  section::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 20%;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.white)
+    );
+    z-index: 1;
+  }
+
+  section::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 20%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.white)
+    );
+    z-index: 1;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    section::before {
+      background: linear-gradient(
+        to left,
+        rgba(255, 255, 255, 0),
+        theme(colors.background.dark)
+      );
+    }
+
+    section::after {
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0),
+        theme(colors.background.dark)
+      );
+    }
+  }
+</style>

@@ -1,36 +1,40 @@
 ---
-import chromoIsotype from "@/assets/images/chromo-isotype.avif";
 import { SECTIONS } from "@/constants/sections";
 import { Link } from "../common/link";
 import HappyClients from "../common/happy-clients.astro";
+import WorkCarousel from "../common/work-carousel.astro";
 ---
 
-<section class="container">
+<section
+  class="container relative flex flex-col items-center justify-center gap-20 overflow-hidden py-20 text-center"
+>
   <div
-    class="relative mx-auto flex aspect-square w-full max-w-full flex-col items-center justify-center sm:w-[clamp(19.375rem,_65vw,_38.75rem)]"
+    class="bg-dot-pattern bg-siz pointer-events-none absolute inset-0 -z-10 bg-[length:110%] dark:opacity-15"
   >
-    <div class="absolute -z-20 size-full overflow-hidden">
-      <img
-        src={chromoIsotype.src}
-        alt="Chromo Logo"
-        class="size-full animate-spin-slow ease-linear"
-      />
+    <div class="bg-radial-light dark:bg-radial-dark absolute inset-0 size-full">
     </div>
 
-    <div
-      class="absolute right-0 -z-10 ml-auto h-full w-[110%] translate-x-5 backdrop-blur sm:w-[calc(50%_+_1.25rem)] sm:backdrop-blur-xl"
-    >
+    <div class="bg-linear-light dark:bg-linear-dark absolute inset-0 size-full">
     </div>
+  </div>
 
-    <p class="font-jetbrains-mono text-brand-white/85">Design & Development</p>
-    <h1 class="mb-10 mt-2.5 text-center sm:whitespace-nowrap">
-      Building your future
+  <div class="flex flex-col items-center justify-center gap-5">
+    <p class="font-jetbrains-mono text-brand-gray">Development & Design</p>
+
+    <h1 class="text-center font-semibold">
+      From innovative designs to robust development
     </h1>
-    <!-- <Button text="Book an Appointment" href={SECTIONS.CONTACT.href} /> -->
-    <Link href={SECTIONS.CONTACT.href}> Book an Appointment </Link>
+
+    <p class="max-w-[45ch] text-brand-gray">
+      We turn your ideas into awesome websites and apps Simple, clean, and <span
+        class="text-black dark:text-white">built to make an impact.</span
+      >
+    </p>
   </div>
 
-  <div class="mt-40 flex justify-center lg:mt-0 lg:justify-start">
-    <HappyClients />
-  </div>
+  <Link size="lg" href={SECTIONS.CONTACT.href}>Book an Appointment </Link>
+
+  <HappyClients />
+
+  <WorkCarousel />
 </section>

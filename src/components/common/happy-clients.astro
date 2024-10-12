@@ -1,35 +1,19 @@
 ---
 import gradeSvg from "@material-symbols/svg-400/rounded/grade-fill.svg?raw";
-import arrowRightAltSvg from "@material-symbols/svg-700/rounded/arrow_right_alt.svg?raw";
 import clientAvatarImg from "@/assets/images/client-avatar.png";
-import { SECTIONS } from "@/constants/sections";
-import GlowEffect from "./glow-effect.astro";
 import Icon from "./icon.astro";
 ---
 
-<GlowEffect radius="full">
-  <a
-    href={SECTIONS.TESTIMONIALS.href}
-    class="relative inline-flex w-max items-center gap-3 px-5 py-2"
-  >
-    <img
-      src={clientAvatarImg.src}
-      alt="avatar"
-      class="size-10 shrink-0 rounded-full object-cover ring-1 ring-brand-white/30"
-    />
+<section class="flex w-max items-center gap-2.5 text-black dark:text-white">
+  <img
+    src={clientAvatarImg.src}
+    alt="avatar"
+    class="size-7 shrink-0 rounded-full object-cover ring-1 ring-brand-gray/25"
+  />
 
-    <div>
-      <p>15+ Happy Clients</p>
-      <p class="flex items-center gap-1">
-        <span>4.7</span>
-        <Icon icon={gradeSvg} class="size-5 fill-brand-yellow" />
-      </p>
-    </div>
-
-    <div
-      class="absolute -bottom-2.5 -right-2.5 z-20 flex items-center gap-1 rounded-full border border-solid border-brand-white/15 bg-brand-background p-1.5"
-    >
-      <Icon icon={arrowRightAltSvg} class="size-5 rotate-45 fill-brand-white" />
-    </div>
-  </a>
-</GlowEffect>
+  <p class="flex items-center gap-1">
+    <span>4.7</span>
+    <Icon icon={gradeSvg} class="size-5 fill-brand-yellow" />
+  </p>
+  <p>15+ Happy Clients</p>
+</section>

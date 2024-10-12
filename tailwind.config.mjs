@@ -1,3 +1,8 @@
+const background = {
+  white: "#FAFAFA",
+  dark: "#010100",
+};
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["selector"],
@@ -14,8 +19,8 @@ export default {
     extend: {
       colors: {
         background: {
-          white: "#FAFAFA00",
-          dark: "#010100",
+          white: background.white,
+          dark: background.dark,
         },
         brand: {
           white: "#ECEDEE",
@@ -46,8 +51,14 @@ export default {
         "solution-card": "12px 0px 65px -2px rgba(0, 0, 0, 0.1)",
         "inner-solution-card": "10px 0px 30px 2px rgba(0, 0, 0, 0.1)",
       },
+      keyframes: {
+        carousel: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
       animation: {
-        "spin-slow": "spin 120s linear infinite",
+        carousel: "carousel 25s linear infinite",
       },
       fontFamily: {
         "plus-jakarta-sans": ["Plus Jakarta Sans", "Geneva", "sans-serif"],
@@ -58,6 +69,14 @@ export default {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        "dot-pattern": `url(/src/assets/images/backgrounds/dot-pattern.svg)`,
+        "square-pattern": `url(/src/assets/images/backgrounds/square-pattern.svg)`,
+        "radial-light": `radial-gradient(circle at center, rgba(255, 255, 255, 0) 60%, ${background.white} 100%)`,
+        "radial-dark": `radial-gradient(circle at center, rgba(0, 0, 0, 0) 60%, ${background.dark} 100%)`,
+        "linear-light": `linear-gradient(to bottom, ${background.white} 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 60%, ${background.white} 100%)`,
+        "linear-dark": `linear-gradient(to bottom, ${background.dark} 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 60%, ${background.dark} 100%)`,
       },
     },
   },
