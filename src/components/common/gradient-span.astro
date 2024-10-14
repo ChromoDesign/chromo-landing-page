@@ -1,4 +1,6 @@
 ---
+import tw from "@/utils/tw";
+
 interface Props {
   color: "red" | "blue" | "green" | "yellow" | "orange" | "purple" | "cyan";
 }
@@ -6,20 +8,18 @@ interface Props {
 const { color } = Astro.props;
 
 const GRADIENT_COLORS: Record<Props["color"], string> = {
-  red: "from-brand-light-red",
-  blue: "from-brand-light-blue",
-  green: "from-brand-light-green",
-  yellow: "from-brand-light-yellow",
-  orange: "from-brand-light-orange",
-  purple: "from-brand-light-purple",
-  cyan: "from-brand-light-cyan",
+  red: tw`bg-brand-light-red from-brand-light-red`,
+  blue: tw`bg-brand-light-blue from-brand-light-blue`,
+  green: tw`bg-brand-light-green from-brand-light-green`,
+  yellow: tw`bg-brand-light-yellow from-brand-light-yellow`,
+  orange: tw`bg-brand-light-orange from-brand-light-orange`,
+  purple: tw`bg-brand-light-purple from-brand-light-purple`,
+  cyan: tw`bg-brand-light-cyan from-brand-light-cyan`,
 };
 ---
 
 <span
-  class={"bg-gradient-to-b from-50% to-brand-white [-webkit-background-clip:text] [-webkit-text-fill-color:transparent]" +
-    " " +
-    GRADIENT_COLORS[color]}
+  class={`dark:bg-gradient-to-b from-50% to-brand-white [-webkit-background-clip:text] [-webkit-text-fill-color:transparent] ${GRADIENT_COLORS[color]}`}
 >
   <slot />
 </span>

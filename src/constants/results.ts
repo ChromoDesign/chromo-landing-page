@@ -1,9 +1,9 @@
-import appRegistrationSvg from "@material-symbols/svg-400/rounded/app_registration.svg?raw";
-import emojiObjectsSvg from "@material-symbols/svg-400/rounded/emoji_objects.svg?raw";
-import languageSvg from "@material-symbols/svg-400/rounded/language.svg?raw";
-import paletteSvg from "@material-symbols/svg-400/rounded/palette.svg?raw";
-import speedSvg from "@material-symbols/svg-400/rounded/speed.svg?raw";
-import supportAgentSvg from "@material-symbols/svg-400/rounded/support_agent.svg?raw";
+import appRegistrationSvg from "@material-symbols/svg-500/rounded/app_registration.svg?raw";
+import emojiObjectsSvg from "@material-symbols/svg-500/rounded/emoji_objects.svg?raw";
+import languageSvg from "@material-symbols/svg-500/rounded/language.svg?raw";
+import paletteSvg from "@material-symbols/svg-500/rounded/palette.svg?raw";
+import speedSvg from "@material-symbols/svg-500/rounded/speed.svg?raw";
+import supportAgentSvg from "@material-symbols/svg-500/rounded/support_agent.svg?raw";
 
 export type Result = {
   title: string;

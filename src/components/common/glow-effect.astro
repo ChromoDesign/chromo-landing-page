@@ -135,15 +135,15 @@ const { color = "white", radius = "xl" } = Astro.props;
     z-index: 2;
   }
 
-  .glows {
+  .glow-container .glows {
     pointer-events: none;
     position: absolute;
     inset: 0;
     filter: blur(calc(var(--blur) * 1px));
   }
 
-  .glows::after,
-  .glows::before {
+  .glow-container .glows::after,
+  .glow-container .glows::before {
     --alpha: 0;
     content: "";
     background: var(--gradient);
@@ -219,6 +219,11 @@ const { color = "white", radius = "xl" } = Astro.props;
     mask-clip: padding-box, border-box;
     mask-composite: intersect;
   }
+
+  .white-border {
+    border: 2px solid white;
+    border-radius: var(--border-radius);
+  }
 </style>
 
 <!-- JS -->
@@ -272,4 +277,27 @@ const { color = "white", radius = "xl" } = Astro.props;
 
   // @ts-expect-error que ladilla
   UPDATE();
+</script>
+
+<script>
+  const GLOW_CONTAINERS = document.querySelectorAll(
+    ".glow-container",
+  ) as NodeListOf<HTMLElement>;
+
+  const darkSchemeMediaQuery = window.matchMedia(
+    "(prefers-color-scheme: dark)",
+  );
+
+  const handleDarkModeChange = (event: MediaQueryListEvent | boolean) => {
+    const isDarkMode = typeof event === "boolean" ? event : event.matches;
+
+    GLOW_CONTAINERS.forEach((glowContainer) => {
+      glowContainer.classList.toggle("glow-container", isDarkMode);
+      glowContainer.classList.toggle("white-border", !isDarkMode);
+    });
+  };
+
+  handleDarkModeChange(darkSchemeMediaQuery.matches);
+
+  darkSchemeMediaQuery.addEventListener("change", handleDarkModeChange);
 </script>

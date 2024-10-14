@@ -5,16 +5,15 @@ const background = {
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  darkMode: ["selector"],
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     fontSize: {
       xs: [".8125rem", { fontSize: 13 }],
       sm: ["1rem", { fontSize: 16 }],
       base: ["1.125rem", { fontSize: 18 }],
-      lg: ["2.125rem", { fontWeight: 500, lineHeight: "1.2" }],
-      xl: ["3.75rem", { fontWeight: 500, lineHeight: "1.2" }],
-      "2xl": ["4.375rem", { fontWeight: 500, lineHeight: "1.2" }],
+      lg: ["2.125rem", { fontWeight: 600, lineHeight: "1.2" }],
+      xl: ["3.75rem", { fontWeight: 600, lineHeight: "1.2" }],
+      "2xl": ["4.375rem", { fontWeight: 600, lineHeight: "1.2" }],
     },
     extend: {
       colors: {

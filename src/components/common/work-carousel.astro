@@ -3,12 +3,12 @@ import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
 import ShowcaseCard from "../cards/showcase-card.astro";
 ---
 
-<section class="relative overflow-hidden whitespace-nowrap *:px-10">
-  <ul class="animate-carousel inline-flex gap-20">
+<section class="relative overflow-hidden whitespace-nowrap *:px-7">
+  <ul class="inline-flex animate-carousel gap-14">
     {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
   </ul>
 
-  <ul class="animate-carousel inline-flex gap-20">
+  <ul class="inline-flex animate-carousel gap-14">
     {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
   </ul>
 </section>

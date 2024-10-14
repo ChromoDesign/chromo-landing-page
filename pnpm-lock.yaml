@@ -27,11 +27,14 @@ importers:
         specifier: ^5.1.0
         version: 5.1.0
       '@material-symbols/svg-400':
-        specifier: ^0.18.0
-        version: 0.18.0
+        specifier: ^0.25.0
+        version: 0.25.0
+      '@material-symbols/svg-500':
+        specifier: ^0.25.0
+        version: 0.25.0
       '@material-symbols/svg-700':
-        specifier: ^0.23.0
-        version: 0.23.0
+        specifier: ^0.25.0
+        version: 0.25.0
       '@radix-ui/react-icons':
         specifier: ^1.3.0
         version: 1.3.0(react@18.3.1)
@@ -658,11 +661,14 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@material-symbols/svg-400@0.18.0':
-    resolution: {integrity: sha512-DYTmDk2BDFwns4lTsqQ/M+6tZxEfwDnIIdA7zAdpRUYxQw2QjJtNMu8f0/3U9cN8XNK8oCXUTIXW6V6uVPlkEg==}
+  '@material-symbols/svg-400@0.25.0':
+    resolution: {integrity: sha512-tJr6rI4r38yWXU81LvTML+AcBjfhdmQjxkf1+wtgDhBT9UZFtU7RDl4cmtgTJrEdW3PijxCFO/6eU4WKJ0RNhw==}
 
-  '@material-symbols/svg-700@0.23.0':
-    resolution: {integrity: sha512-iIvVm4M4+lYiJq/0kX6NuPPHQPvaakgexftSJL8x6obgS4u41hMdv/om6ZX3uYYKHATEJ+Ah0qiqoIqVCINCCg==}
+  '@material-symbols/svg-500@0.25.0':
+    resolution: {integrity: sha512-0O0QFdE92GxLFp21tJp08gAUZYsjPMFYaoFc0UHJMW1zkMFBT5duSX6nNHx45TjFkVEHa/+1aJrpeyZUYScNsg==}
+
+  '@material-symbols/svg-700@0.25.0':
+    resolution: {integrity: sha512-xnr4jKAXLKGJQXjGilezpAkkvfu0k/tSUsoyrTeA7wOZJkgAganHxb7K0BWy2dVAgtO5mtvshtHfXzlYAcD4CQ==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -3803,9 +3809,11 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.4.15
 
-  '@material-symbols/svg-400@0.18.0': {}
+  '@material-symbols/svg-400@0.25.0': {}
 
-  '@material-symbols/svg-700@0.23.0': {}
+  '@material-symbols/svg-500@0.25.0': {}
+
+  '@material-symbols/svg-700@0.25.0': {}
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
