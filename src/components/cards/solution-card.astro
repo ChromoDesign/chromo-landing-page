@@ -1,22 +1,34 @@
 ---
-import arrowRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
-import type { Solution } from "@/constants/solutions";
+import arrowRightAltSvg from "@material-symbols/svg-700/rounded/arrow_right_alt.svg?raw";
 import GlowEffect from "../common/glow-effect.astro";
-import tw from "@/utils/tw";
 import Icon from "../common/icon.astro";
-import sparklingStarsSvg from "@/assets/images/backgrounds/sparkling-stars.svg?raw";
-import { SECTIONS } from "@/constants/sections";
 import { Link } from "../common/link";
+import type { Solution } from "@/constants/solutions";
+import { SECTIONS } from "@/constants/sections";
+import tw from "@/utils/tw";
 
 interface Props extends Solution {}
 
-const COLORS_CLASSES: Record<Solution["color"], string> = {
-  red: tw`bg-brand-red shadow-brand-red/40 before:shadow-brand-red/75 group-hover:shadow-brand-red/60`,
-  blue: tw`bg-brand-blue shadow-brand-blue/40 before:shadow-brand-blue/75 group-hover:shadow-brand-blue/60`,
-  green: tw`bg-brand-green shadow-brand-green/40 before:shadow-brand-green/75 group-hover:shadow-brand-green/60`,
-  yellow: tw`bg-brand-yellow shadow-brand-yellow/40 before:shadow-brand-yellow/75 group-hover:shadow-brand-yellow/60`,
-  orange: tw`bg-brand-light-orange shadow-brand-light-orange/40 before:shadow-brand-light-orange/75 group-hover:shadow-brand-light-orange/60`,
-  purple: tw`bg-brand-light-purple shadow-brand-light-purple/40 before:shadow-brand-light-purple/75 group-hover:shadow-brand-light-purple/60`,
+const COLORS_CLASSES: Record<
+  "light" | "dark",
+  Record<Solution["color"], string>
+> = {
+  light: {
+    red: tw`bg-brand-red shadow-brand-red/5 before:shadow-brand-red/75 group-hover:shadow-brand-red/25`,
+    blue: tw`bg-brand-blue shadow-brand-blue/5 before:shadow-brand-blue/75 group-hover:shadow-brand-blue/25`,
+    green: tw`bg-brand-green shadow-brand-green/5 before:shadow-brand-green/75 group-hover:shadow-brand-green/25`,
+    yellow: tw`bg-brand-yellow shadow-brand-yellow/5 before:shadow-brand-yellow/75 group-hover:shadow-brand-yellow/25`,
+    orange: tw`bg-brand-light-orange shadow-brand-light-orange/5 before:shadow-brand-light-orange/75 group-hover:shadow-brand-light-orange/25`,
+    purple: tw`bg-brand-light-purple shadow-brand-light-purple/5 before:shadow-brand-light-purple/75 group-hover:shadow-brand-light-purple/25`,
+  },
+  dark: {
+    red: tw`dark:shadow-brand-red/40 dark:group-hover:shadow-brand-red/60`,
+    blue: tw`dark:shadow-brand-blue/40 dark:group-hover:shadow-brand-blue/60`,
+    green: tw`dark:shadow-brand-green/40 dark:group-hover:shadow-brand-green/60`,
+    yellow: tw`dark:shadow-brand-yellow/40 dark:group-hover:shadow-brand-yellow/60`,
+    orange: tw`dark:shadow-brand-light-orange/40 dark:group-hover:shadow-brand-light-orange/60`,
+    purple: tw`dark:shadow-brand-light-purple/40 dark:group-hover:shadow-brand-light-purple/60`,
+  },
 };
 
 const { title, description, icon, color, bulletPoints } = Astro.props;
@@ -24,22 +36,26 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
 
 <GlowEffect color={color}>
   <article
-    class="group relative overflow-hidden rounded-xl p-4 hover:bg-white hover:bg-opacity-3"
+    class="group relative overflow-hidden rounded-xl bg-white p-4 shadow-xl shadow-brand-gray/10 dark:bg-background-dark"
   >
     <figure
-      class={tw`relative flex w-fit items-center justify-center rounded-2xl p-3 shadow-[0_0_50px_30px_rgb(0,0,0)] transition-shadow duration-500 before:absolute before:inset-0 before:rounded-[inherit] before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] before:content-[''] ${COLORS_CLASSES[color]}`}
+      class={tw`relative flex w-fit items-center justify-center rounded-2xl p-3 shadow-[0_0_50px_30px_rgb(0,0,0)] transition-shadow duration-500 before:absolute before:inset-0 before:rounded-[inherit] before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] before:content-[''] ${COLORS_CLASSES["light"][color]} ${COLORS_CLASSES["dark"][color]}`}
     >
       <Icon icon={icon} class="size-6 fill-brand-white" />
     </figure>
 
-    <h3 class="relative mb-2.5 mt-4">{title}</h3>
+    <h3 class="relative mb-2.5 mt-4 text-black dark:text-white">{title}</h3>
 
     <p class="text-sm text-brand-gray">{description}</p>
 
     <div class="my-5">
-      <Link href={SECTIONS.CONTACT.href}>
-        <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+      <Link
+        variant="default"
+        href={SECTIONS.CONTACT.href}
+        className="inline-flex w-full items-center gap-2 font-medium"
+      >
         Book an Appointment
+        <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
       </Link>
     </div>
 
@@ -53,10 +69,5 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
         ))
       }
     </ul>
-
-    <Icon
-      icon={sparklingStarsSvg}
-      class="absolute left-2 top-1 -z-10 max-h-20 w-4/5 fill-black object-cover opacity-0 transition-opacity group-hover:opacity-100 dark:fill-white"
-    />
   </article>
 </GlowEffect>

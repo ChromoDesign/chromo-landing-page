@@ -7,16 +7,23 @@ import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 ---
 
-<Section id={SECTIONS.OUR_SERVICES.id}>
-  <SectionHeader subtitle="From design to development all what you need.">
-    <span slot="title">
-      Innovative solutions tailored <GradientSpan color="blue"
-        >for you.</GradientSpan
-      >
-    </span>
-  </SectionHeader>
+<div class="relative overflow-hidden bg-linear-light py-20 dark:bg-linear-dark">
+  <Section id={SECTIONS.OUR_SERVICES.id}>
+    <SectionHeader subtitle="From design to development all what you need.">
+      <span slot="title">
+        Innovative solutions tailored <GradientSpan color="blue"
+          >for you.</GradientSpan
+        >
+      </span>
+    </SectionHeader>
 
-  <section class="grid grid-cols-list-md gap-10">
-    {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
-  </section>
-</Section>
+    <section class="grid grid-cols-list-md gap-10">
+      {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
+    </section>
+  </Section>
+
+  <div
+    class="absolute inset-0 -z-10 size-full bg-brand-gray bg-opacity-3 bg-tile-pattern bg-repeat dark:invert"
+  >
+  </div>
+</div>

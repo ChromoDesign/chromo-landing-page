@@ -6,6 +6,9 @@ interface Props {
 const { id } = Astro.props;
 ---
 
-<section id={id} class="scroll-mt-28 space-y-10 md:space-y-20">
+<section
+  id={id}
+  class="container mx-auto scroll-mt-28 space-y-10 md:space-y-20"
+>
   <slot />
 </section>

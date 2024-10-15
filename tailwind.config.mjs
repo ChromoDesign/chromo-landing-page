@@ -72,9 +72,11 @@ export default {
       backgroundImage: {
         "dot-pattern": `url(/src/assets/images/backgrounds/dot-pattern.svg)`,
         "square-pattern": `url(/src/assets/images/backgrounds/square-pattern.svg)`,
+        "tile-pattern": `url(/src/assets/images/backgrounds/tile-pattern.avif), url(/src/assets/images/backgrounds/tile-pattern.png)`,
         "radial-light": `radial-gradient(circle at center, rgba(255, 255, 255, 0) 60%, ${background.white} 100%)`,
         "radial-dark": `radial-gradient(circle at center, rgba(0, 0, 0, 0) 60%, ${background.dark} 100%)`,
         "linear-light": `linear-gradient(to bottom, ${background.white} 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 60%, ${background.white} 100%)`,
+        "linear-light-full": `linear-gradient(to bottom, ${background.white} 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, ${background.white} 100%)`,
         "linear-dark": `linear-gradient(to bottom, ${background.dark} 0%, rgba(0,0,0,0) 20%, rgba(0,0,0,0) 60%, ${background.dark} 100%)`,
       },
     },

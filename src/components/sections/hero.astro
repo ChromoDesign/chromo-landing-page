@@ -1,8 +1,10 @@
 ---
+import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
 import { SECTIONS } from "@/constants/sections";
 import { Link } from "../common/link";
 import HappyClients from "../common/happy-clients.astro";
 import WorkCarousel from "../common/work-carousel.astro";
+import Icon from "../common/icon.astro";
 ---
 
 <section
@@ -30,7 +32,13 @@ import WorkCarousel from "../common/work-carousel.astro";
     </p>
   </div>
 
-  <Link size="lg" href={SECTIONS.CONTACT.href}>Book an Appointment </Link>
+  <Link
+    size="lg"
+    href={SECTIONS.CONTACT.href}
+    className="inline-flex items-center gap-2"
+  >
+    Book a Free Call Now <Icon icon={boltSvg} class="size-5 fill-current" />
+  </Link>
 
   <HappyClients />
 
