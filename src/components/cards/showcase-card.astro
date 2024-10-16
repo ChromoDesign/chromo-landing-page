@@ -1,4 +1,6 @@
 ---
+import GlowEffect from "../common/glow-effect.astro";
+
 interface Props {
   image: {
     src: string;
@@ -9,12 +11,14 @@ interface Props {
 const { image } = Astro.props;
 ---
 
-<li class="h-full">
-  <img
-    src={image.src}
-    alt={image.alt}
-    title={image.alt}
-    loading="lazy"
-    class="aspect-[118_/_75] w-36 object-scale-down invert sm:w-52 dark:invert-0"
-  />
-</li>
+<GlowEffect radius="xll">
+  <div class="mx-auto grid aspect-[118_/_75] w-60 place-content-center p-2.5">
+    <img
+      src={image.src}
+      alt={image.alt}
+      title={image.alt}
+      loading="lazy"
+      class="object-cover invert dark:invert-0"
+    />
+  </div>
+</GlowEffect>
