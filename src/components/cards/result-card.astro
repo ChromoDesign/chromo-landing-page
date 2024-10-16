@@ -1,7 +1,6 @@
 ---
 import type { Result } from "@/constants/results";
 import GlowEffect from "../common/glow-effect.astro";
-import sparklingStarsSvg from "@/assets/images/backgrounds/sparkling-stars.svg?raw";
 import tw from "@/utils/tw";
 import Icon from "../common/icon.astro";
 
@@ -10,12 +9,10 @@ interface Props {
 }
 
 const lightSchemeClasses = {
-  article: tw`hover:bg-white hover:bg-opacity-50`,
   figure: tw`bg-black`,
 };
 
 const darkSchemeClasses = {
-  article: tw`dark:hover:bg-white dark:hover:bg-opacity-3`,
   figure: tw`dark:bg-brand-white dark:shadow-[0_0_45px_25px_rgba(255,255,255,0.4)] dark:transition-shadow dark:duration-500 dark:ease-in-out dark:before:absolute dark:before:inset-0 dark:before:rounded-[inherit] dark:before:shadow-[0_0_5px_2px_rgba(255,255,255,0.5)] dark:before:content-[''] dark:group-hover:shadow-[0_0_45px_28px_rgba(255,255,255,0.6)]`,
 };
 
@@ -23,9 +20,7 @@ const { result } = Astro.props;
 ---
 
 <GlowEffect>
-  <article
-    class={tw`group relative h-full overflow-hidden rounded-2xl p-5 transition-colors duration-200 ${lightSchemeClasses.article} ${darkSchemeClasses.article}`}
-  >
+  <article class="group relative h-full overflow-hidden rounded-2xl p-5">
     <figure
       class={tw`relative flex size-10 items-center justify-center rounded-xl ${lightSchemeClasses.figure} ${darkSchemeClasses.figure}`}
     >
@@ -39,9 +34,17 @@ const { result } = Astro.props;
 
     <p class="text-sm text-brand-gray">{result.description}</p>
 
-    <Icon
-      icon={sparklingStarsSvg}
-      class="absolute left-2 top-1 max-h-20 w-2/3 fill-black object-cover opacity-0 transition-opacity group-hover:opacity-100 dark:fill-white"
-    />
+    <div
+      class="absolute left-2 top-1 -z-10 size-full opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+    >
+      <div
+        class="bg-matrix-pattern absolute size-full invert-[85%] dark:invert-0"
+      >
+      </div>
+      <div
+        class="absolute size-full bg-gradient-to-b from-transparent via-white to-white dark:from-black/5 dark:via-black/5 dark:to-black"
+      >
+      </div>
+    </div>
   </article>
 </GlowEffect>
