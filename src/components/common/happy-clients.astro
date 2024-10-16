@@ -1,19 +1,50 @@
 ---
+import happyClient1Img from "@/assets/images/happy-clients/happy-client-1.webp";
+import happyClient2Img from "@/assets/images/happy-clients/happy-client-2.webp";
+import happyClient3Img from "@/assets/images/happy-clients/happy-client-3.webp";
 import gradeSvg from "@material-symbols/svg-400/rounded/grade-fill.svg?raw";
-import clientAvatarImg from "@/assets/images/client-avatar.png";
 import Icon from "./icon.astro";
+
+const HAPPY_CLIENTS = [
+  {
+    img: happyClient1Img,
+    alt: "Happy Client 1",
+  },
+  {
+    img: happyClient2Img,
+    alt: "Happy Client 2",
+  },
+  {
+    img: happyClient3Img,
+    alt: "Happy Client 3",
+  },
+];
 ---
 
-<section class="flex w-max items-center gap-2.5 text-black dark:text-white">
-  <img
-    src={clientAvatarImg.src}
-    alt="avatar"
-    class="size-7 shrink-0 rounded-full object-cover ring-1 ring-brand-gray/25"
-  />
+<section class="flex w-max items-center gap-3.5 text-black dark:text-white">
+  <div
+    class="whitespace-nowrap"
+    style={{
+      width: `calc((${HAPPY_CLIENTS.length} * 18px) + 10px)`,
+    }}
+  >
+    {
+      HAPPY_CLIENTS.map(({ img, alt }, index) => (
+        <img
+          src={img.src}
+          alt={alt}
+          class="inline-block size-7 rounded-full ring-1 ring-brand-gray/25"
+          style={{
+            transform: `translateX(${-index * 10}px)`,
+          }}
+        />
+      ))
+    }
+  </div>
 
   <p class="flex items-center gap-1">
     <span>4.7</span>
     <Icon icon={gradeSvg} class="size-5 fill-brand-yellow" />
   </p>
-  <p>15+ Happy Clients</p>
+  <p>8+ Happy Clients</p>
 </section>
