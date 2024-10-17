@@ -1,0 +1,30 @@
+---
+import tw from "@/utils/tw";
+
+type BackgroundColor = "light-blue" | "contrast" | "transparent";
+
+interface Props {
+  src: string;
+  alt: string;
+  backgroundColor: BackgroundColor;
+}
+
+const { src, alt, backgroundColor } = Astro.props;
+
+const BACKGROUND_COLORS: Record<BackgroundColor, string> = {
+  "light-blue": tw`bg-sky-100`,
+  contrast: tw`bg-white`,
+  transparent: tw`bg-background-white`,
+};
+---
+
+<figure
+  class={tw`rounded-xl p-2 ring-2 ring-white dark:bg-white/5 dark:ring-brand-gray/50 ${BACKGROUND_COLORS[backgroundColor]}`}
+>
+  <img
+    src={src}
+    alt={alt}
+    class="size-min h-20 rounded-md object-cover"
+    loading="lazy"
+  />
+</figure>

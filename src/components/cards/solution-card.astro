@@ -36,7 +36,7 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
 
 <GlowEffect color={color}>
   <article
-    class="group relative overflow-hidden rounded-xl bg-white p-4 shadow-xl shadow-brand-gray/10 transition-colors duration-200 hover:bg-transparent dark:bg-black"
+    class="group relative overflow-hidden rounded-xl bg-white p-4 transition-colors duration-200 hover:bg-transparent dark:bg-black"
   >
     <div class="relative z-10">
       <figure
@@ -75,7 +75,7 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
     </div>
 
     <div
-      class="bg-noise-effect absolute inset-0 size-full rounded-xl bg-white opacity-0 brightness-125 transition duration-200 group-hover:opacity-100 dark:bg-black dark:brightness-[40%]"
+      class="absolute inset-0 size-full rounded-xl bg-white bg-noise-effect opacity-0 brightness-125 transition duration-200 group-hover:opacity-100 dark:bg-black dark:brightness-[40%]"
     >
     </div>
   </article>

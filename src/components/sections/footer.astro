@@ -1,35 +1,17 @@
 ---
-import ChromoLogo from "@/components/common/alamo-logo.astro";
-import { SECTIONS_LIST } from "@/constants/sections";
+import "@fontsource/jetbrains-mono/100.css";
 
 const currentYear = 2024;
 ---
 
-<footer class="mt-80 border-t border-solid border-brand-white/15 px-7 py-14">
+<footer
+  class="mt-60 border-solid border-brand-white/15 bg-background-dark py-10 dark:border-t"
+>
   <div
     class="container mx-auto flex flex-col justify-start gap-x-40 gap-y-10 lg:flex-row"
   >
-    <figure>
-      <ChromoLogo />
-    </figure>
-
-    <nav class="flex flex-wrap gap-x-40 gap-y-10">
-      <div>
-        <h3 class="mb-5">Sections</h3>
-        <ul class="space-y-5">
-          {
-            SECTIONS_LIST.map(({ title, href }) => (
-              <li class="text-brand-gray hover:text-brand-white">
-                <a href={href}>{title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
-    </nav>
-
-    <p class="text-sm brightness-75 lg:ml-auto lg:self-end lg:text-end">
-      © Copyright {currentYear}. All Rights Reserved
+    <p class="font-jetbrains-mono text-sm font-thin">
+      © ALAMO ALGORITHMICS {currentYear}. ALL RIGHTS RESERVED.
     </p>
   </div>
 </footer>

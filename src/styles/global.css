@@ -42,15 +42,29 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: theme("colors.brand.white / 15%");
+  background: theme("colors.brand.gray / 25%");
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: theme("colors.brand.white / 25%");
+  background: theme("colors.brand.gray / 75%");
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: theme("colors.brand.white / 50%");
+  background: theme("colors.brand.gray");
+}
+
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar-track {
+    background: theme("colors.brand.white / 15%");
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: theme("colors.brand.white / 25%");
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: theme("colors.brand.white / 50%");
+  }
 }

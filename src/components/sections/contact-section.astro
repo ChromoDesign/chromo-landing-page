@@ -3,46 +3,114 @@ import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
-import arrorRightAltSvg from "@material-symbols/svg-400/rounded/arrow_right_alt.svg?raw";
-import Label from "@/components/forms/label.astro";
-import Input from "@/components/forms/input.astro";
-import Textarea from "@/components/forms/textarea.astro";
 import { Button } from "../ui/button";
 import Icon from "../common/icon.astro";
+import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
+import mightyShieldDemo from "@/assets/images/demo/mighty-shield-demo.webp";
+import torqWebDemo from "@/assets/images/demo/torqweb-demo.webp";
+import torqMobileDemo from "@/assets/images/demo/torqmobile-demo.webp";
+import rockUltrasoundDemo from "@/assets/images/demo/rock-ultrasound-demo.webp";
+
+import PhotoPortrait from "../common/photo-portrait.astro";
 ---
 
-<Section id={SECTIONS.CONTACT.id}>
-  <SectionHeader>
-    <span slot="title">
-      Let's build something <GradientSpan color="cyan"
-        >extraordinary</GradientSpan
-      > together.
-    </span>
-  </SectionHeader>
+<div class="relative overflow-hidden">
+  <Section id={SECTIONS.CONTACT.id}>
+    <div class="relative space-y-10 py-60">
+      <SectionHeader>
+        <span slot="title">
+          <GradientSpan>Curious About What We Do?</GradientSpan>
+        </span>
+        <span slot="subtitle-center" class="text-black dark:text-white"
+          >We're here to help! If you wanna talk, we're just a free call away!</span
+        >
+      </SectionHeader>
 
-  <form
-    class="mx-auto flex w-full flex-col items-center gap-10 rounded-xl border border-solid border-brand-white/15 bg-brand-white/5 p-7 lg:w-2/3 lg:items-end lg:p-14"
-  >
-    <div class="flex w-full flex-col gap-5">
-      <div class="flex flex-col gap-2">
-        <Label for="name">Name</Label>
-        <Input id="name" placeholder="Your Name" />
-      </div>
+      <Button className="mx-auto flex items-center gap-2">
+        Book a Free Call Now
+        <Icon icon={boltSvg} class="size-5 fill-current" />
+      </Button>
 
-      <div class="flex flex-col gap-2">
-        <Label for="email">Email</Label>
-        <Input id="email" type="email" placeholder="Your Email" />
-      </div>
+      <span class="absolute left-[15%] top-[8%] opacity-0" data-animate>
+        <PhotoPortrait
+          backgroundColor="light-blue"
+          src={mightyShieldDemo.src}
+          alt="Mighty Shield Insurance Demo"
+        />
+      </span>
 
-      <div class="flex flex-col gap-2">
-        <Label for="message">Message</Label>
-        <Textarea id="message" placeholder="Your Email" />
-      </div>
+      <span class="absolute bottom-[22%] right-[20%] opacity-0" data-animate>
+        <PhotoPortrait
+          backgroundColor="transparent"
+          src={torqWebDemo.src}
+          alt="TORQ Web Demo"
+        />
+      </span>
+
+      <span class="absolute bottom-[15%] left-[18%] opacity-0" data-animate>
+        <PhotoPortrait
+          backgroundColor="contrast"
+          src={rockUltrasoundDemo.src}
+          alt="Rock Ultrasound Demo"
+        />
+      </span>
+
+      <span class="absolute right-[18%] top-[4%] opacity-0" data-animate>
+        <PhotoPortrait
+          backgroundColor="transparent"
+          src={torqMobileDemo.src}
+          alt="TORQ Mobile App Demo"
+        />
+      </span>
+    </div>
+  </Section>
+
+  <div class="absolute inset-0 -z-10 size-full bg-square-pattern dark:invert">
+    <div
+      class="absolute inset-0 size-full bg-radial-light dark:bg-radial-dark dark:invert"
+    >
     </div>
 
-    <Button>
-      <Icon icon={arrorRightAltSvg} class="size-5 fill-current" />
-      Book an Appointment
-    </Button>
-  </form>
-</Section>
+    <div
+      class="dark:bg-linear-dark-full absolute inset-0 size-full bg-linear-light-full dark:invert"
+    >
+    </div>
+  </div>
+</div>
+
+<script>
+  import tw from "@/utils/tw";
+
+  const portraits = document.querySelectorAll("[data-animate]");
+
+  const animationDelayClasses = [
+    "delay-100",
+    "delay-200",
+    "delay-300",
+    "delay-400",
+  ];
+
+  const animationClasses: string[] =
+    tw`duration-1500 ease-out animate-in fade-in-0 slide-in-from-bottom-16`.split(
+      " ",
+    );
+
+  const intersectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0");
+          entry.target.classList.add(animationDelayClasses[index]);
+          entry.target.classList.add(...animationClasses);
+        }
+      });
+    },
+    {
+      threshold: 1,
+    },
+  );
+
+  for (const portrait of portraits) {
+    intersectionObserver.observe(portrait!);
+  }
+</script>
