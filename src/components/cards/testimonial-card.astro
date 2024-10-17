@@ -2,7 +2,6 @@
 import formatIconSvg from "@material-symbols/svg-400/rounded/format_quote-fill.svg?raw";
 import type { Testimonial } from "@/constants/testimonials";
 import GlowEffect from "../common/glow-effect.astro";
-import CardTranslateEffect from "../common/card-translate-effect.astro";
 import Icon from "../common/icon.astro";
 
 interface Props {
@@ -12,9 +11,9 @@ interface Props {
 const { testimonal } = Astro.props;
 ---
 
-<CardTranslateEffect img={testimonal.image}>
+<div class="rounded-xl dark:bg-black">
   <GlowEffect>
-    <article class="p-5">
+    <article class="p-5 text-black dark:text-brand-white">
       <div class="mb-24 space-y-1.5">
         <h3 class="text-base">{testimonal.name}</h3>
         <p class="text-sm text-brand-gray">{testimonal.website}</p>
@@ -27,4 +26,4 @@ const { testimonal } = Astro.props;
       </div>
     </article>
   </GlowEffect>
-</CardTranslateEffect>
+</div>

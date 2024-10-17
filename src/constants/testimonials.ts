@@ -2,51 +2,31 @@ export type Testimonial = {
   name: string;
   website: string;
   description: string;
-  image: {
-    src: string;
-    alt: string;
-  };
 };
 
 export const TESTIMONIALS = [
   {
-    name: "John Doe",
-    website: "https://www.google.com",
+    name: "Johnathan Curiel",
+    website: "torqapp.io",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-    image: {
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "John Doe",
-    },
+      "Alamo Algorithmic elevated torqapp.io with their stellar work on our web and mobile apps. The improvements were noticeable in both performance and design. Their team was professional, quick to respond, and highly efficient. We’re thrilled with the outcome and excited for future collaborations.",
   },
   {
-    name: "Jane Doe",
-    website: "https://www.google.com",
+    name: "Rock Ultrasound, CEO",
+    website: "rockultrasound.com",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-    image: {
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "Jane Doe",
-    },
+      "Alamo Algorithmic created an engaging landing page for us that boosted user engagement. The contact form streamlined communication, increasing leads. Their SEO efforts greatly improved our rankings. Overall, we were highly impressed by their professionalism and attention to detail.",
   },
   {
-    name: "John Doe",
-    website: "https://www.google.com",
+    name: "Mighty Shield, CEO",
+    website: "mightyshieldinsurance.com",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-    image: {
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "John Doe",
-    },
+      "Alamo Algorithmic crafted an impressive landing page that perfectly captured our brand. The improved SEO resulted in more visibility, and the project exceeded our expectations. Their team was professional and easy to work with. We couldn’t be happier with the final outcome.",
   },
   {
-    name: "Jane Doe",
-    website: "https://www.google.com",
+    name: "Villalobos Tile, CEO",
+    website: "villalobostile.com",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.",
-    image: {
-      src: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
-      alt: "Jane Doe",
-    },
+      "Alamo Algorithmic delivered a beautifully designed landing page for us that looks polished and professional. The contact form helped increase client inquiries, and the SEO improvements were fantastic. We highly recommend them for their expertise and commitment to quality.",
   },
 ] as const satisfies Testimonial[];
