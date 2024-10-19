@@ -1,11 +1,11 @@
-import figmaLogo from "@/assets/images/figma-logo.webp";
-import flutterLogo from "@/assets/images/flutter-logo.webp";
-import jsLogo from "@/assets/images/js-logo.webp";
-import laravelLogo from "@/assets/images/laravel-logo.webp";
-import nestLogo from "@/assets/images/nest-logo.webp";
-import nodeJsLogo from "@/assets/images/nodejs-logo.webp";
-import phpLogo from "@/assets/images/php-logo.webp";
-import reactLogo from "@/assets/images/react-logo.webp";
+import figmaLogo from "@/assets/images/tech-logos/figma-logo.webp";
+import flutterLogo from "@/assets/images/tech-logos/flutter-logo.webp";
+import jsLogo from "@/assets/images/tech-logos/js-logo.webp";
+import laravelLogo from "@/assets/images/tech-logos/laravel-logo.webp";
+import nestLogo from "@/assets/images/tech-logos/nest-logo.webp";
+import nodeJsLogo from "@/assets/images/tech-logos/nodejs-logo.webp";
+import phpLogo from "@/assets/images/tech-logos/php-logo.webp";
+import reactLogo from "@/assets/images/tech-logos/react-logo.webp";
 
 export type Technology = {
   icon: {

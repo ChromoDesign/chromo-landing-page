@@ -51,17 +51,6 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
 
       <p class="text-sm text-brand-gray">{description}</p>
 
-      <div class="my-5">
-        <Link
-          variant="default"
-          href={SECTIONS.CONTACT.href}
-          className="relative z-30 inline-flex w-full items-center gap-2 font-medium"
-        >
-          Book an Appointment
-          <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
-        </Link>
-      </div>
-
       <ul class="mt-4 space-y-2.5 text-sm text-brand-gray">
         {
           bulletPoints.map((bulletPoint) => (

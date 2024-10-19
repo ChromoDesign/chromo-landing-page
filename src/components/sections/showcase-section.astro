@@ -14,7 +14,17 @@ import ShowcaseCard from "../cards/showcase-card.astro";
     </span>
   </SectionHeader>
 
-  <ul class="grid auto-rows-fr grid-cols-list-sm gap-10">
-    {SHOWCASE_PROJECTS.map(({ image }) => <ShowcaseCard image={image} />)}
+  <ul class="grid auto-rows-fr grid-cols-list-lg gap-x-10 gap-y-20">
+    {
+      SHOWCASE_PROJECTS.map((showcase) => (
+        <ShowcaseCard
+          title={showcase.title}
+          logoSrc={showcase.logoSrc}
+          demoSrc={showcase.demoSrc}
+          colorfulLogoSrc={showcase.colorfulLogoSrc}
+          href={showcase.href}
+        />
+      ))
+    }
   </ul>
 </Section>
