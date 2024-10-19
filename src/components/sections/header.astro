@@ -63,7 +63,7 @@ const sectionLinks = SECTIONS_LIST.filter(
   });
 
   window.addEventListener("scroll", function () {
-    if (window.scrollY > scrollThreshold * 2) return; // optimization
+    if (window.scrollY > scrollThreshold * 15) return; // optimization
 
     if (window.scrollY > scrollThreshold) {
       header.classList.remove(...notScrolledClasses);
