@@ -4,17 +4,17 @@ import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
 const array = Array.from({ length: 2 }).fill(0);
 ---
 
-<section class="relative overflow-hidden whitespace-nowrap *:px-7">
+<section class="relative w-[102%] overflow-hidden whitespace-nowrap">
   {
     array.map(() => (
-      <ul class="inline-flex animate-carousel gap-14">
+      <ul class="inline-flex animate-carousel gap-14 px-7 first:pl-0 sm:gap-20 sm:px-10">
         {SHOWCASE_PROJECTS.map(({ title, logoSrc }) => (
-          <li class="h-full">
+          <li class="h-full w-36 shrink-0 sm:w-52">
             <img
               src={logoSrc}
               alt={`${title} Logo`}
               title={title}
-              class="aspect-[118_/_75] w-36 object-scale-down invert sm:w-52 dark:invert-0"
+              class="object-object w-36 invert sm:w-52 dark:invert-0"
             />
           </li>
         ))}
