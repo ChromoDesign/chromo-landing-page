@@ -274,10 +274,12 @@ const { color = "white", radius = "xl" } = Astro.props;
     }
   };
 
-  document.body.addEventListener("mousemove", UPDATE);
+  if (!("ontouchstart" in window)) {
+    document.body.addEventListener("mousemove", UPDATE);
 
-  // @ts-expect-error que ladilla
-  UPDATE();
+    // @ts-expect-error que ladilla
+    UPDATE();
+  }
 </script>
 
 <script>

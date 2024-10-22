@@ -8,15 +8,19 @@ import Icon from "../common/icon.astro";
 ---
 
 <section
-  class="container relative flex flex-col items-center justify-center gap-20 overflow-hidden py-20 text-center"
+  class="container relative flex flex-col items-center justify-center gap-20 overflow-hidden pt-10 text-center lg:py-20"
 >
   <div
-    class="pointer-events-none absolute inset-0 -z-10 bg-dot-pattern bg-[length:110%] dark:opacity-15 dark:contrast-150"
+    class="absolute -top-20 bottom-1/4 left-0 right-0 -z-10 bg-dot-pattern sm:inset-0 sm:bg-[length:110%] dark:opacity-10 dark:contrast-150"
   >
-    <div class="absolute inset-0 size-full bg-radial-light dark:bg-radial-dark">
+    <div
+      class="sm:bg-radial-light-full dark:sm:bg-radial-dark-full absolute inset-0 size-full bg-radial-light dark:bg-radial-dark"
+    >
     </div>
 
-    <div class="absolute inset-0 size-full bg-linear-light dark:bg-linear-dark">
+    <div
+      class="absolute inset-0 size-full sm:bg-linear-light dark:sm:bg-linear-dark"
+    >
     </div>
   </div>
 
@@ -25,8 +29,8 @@ import Icon from "../common/icon.astro";
 
     <h1>From innovative designs to robust development</h1>
 
-    <p class="max-w-[45ch] text-brand-gray">
-      We turn your ideas into awesome websites and apps Simple, clean, and <span
+    <p class="max-w-[30ch] text-brand-gray sm:max-w-[45ch]">
+      We turn your ideas into awesome websites and apps. Simple, clean, and <span
         class="text-black dark:text-white">built to make an impact.</span
       >
     </p>

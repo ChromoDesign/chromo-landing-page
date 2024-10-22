@@ -35,12 +35,7 @@ const sectionLinks = SECTIONS_LIST.filter(
       </ul>
     </nav>
 
-    <Link
-      href={SECTIONS.CONTACT.href}
-      className="transition dark:bg-gradient-to-r dark:from-brand-light-orange dark:to-brand-light-yellow dark:text-white dark:hover:brightness-110"
-    >
-      Let's chat
-    </Link>
+    <Link href={SECTIONS.CONTACT.href}> Let's chat </Link>
   </div>
 </header>
 
@@ -48,7 +43,7 @@ const sectionLinks = SECTIONS_LIST.filter(
   const header = document.getElementById("header")!;
   const scrollThreshold = 100;
   const notScrolledClasses: string[] =
-    "border-brand-gray/35 bg-white dark:bg-transparent".split(" ");
+    "border-brand-gray/35 bg-white dark:bg-background-dark".split(" ");
   const scrolledClasses: string[] =
     "backdrop-blur-xl bg-white/50 dark:bg-brand-gray/10 border-transparent".split(
       " ",

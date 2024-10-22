@@ -33,15 +33,13 @@ import Icon from "../common/icon.astro";
 
   <Section id={SECTIONS.OUR_TEAM.id}>
     <div
-      class="flex flex-col items-center gap-20 md:justify-between lg:gap-40 xl:flex-row xl:gap-10"
+      class="flex flex-col items-center gap-20 md:justify-between lg:flex-row xl:gap-10"
     >
       <div class="space-y-14">
-        <h2
-          class="w-[15ch] px-2.5 text-center text-brand-gray lg:px-0 xl:text-start"
-        >
+        <h2 class="text-center text-brand-gray sm:max-w-[15ch] lg:text-start">
           Dedicated to <GradientSpan color="purple">the best.</GradientSpan>
         </h2>
-        <div class="hidden xl:block">
+        <div class="hidden lg:block">
           <Link
             href={SECTIONS.CONTACT.href}
             className="inline-flex items-center gap-2"
@@ -53,7 +51,7 @@ import Icon from "../common/icon.astro";
       </div>
 
       <ul
-        class="grid w-full grow auto-rows-fr grid-cols-list-xs place-items-center gap-x-20 gap-y-14 lg:gap-y-8 xl:place-items-end 2xl:gap-x-28 2xl:gap-y-16"
+        class="grid w-full grow auto-rows-fr grid-cols-list-xs place-items-center gap-x-20 gap-y-14 lg:place-items-end lg:gap-y-8 xl:w-min 2xl:gap-x-28 2xl:gap-y-16"
       >
         {
           TECHNOLOGIES.map((technology) => (
@@ -69,10 +67,10 @@ import Icon from "../common/icon.astro";
         }
       </ul>
 
-      <div class="block xl:hidden">
-        <Link href={SECTIONS.CONTACT.href}>
+      <div class="block lg:hidden">
+        <Link href={SECTIONS.CONTACT.href} size="lg" className="inline-flex items-center gap-2">
           Book an Appointment
-          <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+          <Icon icon={arrowRightAltSvg} class="size-6 fill-current" />
         </Link>
       </div>
     </div>

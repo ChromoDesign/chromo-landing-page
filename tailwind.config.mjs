@@ -81,8 +81,10 @@ export default {
         "square-pattern": `url(/src/assets/images/backgrounds/square-pattern.svg)`,
         "tile-pattern": `url(/src/assets/images/backgrounds/tile-pattern.avif), url(/src/assets/images/backgrounds/tile-pattern.png)`,
         "matrix-pattern": `url(/src/assets/images/backgrounds/matrix-pattern.webp)`,
-        "radial-light": `radial-gradient(circle at center, rgba(255, 255, 255, 0) 60%, ${background.white} 100%)`,
-        "radial-dark": `radial-gradient(circle at center, rgba(0, 0, 0, 0) 60%, ${background.dark} 100%)`,
+        "radial-light": `radial-gradient(circle at center, rgba(255, 255, 255, 0) 20%, ${background.white} 100%)`,
+        "radial-dark": `radial-gradient(circle at center, rgba(0, 0, 0, 0) 20%, ${background.dark} 100%)`,
+        "radial-light-full": `radial-gradient(circle at center, rgba(255, 255, 255, 0) 60%, ${background.white} 100%)`,
+        "radial-dark-full": `radial-gradient(circle at center, rgba(0, 0, 0, 0) 60%, ${background.dark} 100%)`,
         "linear-light": `linear-gradient(to bottom, ${background.white} 0%, rgba(255,255,255,0) 20%, rgba(255,255,255,0) 60%, ${background.white} 100%)`,
         "linear-light-full": `linear-gradient(to bottom, ${background.white} 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, ${background.white} 100%)`,
         "linear-dark-full": `linear-gradient(to bottom, ${background.dark} 0%, rgba(255,255,255,0) 10%, rgba(255,255,255,0) 90%, ${background.dark} 100%)`,
@@ -93,4 +95,7 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
 };
