@@ -1,7 +1,7 @@
 ---
-import arrowOutwardSvg from "@material-symbols/svg-400/rounded/arrow_outward.svg?raw";
+// import arrowOutwardSvg from "@material-symbols/svg-400/rounded/arrow_outward.svg?raw";
 import GlowEffect from "../common/glow-effect.astro";
-import Icon from "../common/icon.astro";
+// import Icon from "../common/icon.astro";
 
 interface Props {
   title: string;
@@ -11,10 +11,11 @@ interface Props {
   demoSrc: string;
 }
 
-const { href, logoSrc, demoSrc, colorfulLogoSrc, title } = Astro.props;
+const { logoSrc, demoSrc, colorfulLogoSrc, title } = Astro.props;
 ---
 
-<a href={href} class="group inline-block">
+<!-- <a href={href} class="group inline-block"> -->
+<div class="group inline-block">
   <section>
     <div class="relative">
       <GlowEffect radius="xll">
@@ -46,7 +47,7 @@ const { href, logoSrc, demoSrc, colorfulLogoSrc, title } = Astro.props;
 
     <div class="mt-3.5 flex items-center justify-between gap-2">
       <h3 class="text-base text-black dark:text-white">{title}</h3>
-      <p
+      <!-- <p
         class="group flex items-center gap-1 font-jetbrains-mono text-brand-gray transition-colors duration-200 group-hover:text-black dark:group-hover:text-white"
       >
         <span>View project</span>
@@ -54,7 +55,7 @@ const { href, logoSrc, demoSrc, colorfulLogoSrc, title } = Astro.props;
           icon={arrowOutwardSvg}
           class="relative top-px size-5 fill-current"
         />
-      </p>
+      </p> -->
     </div>
   </section>
-</a>
+</div>

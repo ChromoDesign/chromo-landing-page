@@ -9,24 +9,24 @@ export const TESTIMONIALS = [
     name: "Johnathan Curiel",
     website: "torqapp.io",
     description:
-      "Alamo Algorithmic elevated torqapp.io with their stellar work on our web and mobile apps. The improvements were noticeable in both performance and design. Their team was professional, quick to respond, and highly efficient. We’re thrilled with the outcome and excited for future collaborations.",
+      "Working with Alamo Algorithmic on our web and mobile apps was a great experience. They didn't just deliver solid performance improvements; they brought fresh, creative ideas that really elevated our product. Communication was easy, and they consistently responded with solutions that felt like they were genuinely invested in our success. We're excited to keep this partnership going.",
   },
   {
-    name: "Rock Ultrasound, CEO",
+    name: "Alirio Castellano",
     website: "rockultrasound.com",
     description:
-      "Alamo Algorithmic created an engaging landing page for us that boosted user engagement. The contact form streamlined communication, increasing leads. Their SEO efforts greatly improved our rankings. Overall, we were highly impressed by their professionalism and attention to detail.",
+      "Alamo Algorithmic crafted a landing page that really connected with our audience. The contact form helped us communicate with clients in a way that was effortless, and the SEO boost was impressive, bringing more traffic our way. I appreciated how thoughtful and detail-oriented their team was—they made sure our needs were heard and delivered above expectations.",
   },
   {
     name: "Mighty Shield, CEO",
     website: "mightyshieldinsurance.com",
     description:
-      "Alamo Algorithmic crafted an impressive landing page that perfectly captured our brand. The improved SEO resulted in more visibility, and the project exceeded our expectations. Their team was professional and easy to work with. We couldn’t be happier with the final outcome.",
+      "Alamo Algorithmic took our ideas and shaped them into a landing page that perfectly reflects our brand. Our visibility online improved, and the project went above and beyond what we expected. Their team was easy to work with, thoughtful about our feedback, and committed to getting it just right. We're thrilled with the results.",
   },
   {
     name: "Villalobos Tile, CEO",
     website: "villalobostile.com",
     description:
-      "Alamo Algorithmic delivered a beautifully designed landing page for us that looks polished and professional. The contact form helped increase client inquiries, and the SEO improvements were fantastic. We highly recommend them for their expertise and commitment to quality.",
+      "Our new landing page from Alamo Algorithmic has been a fantastic addition. It looks professional, functions smoothly, and has definitely brought in more client inquiries. Their SEO work has driven extra traffic, and their commitment to getting the details right really shows. I’d highly recommend them to anyone looking for quality web design.",
   },
 ] as const satisfies Testimonial[];

@@ -3,7 +3,7 @@ import happyClient1Img from "@/assets/images/happy-clients/happy-client-1.webp";
 import happyClient2Img from "@/assets/images/happy-clients/happy-client-2.webp";
 import happyClient3Img from "@/assets/images/happy-clients/happy-client-3.webp";
 import gradeSvg from "@material-symbols/svg-400/rounded/grade-fill.svg?raw";
-import Icon from "./icon.astro";
+import { Icon } from "./icon";
 
 const HAPPY_CLIENTS = [
   {
@@ -44,7 +44,7 @@ const HAPPY_CLIENTS = [
 
   <p class="flex items-center gap-1">
     <span>4.7</span>
-    <Icon icon={gradeSvg} class="size-5 fill-brand-yellow" />
+    <Icon icon={gradeSvg} className="size-5 fill-brand-yellow" />
   </p>
   <p>8+ Happy Clients</p>
 </section>

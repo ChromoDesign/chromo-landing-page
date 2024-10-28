@@ -3,6 +3,8 @@ import { Button, type ButtonProps } from "../ui/button";
 
 export interface LinkProps extends ButtonProps {
   href: string;
+  target?: React.AnchorHTMLAttributes<HTMLAnchorElement>["target"];
+  rel?: React.AnchorHTMLAttributes<HTMLAnchorElement>["rel"];
   children: React.ReactNode;
 }
 

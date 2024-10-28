@@ -19,12 +19,13 @@ const buttonVariants = cva(
         secondary:
           "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         link: tw`text-brand-gray underline-offset-4 duration-75 hover:text-black hover:underline dark:hover:text-brand-white`,
+        borderless: tw`hover:bg-slate-100`,
       },
       size: {
         default: "h-10 px-4 py-2",
         sm: "h-8 rounded-full px-3 text-xs",
         lg: "h-12 rounded-full px-8 text-base",
-        icon: "h-9 w-9",
+        icon: "h-9 w-9 p-1.5",
       },
     },
     defaultVariants: {

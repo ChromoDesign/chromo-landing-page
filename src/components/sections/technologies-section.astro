@@ -5,7 +5,7 @@ import { TECHNOLOGIES } from "@/constants/technologies";
 import { Link } from "../common/link";
 import GradientSpan from "@/components/common/gradient-span.astro";
 import Section from "@/components/common/section.astro";
-import Icon from "../common/icon.astro";
+import { Icon } from "../common/icon";
 ---
 
 <div class="relative py-16">
@@ -45,7 +45,7 @@ import Icon from "../common/icon.astro";
             className="inline-flex items-center gap-2"
           >
             Book an Appointment
-            <Icon icon={arrowRightAltSvg} class="size-5 fill-current" />
+            <Icon icon={arrowRightAltSvg} className="size-5 fill-current" />
           </Link>
         </div>
       </div>
@@ -68,9 +68,13 @@ import Icon from "../common/icon.astro";
       </ul>
 
       <div class="block lg:hidden">
-        <Link href={SECTIONS.CONTACT.href} size="lg" className="inline-flex items-center gap-2">
+        <Link
+          href={SECTIONS.CONTACT.href}
+          size="lg"
+          className="inline-flex items-center gap-2"
+        >
           Book an Appointment
-          <Icon icon={arrowRightAltSvg} class="size-6 fill-current" />
+          <Icon icon={arrowRightAltSvg} className="size-6 fill-current" />
         </Link>
       </div>
     </div>

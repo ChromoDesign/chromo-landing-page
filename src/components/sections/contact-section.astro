@@ -3,20 +3,18 @@ import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
-import { Button } from "../ui/button";
-import Icon from "../common/icon.astro";
-import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
 import mightyShieldDemo from "@/assets/images/demo/mighty-shield-demo.webp";
 import torqWebDemo from "@/assets/images/demo/torqweb-demo.webp";
 import torqMobileDemo from "@/assets/images/demo/torqmobile-demo.webp";
 import rockUltrasoundDemo from "@/assets/images/demo/rock-ultrasound-demo.webp";
 
 import PhotoPortrait from "../common/photo-portrait.astro";
+import BookingButton from "../buttons/booking-button.astro";
 ---
 
 <div class="relative overflow-hidden">
   <Section id={SECTIONS.CONTACT.id}>
-    <div class="relative space-y-10 py-60">
+    <div class="relative flex flex-col gap-10 py-60">
       <SectionHeader>
         <span slot="title">
           <GradientSpan>Have a project in mind?</GradientSpan>
@@ -26,10 +24,9 @@ import PhotoPortrait from "../common/photo-portrait.astro";
         >
       </SectionHeader>
 
-      <Button className="mx-auto flex items-center gap-2" size="lg">
-        Book a Free Call Now
-        <Icon icon={boltSvg} class="size-5 fill-current" />
-      </Button>
+      <span class="self-center">
+        <BookingButton />
+      </span>
 
       <span
         class="absolute left-[5%] top-[12%] opacity-0 sm:left-[15%] sm:top-[8%]"
@@ -79,7 +76,7 @@ import PhotoPortrait from "../common/photo-portrait.astro";
 
   <div class="absolute inset-0 -z-10 size-full bg-square-pattern dark:invert">
     <div
-      class="bg-radial-light-full dark:bg-radial-dark-full absolute inset-0 size-full dark:invert"
+      class="absolute inset-0 size-full bg-radial-light-full dark:bg-radial-dark-full dark:invert"
     >
     </div>
 

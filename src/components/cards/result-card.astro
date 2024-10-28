@@ -2,7 +2,7 @@
 import type { Result } from "@/constants/results";
 import GlowEffect from "../common/glow-effect.astro";
 import tw from "@/utils/tw";
-import Icon from "../common/icon.astro";
+import { Icon } from "../common/icon";
 
 interface Props {
   result: Result;
@@ -26,7 +26,7 @@ const { result } = Astro.props;
     >
       <Icon
         icon={result.icon}
-        class="size-5 shrink-0 fill-white dark:fill-black"
+        className="size-5 shrink-0 fill-white dark:fill-black"
       />
     </figure>
 

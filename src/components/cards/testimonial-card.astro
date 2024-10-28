@@ -2,7 +2,7 @@
 import formatIconSvg from "@material-symbols/svg-400/rounded/format_quote-fill.svg?raw";
 import type { Testimonial } from "@/constants/testimonials";
 import GlowEffect from "../common/glow-effect.astro";
-import Icon from "../common/icon.astro";
+import { Icon } from "../common/icon";
 
 interface Props {
   testimonal: Testimonial;
@@ -11,7 +11,7 @@ interface Props {
 const { testimonal } = Astro.props;
 ---
 
-<div class="rounded-xl dark:bg-black">
+<div class="h-full rounded-xl *:h-full dark:bg-black">
   <GlowEffect>
     <article class="p-5 text-black dark:text-brand-white">
       <div class="mb-24 space-y-1.5">
@@ -20,7 +20,10 @@ const { testimonal } = Astro.props;
       </div>
 
       <div class="space-y-2.5">
-        <Icon icon={formatIconSvg} class="size-7 rotate-180 fill-brand-gray" />
+        <Icon
+          icon={formatIconSvg}
+          className="size-7 rotate-180 fill-brand-gray"
+        />
 
         <p class="text-sm">{testimonal.description}</p>
       </div>

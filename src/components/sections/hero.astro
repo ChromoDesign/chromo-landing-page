@@ -1,10 +1,7 @@
 ---
-import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
-import { SECTIONS } from "@/constants/sections";
-import { Link } from "../common/link";
+import BookingButton from "../buttons/booking-button.astro";
 import HappyClients from "../common/happy-clients.astro";
 import WorkCarousel from "../common/work-carousel.astro";
-import Icon from "../common/icon.astro";
 ---
 
 <section
@@ -14,7 +11,7 @@ import Icon from "../common/icon.astro";
     class="absolute -top-20 bottom-1/4 left-0 right-0 -z-10 bg-dot-pattern sm:inset-0 sm:bg-[length:110%] dark:opacity-10 dark:contrast-150"
   >
     <div
-      class="sm:bg-radial-light-full dark:sm:bg-radial-dark-full absolute inset-0 size-full bg-radial-light dark:bg-radial-dark"
+      class="absolute inset-0 size-full bg-radial-light sm:bg-radial-light-full dark:bg-radial-dark dark:sm:bg-radial-dark-full"
     >
     </div>
 
@@ -36,13 +33,7 @@ import Icon from "../common/icon.astro";
     </p>
   </div>
 
-  <Link
-    size="lg"
-    href={SECTIONS.CONTACT.href}
-    className="inline-flex items-center gap-2"
-  >
-    Book a Free Call Now <Icon icon={boltSvg} class="size-5 fill-current" />
-  </Link>
+  <BookingButton />
 
   <HappyClients />
 
