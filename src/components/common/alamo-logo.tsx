@@ -1,7 +1,17 @@
-export const AlamoLogo: React.FC = () => {
+import logo from "@/assets/images/brand/alamo-algorithmicslogo-black.svg?raw";
+import { pxToRem } from "@/utils/px-to-rem";
+import { Icon } from "../common/icon";
+
+type AlamoLogoProps = {
+  height?: number;
+};
+
+export const AlamoLogo: React.FC<AlamoLogoProps> = ({ height = 32 }) => {
   return (
-    <div className="relative size-8 rounded-md font-extrabold leading-none text-black shadow-md dark:bg-brand-gray/20 dark:text-white">
-      <span className="absolute inset-0 m-auto size-min">A</span>
-    </div>
+    <Icon
+      icon={logo}
+      className="h-full invert-0 dark:invert"
+      style={{ height: pxToRem(height) }}
+    />
   );
 };

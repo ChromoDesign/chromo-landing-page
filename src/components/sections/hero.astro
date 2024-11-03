@@ -1,41 +1,35 @@
 ---
+import DotPatternBackground from "../backgrounds/dot-pattern-background.astro";
+import LinearRadialFadeBackground from "../backgrounds/linear-radial-fade-background.astro";
 import BookingButton from "../buttons/booking-button.astro";
 import HappyClients from "../common/happy-clients.astro";
 import WorkCarousel from "../common/work-carousel.astro";
 ---
 
-<section
-  class="container relative flex flex-col items-center justify-center gap-20 overflow-hidden pt-10 text-center lg:py-20"
->
-  <div
-    class="absolute -top-20 bottom-1/4 left-0 right-0 -z-10 bg-dot-pattern sm:inset-0 sm:bg-[length:110%] dark:opacity-10 dark:contrast-150"
+<div class="relative">
+  <DotPatternBackground>
+    <LinearRadialFadeBackground />
+  </DotPatternBackground>
+
+  <section
+    class="container flex flex-col items-center justify-center gap-20 overflow-hidden pt-10 text-center lg:py-20"
   >
-    <div
-      class="absolute inset-0 size-full bg-radial-light sm:bg-radial-light-full dark:bg-radial-dark dark:sm:bg-radial-dark-full"
-    >
+    <div class="flex flex-col items-center justify-center gap-5">
+      <p class="font-jetbrains-mono text-brand-gray">Development & Design</p>
+
+      <h1>From innovative designs to robust development</h1>
+
+      <p class="max-w-[30ch] text-brand-gray sm:max-w-[45ch]">
+        We turn your ideas into awesome websites and apps. Simple, clean, and <span
+          class="text-black dark:text-white">built to make an impact.</span
+        >
+      </p>
     </div>
 
-    <div
-      class="absolute inset-0 size-full sm:bg-linear-light dark:sm:bg-linear-dark"
-    >
-    </div>
-  </div>
+    <BookingButton />
 
-  <div class="flex flex-col items-center justify-center gap-5">
-    <p class="font-jetbrains-mono text-brand-gray">Development & Design</p>
+    <HappyClients />
 
-    <h1>From innovative designs to robust development</h1>
-
-    <p class="max-w-[30ch] text-brand-gray sm:max-w-[45ch]">
-      We turn your ideas into awesome websites and apps. Simple, clean, and <span
-        class="text-black dark:text-white">built to make an impact.</span
-      >
-    </p>
-  </div>
-
-  <BookingButton />
-
-  <HappyClients />
-
-  <WorkCarousel />
-</section>
+    <WorkCarousel />
+  </section>
+</div>

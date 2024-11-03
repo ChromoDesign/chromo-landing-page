@@ -10,18 +10,26 @@ import rockUltrasoundDemo from "@/assets/images/demo/rock-ultrasound-demo.webp";
 
 import PhotoPortrait from "../common/photo-portrait.astro";
 import BookingButton from "../buttons/booking-button.astro";
+import SquarePatternBackground from "../backgrounds/square-pattern-background.astro";
+import LinearRadialFadeBackground from "../backgrounds/linear-radial-fade-background.astro";
 ---
 
-<div class="relative overflow-hidden">
+<div class="relative">
+  <SquarePatternBackground>
+    <div class="*:dark:invert">
+      <LinearRadialFadeBackground />
+    </div>
+  </SquarePatternBackground>
+
   <Section id={SECTIONS.CONTACT.id}>
     <div class="relative flex flex-col gap-10 py-60">
       <SectionHeader>
         <span slot="title">
           <GradientSpan>Have a project in mind?</GradientSpan>
         </span>
-        <span slot="subtitle-center" class="text-black dark:text-white"
-          >Connect with us today and let’s make it happen!</span
-        >
+        <span slot="subtitle-center" class="text-black dark:text-white">
+          Connect with us today and let's make it happen!
+        </span>
       </SectionHeader>
 
       <span class="self-center">
@@ -73,18 +81,6 @@ import BookingButton from "../buttons/booking-button.astro";
       </span>
     </div>
   </Section>
-
-  <div class="absolute inset-0 -z-10 size-full bg-square-pattern dark:invert">
-    <div
-      class="absolute inset-0 size-full bg-radial-light-full dark:bg-radial-dark-full dark:invert"
-    >
-    </div>
-
-    <div
-      class="absolute inset-0 size-full bg-linear-light dark:bg-linear-dark dark:invert"
-    >
-    </div>
-  </div>
 </div>
 
 <script>

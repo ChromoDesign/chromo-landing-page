@@ -8,8 +8,22 @@ const addAttributesToInnerHTMLString = (
   innerHTML: string,
   attributes: React.SVGAttributes<SVGSVGElement> = {},
 ) => {
-  const attributesString = Object.entries(attributes)
+  const { style, ...otherAttributes } = attributes;
+  const styleString = style
+    ? `style="${Object.entries(style)
+        .map(([key, value]) => {
+          const cssKey = key.replace(
+            /[A-Z]/g,
+            (char) => `-${char.toLowerCase()}`,
+          );
+          return `${cssKey}:${value}`;
+        })
+        .join("; ")}"`
+    : "";
+
+  const attributesString = Object.entries(otherAttributes)
     .map(([key, value]) => `${key}="${value}"`)
+    .concat(styleString ? [styleString] : [])
     .join(" ");
 
   const newInnerHTML = innerHTML
