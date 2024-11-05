@@ -5,10 +5,10 @@ type HamburgerButtonProps = {
   isActive: boolean;
 };
 
-export const HamburgerButton = ({
+export const HamburgerButton: React.FC<HamburgerButtonProps> = ({
   isActive,
   toggleSidebar,
-}: HamburgerButtonProps) => {
+}) => {
   const rotateStyles = isActive ? "rotate-45 translate-y-1.5" : "";
   const invertedRotateStyles = isActive
     ? "rotate-[-45deg] -translate-y-1.5"

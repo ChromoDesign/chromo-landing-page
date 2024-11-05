@@ -19,7 +19,7 @@ const buttonVariants = cva(
         secondary:
           "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         link: tw`text-brand-gray underline-offset-4 duration-75 hover:text-black hover:underline dark:hover:text-brand-white`,
-        borderless: tw`hover:bg-slate-100`,
+        borderless: tw`hover:bg-slate-100 dark:hover:bg-brand-white/15`,
       },
       size: {
         default: "h-10 px-4 py-2",

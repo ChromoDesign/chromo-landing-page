@@ -17,6 +17,7 @@ export const Header: React.FC = () => {
 
   const toggleMobileNav = (hardValue?: boolean) => {
     const newValue = hardValue ?? !isMobileNavActive;
+    console.log(newValue);
     setIsMobileNavActive(newValue);
     document.body.classList.toggle("overflow-hidden", newValue);
   };
@@ -71,24 +72,25 @@ export const Header: React.FC = () => {
           <span className="block lg:hidden">
             <HamburgerButton
               isActive={isMobileNavActive}
-              toggleSidebar={toggleMobileNav}
+              toggleSidebar={() => toggleMobileNav()}
             />
           </span>
 
           <div
-            className={`absolute left-0 top-full -z-10 flex w-full flex-col gap-5 border-b-2 border-dashed border-brand-gray/35 bg-white transition duration-500 lg:hidden dark:bg-background-dark ${isMobileNavActive ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
+            className={`absolute left-0 top-full -z-10 w-full border-b-2 border-dashed border-brand-gray/35 bg-white pb-5 transition duration-500 lg:hidden dark:bg-background-dark ${isMobileNavActive ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
           >
-            <LinearNav
-              orientation="vertical"
-              onClick={() => toggleMobileNav()}
-            />
-            <Link
-              className="mx-4 mb-5"
-              href={SECTIONS.CONTACT.href}
-              onClick={() => toggleMobileNav()}
-            >
-              Let's chat
-            </Link>
+            <div className="container mx-auto flex flex-col gap-5 px-5 sm:px-0">
+              <LinearNav
+                orientation="vertical"
+                onClick={() => toggleMobileNav()}
+              />
+              <Link
+                href={SECTIONS.CONTACT.href}
+                onClick={() => toggleMobileNav()}
+              >
+                Let's chat
+              </Link>
+            </div>
           </div>
         </div>
       </header>
