@@ -27,28 +27,28 @@ type ShowcaseProject = {
 export const SHOWCASE_PROJECTS = [
   {
     title: "Torq App",
-    href: "#",
+    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-1952&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A1952&show-proto-sidebar=1",
     logoSrc: torqLogo.src,
     colorfulLogoSrc: torqColorfulLogo.src,
     demoSrc: torqDemo.src,
   },
   {
     title: "Mighty Shield",
-    href: "#",
+    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-3179&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3179&show-proto-sidebar=1",
     logoSrc: mightyShieldLogo.src,
     colorfulLogoSrc: mightyShieldColorfulLogo.src,
     demoSrc: mightyShieldDemo.src,
   },
   {
     title: "Rock UltraSound",
-    href: "#",
+    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-146&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A146&show-proto-sidebar=1",
     logoSrc: rockUltraSoundLogo.src,
     colorfulLogoSrc: rockUltraSoundColorfulLogo.src,
     demoSrc: rockUltrasoundDemo.src,
   },
   {
     title: "Villalobos Tile",
-    href: "#",
+    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-1753&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A1753&show-proto-sidebar=1",
     logoSrc: villalobosTileLogo.src,
     colorfulLogoSrc: villalobosTileColorfulLogo.src,
     demoSrc: villalobosTileDemo.src,
