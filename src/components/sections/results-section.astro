@@ -7,7 +7,7 @@ import Section from "@/components/common/section.astro";
 import ResultCard from "../cards/result-card.astro";
 ---
 
-<Section id={SECTIONS.OUR_SERVICES.id}>
+<Section id={SECTIONS.OUR_AGENCY.id}>
   <SectionHeader subtitle="From design to development all what you need.">
     <span slot="title">
       Solutions that deliver <GradientSpan color="cyan">results.</GradientSpan>
@@ -15,7 +15,7 @@ import ResultCard from "../cards/result-card.astro";
   </SectionHeader>
 
   <section
-    class="grid-cols-list-md lg:grid-cols-list-lg grid grow auto-rows-fr gap-10"
+    class="grid grow auto-rows-fr grid-cols-list-md gap-10 lg:grid-cols-list-lg"
   >
     {RESULTS.map((result) => <ResultCard result={result} />)}
   </section>

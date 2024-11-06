@@ -1,5 +1,6 @@
 import codeBlockSvg from "@material-symbols/svg-400/rounded/code_blocks-fill.svg?raw";
 import designServicesSvg from "@material-symbols/svg-400/rounded/design_services-fill.svg?raw";
+import dynamicFormSvg from "@material-symbols/svg-400/rounded/dynamic_form-fill.svg?raw";
 import homeSvg from "@material-symbols/svg-400/rounded/home-fill.svg?raw";
 import photoAuthMerge from "@material-symbols/svg-400/rounded/photo_auto_merge-fill.svg?raw";
 import playingCardsSvg from "@material-symbols/svg-400/rounded/playing_cards-fill.svg?raw";
@@ -18,10 +19,10 @@ export const SECTIONS = {
     href: "#home",
     svg: homeSvg,
   },
-  OUR_SERVICES: {
-    id: "our-services",
-    title: "Our Services",
-    href: "#our-services",
+  OUR_AGENCY: {
+    id: "our-agency",
+    title: "Our Agency",
+    href: "#our-agency",
     svg: designServicesSvg,
   },
   PROJECTS: {
@@ -36,11 +37,17 @@ export const SECTIONS = {
     href: "#testimonials",
     svg: playingCardsSvg,
   },
-  OUR_TEAM: {
-    id: "our-team",
-    title: "Our Team",
-    href: "#our-team",
+  OUR_SERVICES: {
+    id: "our-services",
+    title: "Our Services",
+    href: "#our-services",
     svg: photoAuthMerge,
+  },
+  FAQ: {
+    id: "faq",
+    title: "FAQ",
+    href: "#faq",
+    svg: dynamicFormSvg,
   },
   CONTACT: {
     id: "contact",
@@ -52,9 +59,9 @@ export const SECTIONS = {
 
 export const SECTIONS_LIST = [
   SECTIONS.HOME,
-  SECTIONS.OUR_SERVICES,
+  SECTIONS.OUR_AGENCY,
   SECTIONS.PROJECTS,
+  SECTIONS.OUR_SERVICES,
   SECTIONS.TESTIMONIALS,
-  SECTIONS.OUR_TEAM,
   SECTIONS.CONTACT,
 ] as const satisfies Section[];

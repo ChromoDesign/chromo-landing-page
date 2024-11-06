@@ -31,7 +31,9 @@ const { color = "white", radius = "xl" } = Astro.props;
 <div class:list={["glow-container", color, radius]}>
   <div class="glows"></div>
 
-  <slot />
+  <div class="h-full *:h-full">
+    <slot />
+  </div>
 </div>
 
 <!-- CSS -->

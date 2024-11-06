@@ -61,15 +61,15 @@ export const Header: React.FC = () => {
         <div className="container mx-auto flex items-center justify-between gap-5">
           <AlamoLogo />
 
-          <div className="hidden grow lg:block">
+          <div className="hidden grow xl:block">
             <LinearNav />
           </div>
 
-          <span className="hidden lg:block">
+          <span className="hidden xl:block">
             <Link href={SECTIONS.CONTACT.href}>Let's chat</Link>
           </span>
 
-          <span className="block lg:hidden">
+          <span className="block xl:hidden">
             <HamburgerButton
               isActive={isMobileNavActive}
               toggleSidebar={() => toggleMobileNav()}
@@ -77,7 +77,7 @@ export const Header: React.FC = () => {
           </span>
 
           <div
-            className={`absolute left-0 top-full -z-10 w-full border-b-2 border-dashed border-brand-gray/35 bg-white pb-5 transition duration-500 lg:hidden dark:bg-background-dark ${isMobileNavActive ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
+            className={`absolute left-0 top-full -z-10 w-full border-b-2 border-dashed border-brand-gray/35 bg-white pb-5 transition duration-500 xl:hidden dark:bg-background-dark ${isMobileNavActive ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"}`}
           >
             <div className="container mx-auto flex flex-col gap-5 px-5 sm:px-0">
               <LinearNav

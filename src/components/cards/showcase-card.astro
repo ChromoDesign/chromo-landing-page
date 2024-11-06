@@ -1,60 +1,83 @@
 ---
-import arrowOutwardSvg from "@material-symbols/svg-400/rounded/arrow_outward.svg?raw";
+import languageSvg from "@material-symbols/svg-700/rounded/language.svg?raw";
+import figmaSvg from "@/assets/icons/figma.svg?raw";
 import GlowEffect from "../common/glow-effect.astro";
 import { Icon } from "../common/icon";
 
 interface Props {
   title: string;
-  href: string;
+  href?: string;
+  figmaHref?: string;
   logoSrc: string;
   colorfulLogoSrc: string;
   demoSrc: string;
 }
 
-const { logoSrc, demoSrc, colorfulLogoSrc, title, href } = Astro.props;
+const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
+  Astro.props;
 ---
 
-<a href={href} class="group inline-block">
-  <section>
-    <div class="relative">
-      <GlowEffect radius="xll">
-        <div
-          class="mx-auto grid aspect-square w-72 place-content-center *:absolute *:inset-0 *:m-auto *:object-cover"
-        >
-          <img
-            src={logoSrc}
-            alt={`${title} Logo`}
-            title={title}
-            loading="lazy"
-            class="invert transition-opacity duration-200 group-hover:opacity-0 dark:invert-0"
-          />
-          <img
-            src={demoSrc}
-            alt={`${title} Demo`}
-            loading="lazy"
-            class="size-full rounded-2xl bg-white p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
-          />
-          <img
-            src={colorfulLogoSrc}
-            alt={`${title} Logo`}
-            loading="lazy"
-            class="scale-[80%] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
-          />
-        </div>
-      </GlowEffect>
-    </div>
-
-    <div class="mt-3.5 flex items-center justify-between gap-2">
-      <h3 class="text-base text-black dark:text-white">{title}</h3>
-      <p
-        class="group flex items-center gap-1 font-jetbrains-mono text-brand-gray transition-colors duration-200 group-hover:text-black dark:group-hover:text-white"
+<section class="group inline-block">
+  <div class="relative">
+    <GlowEffect radius="xll">
+      <div
+        class="mx-auto grid aspect-square w-72 place-content-center *:absolute *:inset-0 *:m-auto *:object-cover"
       >
-        <span>View project</span>
-        <Icon
-          icon={arrowOutwardSvg}
-          className="relative top-px size-5 fill-current"
+        <img
+          src={logoSrc}
+          alt={`${title} Logo`}
+          title={title}
+          loading="lazy"
+          class="invert transition-opacity duration-200 group-hover:opacity-0 dark:invert-0"
         />
-      </p>
-    </div>
-  </section>
-</a>
+        <img
+          src={demoSrc}
+          alt={`${title} Demo`}
+          loading="lazy"
+          class="size-full rounded-2xl bg-white p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
+        />
+        <img
+          src={colorfulLogoSrc}
+          alt={`${title} Logo`}
+          loading="lazy"
+          class="scale-[80%] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+        />
+      </div>
+    </GlowEffect>
+  </div>
+
+  <div class="mt-3.5 flex items-center justify-between gap-2">
+    <h3 class="text-base text-black dark:text-white">{title}</h3>
+    <p
+      class="group-hover group-hover:text flex items-center gap-3 text-brand-gray"
+    >
+      {
+        href && (
+          <a
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block rounded-md bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:hover:text-white"
+          >
+            <span class="sr-only">View project</span>
+            <Icon icon={languageSvg} className="size-5 fill-current" />
+          </a>
+        )
+      }
+      {
+        figmaHref && (
+          <a
+            href={figmaHref}
+            target="_blank"
+            title="View in Figma"
+            rel="noopener noreferrer"
+            class="inline-block rounded bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:hover:text-white"
+          >
+            <span class="sr-only">View in Figma</span>
+            <Icon icon={figmaSvg} className="text-inherit size-5" />
+          </a>
+        )
+      }
+    </p>
+  </div>
+</section>

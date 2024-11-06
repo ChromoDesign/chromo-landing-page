@@ -1,4 +1,5 @@
 ---
+import kidStarSvg from "@material-symbols/svg-400/rounded/kid_star-fill.svg?raw";
 import formatIconSvg from "@material-symbols/svg-400/rounded/format_quote-fill.svg?raw";
 import type { Testimonial } from "@/constants/testimonials";
 import GlowEffect from "../common/glow-effect.astro";
@@ -9,13 +10,26 @@ interface Props {
 }
 
 const { testimonal } = Astro.props;
+
+const stars = [...Array(5)].map((_, index) => index + 1);
 ---
 
 <div class="h-full rounded-xl *:h-full dark:bg-black">
   <GlowEffect>
     <article class="p-5 text-black dark:text-brand-white">
       <div class="mb-24 space-y-1.5">
-        <h3 class="text-base">{testimonal.name}</h3>
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="text-base">{testimonal.name}</h3>
+          <ul class="flex gap-0.5">
+            {
+              stars.map(() => (
+                <li>
+                  <Icon icon={kidStarSvg} className="size-5 fill-amber-400" />
+                </li>
+              ))
+            }
+          </ul>
+        </div>
         <p class="text-sm text-brand-gray">{testimonal.website}</p>
       </div>
 

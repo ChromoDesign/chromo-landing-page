@@ -18,46 +18,55 @@ import villalobosTileDemo from "@/assets/images/demo/villalobos-tile-demo-2.webp
 
 type ShowcaseProject = {
   title: string;
-  href: string;
   logoSrc: string;
   colorfulLogoSrc: string;
   demoSrc: string;
+  href?: string;
+  figmaHref?: string;
 };
 
-export const SHOWCASE_PROJECTS = [
+export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   {
     title: "Torq App",
-    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-1952&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A1952&show-proto-sidebar=1",
+    href: "https://torqapp.io",
+    figmaHref:
+      "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-1952&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A1952&show-proto-sidebar=1",
     logoSrc: torqLogo.src,
     colorfulLogoSrc: torqColorfulLogo.src,
     demoSrc: torqDemo.src,
   },
   {
     title: "Mighty Shield",
-    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-3179&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3179&show-proto-sidebar=1",
+    href: "https://mightyshieldinsurance.com",
+    figmaHref:
+      "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=1-3179&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1%3A3179&show-proto-sidebar=1",
     logoSrc: mightyShieldLogo.src,
     colorfulLogoSrc: mightyShieldColorfulLogo.src,
     demoSrc: mightyShieldDemo.src,
   },
   {
     title: "Rock UltraSound",
-    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-146&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A146&show-proto-sidebar=1",
+    href: "https://rockultrasound.com",
+    figmaHref:
+      "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-146&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A146&show-proto-sidebar=1",
     logoSrc: rockUltraSoundLogo.src,
     colorfulLogoSrc: rockUltraSoundColorfulLogo.src,
     demoSrc: rockUltrasoundDemo.src,
   },
   {
     title: "Villalobos Tile",
-    href: "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-1753&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A1753&show-proto-sidebar=1",
+    href: "https://villalobostile.com",
+    figmaHref:
+      "https://www.figma.com/proto/UvugXZsqpdArzWS2R5m3tI/Portfolio-showcase?page-id=&node-id=3-1753&node-type=canvas&viewport=525%2C200%2C0.11&t=cUiTv1Lt5GeL84ke-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3%3A1753&show-proto-sidebar=1",
     logoSrc: villalobosTileLogo.src,
     colorfulLogoSrc: villalobosTileColorfulLogo.src,
     demoSrc: villalobosTileDemo.src,
   },
   {
     title: "Toro",
-    href: "#",
+    figmaHref: "#",
     logoSrc: toroLogo.src,
     colorfulLogoSrc: toroColorfulLogo.src,
     demoSrc: toroDemo.src,
   },
-] as const satisfies ShowcaseProject[];
+];
