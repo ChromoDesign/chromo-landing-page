@@ -34,13 +34,13 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
           src={demoSrc}
           alt={`${title} Demo`}
           loading="lazy"
-          class="size-full rounded-2xl bg-white p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
+          class="size-full rounded-2xl bg-white/50 p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
         />
         <img
           src={colorfulLogoSrc}
           alt={`${title} Logo`}
           loading="lazy"
-          class="scale-[80%] opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          class="scale-110 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
         />
       </div>
     </GlowEffect>
@@ -57,7 +57,7 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
             href={href}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-block rounded-md bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:hover:text-white"
+            class="inline-block rounded-lg bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:bg-transparent dark:text-background-white dark:ring-1 dark:ring-current dark:hover:bg-white/20 dark:hover:text-white"
           >
             <span class="sr-only">View project</span>
             <Icon icon={languageSvg} className="size-5 fill-current" />
@@ -71,7 +71,7 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
             target="_blank"
             title="View in Figma"
             rel="noopener noreferrer"
-            class="inline-block rounded bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:hover:text-white"
+            class="inline-block rounded-lg bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:bg-transparent dark:text-background-white dark:ring-1 dark:ring-current dark:hover:bg-white/20 dark:hover:text-white"
           >
             <span class="sr-only">View in Figma</span>
             <Icon icon={figmaSvg} className="text-inherit size-5" />
