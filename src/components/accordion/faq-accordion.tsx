@@ -13,7 +13,17 @@ export const FaqAccordion = () => {
         {FAQ_ITEMS.map(({ id, question, answer }) => (
           <AccordionItem value={id} key={id}>
             <AccordionTrigger>{question}</AccordionTrigger>
-            <AccordionContent>{answer}</AccordionContent>
+            <AccordionContent>
+              {Array.isArray(answer) ? (
+                answer.map((ans, index) => (
+                  <p key={index} className="pb-5">
+                    {ans}
+                  </p>
+                ))
+              ) : (
+                <p className="pb-5">{answer}</p>
+              )}
+            </AccordionContent>
           </AccordionItem>
         ))}
       </Accordion>

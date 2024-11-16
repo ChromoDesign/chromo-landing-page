@@ -1,7 +1,7 @@
 export type FaqItems = {
   id: string;
   question: string;
-  answer: JSX.Element | string;
+  answer: string | string[];
 };
 
 export const FAQ_ITEMS: FaqItems[] = [
@@ -15,19 +15,11 @@ export const FAQ_ITEMS: FaqItems[] = [
     id: "item-2",
     question:
       "What tools and software do you use for your design and development work?",
-    answer: `
-            For design, we primarily use Figma for UI/UX design and prototyping,
-            as it allows for efficient collaboration and high-fidelity mockups.
-            For interactive prototyping, we leverage Framer to create dynamic
-            experiences.
-            On the development side, we use React for building front-end
-            interfaces, Node.js and NestJS for server-side development, and
-            Flutter for cross-platform mobile applications. We also work with
-            Laravel for back-end web development, creating robust and scalable
-            solutions.
-            By using this combination of tools, we ensure seamless integration
-            between design and development, delivering both visually appealing and
-            technically sound projects.`,
+    answer: [
+      "For design, we primarily use Figma for UI/UX design and prototyping, as it allows for efficient collaboration and high-fidelity mockups. For interactive prototyping, we leverage Framer to create dynamic experiences.",
+      "On the development side, we use React for building front-end interfaces, Node.js and NestJS for server-side development, and Flutter for cross-platform mobile applications. We also work with Laravel for back-end web development, creating robust and scalable solutions.",
+      "By using this combination of tools, we ensure seamless integration between design and development, delivering both visually appealing and technically sound projects.",
+    ],
   },
   {
     id: "item-3",
