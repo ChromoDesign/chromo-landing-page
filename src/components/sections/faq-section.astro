@@ -1,0 +1,22 @@
+---
+import { SECTIONS } from "@/constants/sections";
+import GradientSpan from "../common/gradient-span.astro";
+import SectionHeader from "../common/section-header.astro";
+import Section from "../common/section.astro";
+import { FaqAccordion } from "../accordion/faq-accordion";
+import { FaqLogo } from "../common/faq-logo";
+---
+
+<Section id={SECTIONS.FAQ.id}>
+  <div class="flex justify-center">
+    <FaqLogo />
+  </div>
+  <SectionHeader>
+    <span slot="title">
+      Have questions? <GradientSpan> Answers.</GradientSpan>
+    </span>
+  </SectionHeader>
+  <div>
+    <FaqAccordion client:load />
+  </div>
+</Section>
