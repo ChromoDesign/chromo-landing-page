@@ -19,7 +19,7 @@ export const TESTIMONIALS = [
   },
   {
     name: "Hank Rearden",
-    website: "www.dependsontheweather.org",
+    website: "dependsontheweather.org",
     description:
       "Alamo Algorithmics has been incredible to work with! These guys helped Depends on the Weather get across the finish line to have a successful app launch. In particular, they were able to solve long-standing issues with our advertisements that stumped other developers. Their attention to detail, problem-solving skills, and communication are world class, leading to innovative solutions and happy Depends on the Weather app users!",
   },

@@ -30,7 +30,14 @@ const stars = [...Array(5)].map((_, index) => index + 1);
             }
           </ul>
         </div>
-        <p class="text-sm text-brand-gray">{testimonal.website}</p>
+        <a
+          class="text-sm text-brand-gray transition-colors duration-200 hover:text-black dark:hover:text-white"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={"https://" + testimonal.website}
+        >
+          {testimonal.website}
+        </a>
       </div>
 
       <div class="space-y-2.5">
