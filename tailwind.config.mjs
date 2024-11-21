@@ -24,10 +24,8 @@ export default {
         },
         brand: {
           black: "#1A1A1A",
-          "carbon-black": "#101010",
           white: "#ECEDEE",
           gray: "#7C7C7C",
-          "ash-gray": "#858585",
           yellow: "#EBB700",
           "light-yellow": "#EBB700",
           red: "#E3342D",

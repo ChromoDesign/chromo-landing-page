@@ -4,12 +4,12 @@ import GradientSpan from "../common/gradient-span.astro";
 import SectionHeader from "../common/section-header.astro";
 import Section from "../common/section.astro";
 import { FaqAccordion } from "../accordion/faq-accordion";
-import FaqChip from "../common/faq-chip.astro";
+import Chip from "../common/chip.astro";
 ---
 
 <Section id={SECTIONS.FAQ.id}>
   <div class="flex justify-center">
-    <FaqChip label={"FAQs"} />
+    <Chip label={"FAQs"} height={32} />
   </div>
   <SectionHeader>
     <span slot="title">
