@@ -9,7 +9,7 @@ export const FAQ_ITEMS: FaqItems[] = [
     id: "item-1",
     question:
       "How do you ensure that your designs meet user needs and business goals?",
-    answer: `we ensure designs meet user needs and business goals through a user-centered approach, combining research, prototyping, and collaboration. By aligning user insights with business objectives, I create functional, visually appealing designs that drive results.`,
+    answer: `We ensure designs meet user needs and business goals through a user-centered approach, combining research, prototyping, and collaboration. By aligning user insights with business objectives, I create functional, visually appealing designs that drive results.`,
   },
   {
     id: "item-2",
