@@ -54,21 +54,19 @@ const array = Array.from({ length: 2 }).fill(0);
     z-index: 1;
   }
 
-  @media (prefers-color-scheme: dark) {
-    section::before {
-      background: linear-gradient(
-        to left,
-        rgba(255, 255, 255, 0),
-        theme(colors.background.dark)
-      );
-    }
+  :root.dark section::before {
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.dark)
+    );
+  }
 
-    section::after {
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0),
-        theme(colors.background.dark)
-      );
-    }
+  :root.dark section::after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.dark)
+    );
   }
 </style>
