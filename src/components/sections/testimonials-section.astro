@@ -5,12 +5,14 @@ import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 import TestimonialCard from "@/components/cards/testimonial-card.astro";
 import { TESTIMONIALS } from "@/constants/testimonials";
+import Chip from "../common/chip.astro";
 ---
 
 <Section id={SECTIONS.TESTIMONIALS.id}>
+  <Chip label="Testimonials" />
   <SectionHeader subtitle="See what our satisfied clients have to say">
     <span slot="title">
-      Client <GradientSpan color="orange">Stories</GradientSpan>
+      <GradientSpan>Client Stories</GradientSpan>
     </span>
   </SectionHeader>
 
