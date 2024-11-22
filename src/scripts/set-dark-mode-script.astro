@@ -1,6 +1,24 @@
 <script is:inline>
   const savedTheme = localStorage.getItem("theme");
-  const isDarkMode = savedTheme === "dark";
 
-  document.documentElement.classList.toggle("dark", isDarkMode);
+  if (savedTheme) {
+    const isDarkMode = savedTheme === "dark";
+    document.documentElement.classList.toggle("dark", isDarkMode);
+  } else {
+    const colorSchemeMediaQuery = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    );
+
+    document.documentElement.classList.toggle(
+      "dark",
+      colorSchemeMediaQuery.matches,
+    );
+
+    colorSchemeMediaQuery.addEventListener("change", (event) => {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme) return;
+      const isDarkMode = event.matches;
+      document.documentElement.classList.toggle("dark", isDarkMode);
+    });
+  }
 </script>

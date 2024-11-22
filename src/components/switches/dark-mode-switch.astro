@@ -41,8 +41,7 @@ import { Icon } from "../common/icon";
     "theme-toggle",
   ) as HTMLInputElement;
 
-  const savedTheme = localStorage.getItem("theme");
-  const isDarkMode = savedTheme === "dark";
+  const isDarkMode = htmlElement.classList.contains("dark");
   toggleSwitch.checked = isDarkMode;
 
   const activeIconClasses = tw`opacity-100`.split(" ");
@@ -74,10 +73,19 @@ import { Icon } from "../common/icon";
 
   toggleButtonStyles(isDarkMode);
 
-  toggleSwitch.addEventListener("change", () => {
-    const isDarkMode = toggleSwitch.checked;
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === "attributes") {
+        const isDarkMode = htmlElement.classList.contains("dark");
+        toggleButtonStyles(isDarkMode);
+      }
+    });
+  });
 
-    toggleButtonStyles(isDarkMode);
+  observer.observe(htmlElement, { attributes: true });
+
+  toggleSwitch.addEventListener("change", (event) => {
+    const isDarkMode = (event.target as HTMLInputElement).checked;
 
     if (isDarkMode) {
       localStorage.setItem("theme", "dark");
