@@ -23,6 +23,7 @@ export default {
           dark: background.dark,
         },
         brand: {
+          black: "#1A1A1A",
           white: "#ECEDEE",
           gray: "#7C7C7C",
           yellow: "#EBB700",
@@ -50,6 +51,7 @@ export default {
       boxShadow: {
         "solution-card": "12px 0px 65px -2px rgba(0, 0, 0, 0.1)",
         "inner-solution-card": "10px 0px 30px 2px rgba(0, 0, 0, 0.1)",
+        soft: "0 0 10px rgba(100, 100, 100, 0.1)",
       },
       transitionDelay: {
         400: "400ms",
@@ -60,12 +62,34 @@ export default {
       },
       keyframes: {
         carousel: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-100%)" },
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(-100%)",
+          },
+        },
+        "accordion-down": {
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
+        },
+        "accordion-up": {
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
       },
       animation: {
         carousel: "carousel 25s linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
       fontFamily: {
         "plus-jakarta-sans": ["Plus Jakarta Sans", "Geneva", "sans-serif"],

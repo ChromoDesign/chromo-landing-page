@@ -12,14 +12,12 @@ import toroColorfulLogo from "@/assets/images/work-logos/color/toro-imagotype-co
 import torqColorfulLogo from "@/assets/images/work-logos/color/torq-imagotype-colorful.webp";
 import villalobosTileColorfulLogo from "@/assets/images/work-logos/color/villalobos-tile-imagotype-colorful.webp";
 
+import dependsOnWeatherDemo from "@/assets/images/demo/depends-on-the-weather-demo.webp";
 import mightyShieldDemo from "@/assets/images/demo/mighty-shield-demo-2.webp";
 import rockUltrasoundDemo from "@/assets/images/demo/rock-ultrasound-demo-2.webp";
 import toroDemo from "@/assets/images/demo/toro-demo-2.webp";
 import torqDemo from "@/assets/images/demo/torqmobile-demo-2.webp";
-import {
-  default as dependsOnWeatherDemo,
-  default as villalobosTileDemo,
-} from "@/assets/images/demo/villalobos-tile-demo-2.webp";
+import villalobosTileDemo from "@/assets/images/demo/villalobos-tile-demo-2.webp";
 
 type ShowcaseProject = {
   title: string;
