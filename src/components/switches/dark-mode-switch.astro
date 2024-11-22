@@ -1,0 +1,90 @@
+---
+import MoonIcon from "@/assets/icons/dark-mode.svg?raw";
+import SunIcon from "@/assets/icons/light-mode.svg?raw";
+import { Icon } from "../common/icon";
+---
+
+<label class="relative inline-block cursor-pointer">
+  <input type="checkbox" id="theme-toggle" class="sr-only" />
+  <span
+    class="relative block h-10 w-20 rounded-full border border-neutral-700 bg-transparent"
+  >
+    <span
+      id="sun-icon"
+      class="absolute left-2 top-1/2 -translate-y-1/2 transition-opacity duration-300"
+    >
+      <Icon icon={SunIcon} className="h-6 w-6" />
+    </span>
+
+    <span
+      id="moon-icon"
+      class="absolute right-1.5 top-1/2 -translate-y-1/2 transition-opacity duration-300"
+    >
+      <Icon icon={MoonIcon} className="h-6 w-6" />
+    </span>
+
+    <span
+      id="toggle-circle"
+      class="absolute top-0 block size-10 rounded-full border border-neutral-700 transition-transform duration-300"
+    ></span>
+  </span>
+</label>
+
+<script>
+  import tw from "@/utils/tw";
+
+  const htmlElement = document.documentElement;
+  const sunIcon = document.getElementById("sun-icon")!;
+  const moonIcon = document.getElementById("moon-icon")!;
+  const toggleCircle = document.getElementById("toggle-circle")!;
+  const toggleSwitch = document.getElementById(
+    "theme-toggle",
+  ) as HTMLInputElement;
+
+  const savedTheme = localStorage.getItem("theme");
+  const isDarkMode = savedTheme === "dark";
+  toggleSwitch.checked = isDarkMode;
+
+  const activeIconClasses = tw`opacity-100`.split(" ");
+  const inactiveIconClasses = tw`opacity-20`.split(" ");
+  const activeToggleClasses = tw`translate-x-10`.split(" ");
+  const inactiveToggleClasses = tw`translate-x-0`.split(" ");
+
+  function toggleButtonStyles(isDarkMode: boolean) {
+    if (isDarkMode) {
+      sunIcon.classList.add(...inactiveIconClasses);
+      sunIcon.classList.remove(...activeIconClasses);
+
+      moonIcon.classList.add(...activeIconClasses);
+      moonIcon.classList.remove(...inactiveIconClasses);
+
+      toggleCircle.classList.add(...activeToggleClasses);
+      toggleCircle.classList.remove(...inactiveToggleClasses);
+    } else {
+      sunIcon.classList.add(...activeIconClasses);
+      sunIcon.classList.remove(...inactiveIconClasses);
+
+      moonIcon.classList.add(...inactiveIconClasses);
+      moonIcon.classList.remove(...activeIconClasses);
+
+      toggleCircle.classList.add(...inactiveToggleClasses);
+      toggleCircle.classList.remove(...activeToggleClasses);
+    }
+  }
+
+  toggleButtonStyles(isDarkMode);
+
+  toggleSwitch.addEventListener("change", () => {
+    const isDarkMode = toggleSwitch.checked;
+
+    toggleButtonStyles(isDarkMode);
+
+    if (isDarkMode) {
+      localStorage.setItem("theme", "dark");
+      htmlElement.classList.add("dark");
+    } else {
+      localStorage.setItem("theme", "light");
+      htmlElement.classList.remove("dark");
+    }
+  });
+</script>

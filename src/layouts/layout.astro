@@ -9,6 +9,7 @@ import { Header } from "@/components/sections/header";
 import { SECTIONS } from "@/constants/sections";
 import Footer from "@/components/sections/footer.astro";
 import MetaIcons from "@/components/meta/meta-icons.astro";
+import SetDarkModeScript from "@/scripts/set-dark-mode-script.astro";
 
 interface Props {
   title: string;
@@ -25,8 +26,10 @@ const { title, description } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Astro description" />
     <title>{title}</title>
-    <meta name="generator" content={Astro.generator} />
 
+    <SetDarkModeScript />
+
+    <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
 
     <MetaIcons />

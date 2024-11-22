@@ -130,6 +130,7 @@ const { color = "white", radius = "xl" } = Astro.props;
     --start: 0;
     border-radius: var(--border-radius);
     border: 1px solid var(--border-color);
+    padding: 1px;
     position: relative;
   }
 
@@ -231,6 +232,7 @@ const { color = "white", radius = "xl" } = Astro.props;
 
 <!-- JS -->
 <script>
+  // -------------------- GLOW EFFECT --------------------
   const GLOW_CONTAINERS = document.querySelectorAll(
     ".glow-container",
   ) as NodeListOf<HTMLElement>;
@@ -276,33 +278,42 @@ const { color = "white", radius = "xl" } = Astro.props;
     }
   };
 
-  if (!("ontouchstart" in window)) {
-    document.body.addEventListener("mousemove", UPDATE);
+  function updateGlowContainers() {
+    if (!("ontouchstart" in window)) {
+      document.body.addEventListener("mousemove", UPDATE);
 
-    // @ts-expect-error que ladilla
-    UPDATE();
+      // @ts-expect-error que ladilla
+      UPDATE();
+    }
   }
-</script>
 
-<script>
-  const GLOW_CONTAINERS = document.querySelectorAll(
-    ".glow-container",
-  ) as NodeListOf<HTMLElement>;
+  updateGlowContainers();
 
-  const darkSchemeMediaQuery = window.matchMedia(
-    "(prefers-color-scheme: dark)",
-  );
+  // -------------------- DARK MODE --------------------
+  const htmlElement = document.documentElement;
 
-  const handleDarkModeChange = (event: MediaQueryListEvent | boolean) => {
-    const isDarkMode = typeof event === "boolean" ? event : event.matches;
-
+  function changeGlowContainersTheme(isDarkMode: boolean) {
     GLOW_CONTAINERS.forEach((glowContainer) => {
       glowContainer.classList.toggle("glow-container", isDarkMode);
       glowContainer.classList.toggle("white-border", !isDarkMode);
     });
-  };
+  }
 
-  handleDarkModeChange(darkSchemeMediaQuery.matches);
+  const isDarkMode = htmlElement.classList.contains("dark");
+  changeGlowContainersTheme(isDarkMode);
 
-  darkSchemeMediaQuery.addEventListener("change", handleDarkModeChange);
+  const observer = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+      if (mutation.type === "attributes") {
+        const isDarkMode = htmlElement.classList.contains("dark");
+        GLOW_CONTAINERS.forEach((glowContainer) => {
+          glowContainer.classList.toggle("glow-container", isDarkMode);
+          glowContainer.classList.toggle("white-border", !isDarkMode);
+        });
+        if (isDarkMode) updateGlowContainers();
+      }
+    });
+  });
+
+  observer.observe(htmlElement, { attributes: true });
 </script>

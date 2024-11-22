@@ -1,0 +1,6 @@
+<script is:inline>
+  const savedTheme = localStorage.getItem("theme");
+  const isDarkMode = savedTheme === "dark";
+
+  document.documentElement.classList.toggle("dark", isDarkMode);
+</script>
