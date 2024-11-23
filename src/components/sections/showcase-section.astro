@@ -5,12 +5,14 @@ import { SHOWCASE_PROJECTS } from "@/constants/showcase-projects";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 import ShowcaseCard from "../cards/showcase-card.astro";
+import Chip from "../common/chip.astro";
 ---
 
 <Section id={SECTIONS.PROJECTS.id}>
+  <Chip label="Projects" />
   <SectionHeader subtitle="Real-World Applications of Our Expertise">
     <span slot="title">
-      Showcasing <GradientSpan color="green">excellence</GradientSpan> in every endeavor.
+      <GradientSpan>Showcasing excellence in every endeavor.</GradientSpan>
     </span>
   </SectionHeader>
 
