@@ -1,0 +1,71 @@
+---
+import { TECHNOLOGIES } from "@/constants/technologies";
+
+const array = Array.from({ length: 3 }).fill(0);
+---
+
+<section class="relative w-[102%] overflow-hidden whitespace-nowrap sm:w-full">
+  {
+    array.map(() => (
+      <ul class="inline-flex animate-carousel gap-8 px-4 first:pl-0 sm:gap-16 sm:px-6">
+        {TECHNOLOGIES.map(({ icon }) => (
+          <li class="h-full w-12 shrink-0 sm:w-16">
+            <img
+              src={icon.src}
+              alt={icon.alt}
+              class="object-object w-10 invert sm:w-14 dark:invert-0"
+            />
+          </li>
+        ))}
+      </ul>
+    ))
+  }
+</section>
+
+<style>
+  section::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    width: 20%;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.white)
+    );
+    z-index: 1;
+  }
+
+  section::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    width: 20%;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.white)
+    );
+    z-index: 1;
+  }
+
+  :root.dark section::before {
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.dark)
+    );
+  }
+
+  :root.dark section::after {
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      theme(colors.background.dark)
+    );
+  }
+</style>
