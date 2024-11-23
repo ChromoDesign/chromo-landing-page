@@ -7,6 +7,7 @@ import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 import TilePatternBackground from "../backgrounds/tile-pattern-background.astro";
 import LinearFadeBackground from "../backgrounds/linear-fade-background.astro";
+import Chip from "../common/chip.astro";
 ---
 
 <div class="relative">
@@ -14,11 +15,10 @@ import LinearFadeBackground from "../backgrounds/linear-fade-background.astro";
   <LinearFadeBackground>
     <div class="py-32">
       <Section id={SECTIONS.OUR_SERVICES.id}>
+        <Chip label="Our Services" />
         <SectionHeader subtitle="From design to development all what you need.">
           <span slot="title">
-            Innovative solutions tailored <GradientSpan color="blue"
-              >for you.</GradientSpan
-            >
+            <GradientSpan>Innovative solutions tailored for you.</GradientSpan>
           </span>
         </SectionHeader>
 
