@@ -1,0 +1,30 @@
+---
+import TilePatternBgBlack from "../backgrounds/tile-pattern-bg-black.astro";
+import BookingWhiteButton from "../buttons/booking-white-button.astro";
+import SectionHeader from "../common/section-header.astro";
+import Section from "../common/section.astro";
+import WhiteSpan from "../common/white-span.astro";
+---
+
+<div class="relative z-0 bg-background-dark">
+  <TilePatternBgBlack />
+
+  <div class="-mb-40 py-28">
+    <Section>
+      <div class="relative flex flex-col gap-10 py-20">
+        <SectionHeader>
+          <span slot="title" class="flex flex-col">
+            <WhiteSpan>Don’t think twice </WhiteSpan>
+            <WhiteSpan>let’s bring your vision to life!</WhiteSpan>
+          </span>
+          <span slot="subtitle-center" class="text-base dark:text-white">
+            Connect with us today and let's make it happen!
+          </span>
+        </SectionHeader>
+        <span class="self-center">
+          <BookingWhiteButton />
+        </span>
+      </div>
+    </Section>
+  </div>
+</div>
