@@ -1,7 +1,13 @@
 ---
+import type { VariantProps } from "class-variance-authority";
 import { Icon } from "../common/icon";
 import { Link } from "../common/link";
 import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
+import type { buttonVariants } from "../ui/button";
+
+export interface Props extends VariantProps<typeof buttonVariants> {}
+
+const { variant } = Astro.props;
 ---
 
 <Link
@@ -10,6 +16,7 @@ import boltSvg from "@material-symbols/svg-700/rounded/bolt.svg?raw";
   className="inline-flex items-center gap-2"
   target="_blank"
   rel="noopener noreferrer"
+  variant={variant}
 >
-  Book a Free Call Now <Icon icon={boltSvg} className="size-5 fill-current" />
+  <slot /><Icon icon={boltSvg} className="size-5 fill-current" />
 </Link>

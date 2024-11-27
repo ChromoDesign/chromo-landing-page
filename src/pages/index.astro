@@ -8,6 +8,7 @@ import ResultsSection from "@/components/sections/results-section.astro";
 import ShowcaseSection from "@/components/sections/showcase-section.astro";
 import FaqSection from "@/components/sections/faq-section.astro";
 import NewTechnologiesSection from "@/components/sections/new-technologies-section.astro";
+import SecondaryContactSection from "@/components/sections/secondary-contact-section.astro";
 ---
 
 <Layout
@@ -17,13 +18,14 @@ import NewTechnologiesSection from "@/components/sections/new-technologies-secti
   <div class="container mx-auto mb-32 px-7 sm:px-0">
     <Hero />
   </div>
-  <div class="my-40 space-y-28 md:space-y-52">
+  <div class="mt-40 space-y-28 md:space-y-52">
     <ResultsSection />
     <ShowcaseSection />
     <NewTechnologiesSection />
     <SolutionsSection />
+    <ContactSection />
     <TestimonialsSection />
     <FaqSection />
-    <ContactSection />
+    <SecondaryContactSection />
   </div>
 </Layout>

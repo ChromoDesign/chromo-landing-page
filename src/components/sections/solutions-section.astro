@@ -5,27 +5,29 @@ import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
-import TilePatternBackground from "../backgrounds/tile-pattern-background.astro";
 import LinearFadeBackground from "../backgrounds/linear-fade-background.astro";
 import Chip from "../common/chip.astro";
+import TilePatternBackground from "../backgrounds/tile-pattern-background.astro";
 ---
 
 <div class="relative">
-  <TilePatternBackground />
-  <LinearFadeBackground>
-    <div class="py-32">
-      <Section id={SECTIONS.OUR_SERVICES.id}>
-        <Chip label="Our Services" />
-        <SectionHeader subtitle="From design to development all what you need.">
-          <span slot="title">
-            <GradientSpan>Innovative solutions tailored for you.</GradientSpan>
-          </span>
-        </SectionHeader>
+  <TilePatternBackground>
+    <LinearFadeBackground />
+  </TilePatternBackground>
 
-        <section class="grid grid-cols-list-lg gap-10">
-          {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
-        </section>
-      </Section>
-    </div>
-  </LinearFadeBackground>
+  <div class="relative py-32">
+    <Section id={SECTIONS.OUR_SERVICES.id}>
+      <Chip label="Our Services" />
+      <SectionHeader>
+        <span slot="title" class="flex flex-col">
+          <GradientSpan>Innovative solutions </GradientSpan>
+          <GradientSpan>tailored for you.</GradientSpan>
+        </span>
+      </SectionHeader>
+
+      <section class="grid grid-cols-list-lg gap-10">
+        {SOLUTIONS.map((solution) => <SolutionCard {...solution} />)}
+      </section>
+    </Section>
+  </div>
 </div>

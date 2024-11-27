@@ -1,0 +1,32 @@
+---
+import { SECTIONS } from "@/constants/sections";
+import TilePatternBackground from "../backgrounds/tile-pattern-background.astro";
+import BookingButton from "../buttons/booking-button.astro";
+import SectionHeader from "../common/section-header.astro";
+import Section from "../common/section.astro";
+---
+
+<div class="relative bg-background-dark">
+  <TilePatternBackground theme="dark" />
+
+  <div class="py-40">
+    <Section id={SECTIONS.CONTACT.id}>
+      <div class="relative flex flex-col gap-10 py-20">
+        <SectionHeader>
+          <span slot="title" class="flex flex-col text-white dark:text-white">
+            <span>Don’t think twice </span>
+            <span>let’s bring your vision to life!</span>
+          </span>
+          <span slot="subtitle-center" class="text-base dark:text-white">
+            Connect with us today and let's make it happen!
+          </span>
+        </SectionHeader>
+        <span class="self-center">
+          <BookingButton variant="force_white">
+            Claim Your Free Call Now
+          </BookingButton>
+        </span>
+      </div>
+    </Section>
+  </div>
+</div>
