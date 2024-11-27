@@ -1,7 +1,6 @@
 ---
 import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
-import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
 import mightyShieldDemo from "@/assets/images/demo/mighty-shield-demo.webp";
 import torqWebDemo from "@/assets/images/demo/torqweb-demo.webp";
@@ -21,7 +20,7 @@ import LinearRadialFadeBackground from "../backgrounds/linear-radial-fade-backgr
     </div>
   </SquarePatternBackground>
 
-  <Section id={SECTIONS.CONTACT.id}>
+  <Section>
     <div class="relative flex flex-col gap-10 py-60">
       <SectionHeader>
         <span slot="title">
