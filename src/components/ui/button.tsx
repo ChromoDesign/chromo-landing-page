@@ -20,7 +20,7 @@ const buttonVariants = cva(
           "bg-neutral-100 text-neutral-900 shadow-sm hover:bg-neutral-100/80 dark:bg-neutral-800 dark:text-neutral-50 dark:hover:bg-neutral-800/80",
         link: tw`text-brand-gray underline-offset-4 duration-75 hover:text-black hover:underline dark:hover:text-brand-white`,
         borderless: tw`hover:bg-slate-100 dark:hover:bg-brand-white/15`,
-        white: tw`bg-white text-black hover:bg-neutral-50/90 dark:bg-white dark:text-black dark:hover:bg-neutral-50/90`,
+        force_white: tw`bg-brand-white text-brand-black hover:bg-neutral-50/90 dark:bg-brand-white dark:text-brand-black dark:hover:bg-neutral-50/90`,
       },
       size: {
         default: "h-10 px-4 py-2",
