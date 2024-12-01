@@ -6,10 +6,10 @@ import GlowEffect from "../common/glow-effect.astro";
 import { Icon } from "../common/icon";
 
 interface Props {
-  testimonal: Testimonial;
+  testimonial: Testimonial;
 }
 
-const { testimonal } = Astro.props;
+const { testimonial } = Astro.props;
 
 const stars = [...Array(5)].map((_, index) => index + 1);
 ---
@@ -19,7 +19,7 @@ const stars = [...Array(5)].map((_, index) => index + 1);
     <article class="p-5 text-black dark:text-brand-white">
       <div class="mb-24 space-y-1.5">
         <div class="flex items-center justify-between gap-2">
-          <h3 class="text-base">{testimonal.name}</h3>
+          <h3 class="text-base">{testimonial.name}</h3>
           <ul class="flex gap-0.5">
             {
               stars.map(() => (
@@ -34,9 +34,9 @@ const stars = [...Array(5)].map((_, index) => index + 1);
           class="text-sm text-brand-gray transition-colors duration-200 hover:text-black dark:hover:text-white"
           target="_blank"
           rel="noopener noreferrer"
-          href={"https://" + testimonal.website}
+          href={"https://" + testimonial.website}
         >
-          {testimonal.website}
+          {testimonial.website}
         </a>
       </div>
 
@@ -46,7 +46,7 @@ const stars = [...Array(5)].map((_, index) => index + 1);
           className="size-7 rotate-180 fill-brand-gray"
         />
 
-        <p class="text-sm">{testimonal.description}</p>
+        <p class="text-sm">{testimonial.description}</p>
       </div>
     </article>
   </GlowEffect>
