@@ -3,9 +3,8 @@ import GradientSpan from "@/components/common/gradient-span.astro";
 import SectionHeader from "@/components/common/section-header.astro";
 import { SECTIONS } from "@/constants/sections";
 import Section from "@/components/common/section.astro";
-import TestimonialCard from "@/components/cards/testimonial-card.astro";
-import { TESTIMONIALS } from "@/constants/testimonials";
 import Chip from "../common/chip.astro";
+import { TestimonialsCarousel } from "../carousel/testimonials-carousel";
 ---
 
 <Section id={SECTIONS.TESTIMONIALS.id}>
@@ -15,14 +14,5 @@ import Chip from "../common/chip.astro";
       <GradientSpan>Client Stories</GradientSpan>
     </span>
   </SectionHeader>
-
-  <ul class="grid auto-rows-fr grid-cols-list-lg gap-10">
-    {
-      TESTIMONIALS.map((testimonial) => (
-        <li class="list-none">
-          <TestimonialCard testimonal={testimonial} />
-        </li>
-      ))
-    }
-  </ul>
+  <TestimonialsCarousel client:load />
 </Section>
