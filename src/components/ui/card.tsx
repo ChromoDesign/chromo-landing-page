@@ -81,3 +81,5 @@ export {
   CardHeader,
   CardTitle,
 };
+
+export default Card;

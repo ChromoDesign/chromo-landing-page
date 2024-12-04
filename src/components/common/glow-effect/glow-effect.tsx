@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
+import "./glow-effect.css";
 
 type GlowColor =
   | "white"
@@ -32,7 +33,7 @@ export const GlowEffect: React.FC<GlowEffectProps> = ({
   children,
 }) => {
   const [active, setActive] = useState<number>(0);
-  const glowContainerRef = useRef<HTMLDivElement | null>(null);
+  const glowContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const CONFIG = {
@@ -75,9 +76,7 @@ export const GlowEffect: React.FC<GlowEffectProps> = ({
       }
     };
 
-    if (typeof window !== "undefined") {
-      document.body.addEventListener("mousemove", handleMouseMove);
-    }
+    document.body.addEventListener("mousemove", handleMouseMove);
 
     return () => {
       document.body.removeEventListener("mousemove", handleMouseMove);

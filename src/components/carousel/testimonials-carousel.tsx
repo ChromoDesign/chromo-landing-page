@@ -17,9 +17,7 @@ export const TestimonialsCarousel = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    if (!api) {
-      return;
-    }
+    if (!api) return;
 
     setCount(api.scrollSnapList().length);
     setCurrent(api.selectedScrollSnap() + 1);
@@ -27,36 +25,48 @@ export const TestimonialsCarousel = () => {
     api.on("select", () => {
       setCurrent(api.selectedScrollSnap() + 1);
     });
+
+    const CAROUSEL_INTERVAL_SECONDS = 12 * 1000;
+
+    const interval = setInterval(() => {
+      api.scrollNext();
+    }, CAROUSEL_INTERVAL_SECONDS);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [api]);
   return (
     <>
       <div className="relative">
         <Carousel
+          className="mt-14 flex flex-col lg:flex-col-reverse"
+          setApi={setApi}
           opts={{
+            loop: true,
             align: "center",
           }}
-          setApi={setApi}
         >
-          <div className="mt-14">
-            <CarouselContent className="">
-              {TESTIMONIALS.map((testimonial, index) => (
-                <CarouselItem
-                  key={index}
-                  className="sm:basis-1/1 basis-full lg:basis-1/3"
-                >
-                  <TestimonialCard testimonial={testimonial} />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+          <CarouselContent className="">
+            {TESTIMONIALS.map((testimonial, index) => (
+              <CarouselItem
+                key={index}
+                className="sm:basis-1/1 basis-full lg:basis-1/3"
+              >
+                <TestimonialCard testimonial={testimonial} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+
+          <div className="mt-10 lg:hidden">
+            <CarouselDots current={current} count={count} />
           </div>
 
-          <div className="carousel-buttons-container">
+          <div className="my-5 flex justify-center lg:justify-end">
             <CarouselPrevious />
             <CarouselNext />
           </div>
         </Carousel>
-
-        <CarouselDots current={current} count={count} />
       </div>
     </>
   );
