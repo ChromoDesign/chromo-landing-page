@@ -162,7 +162,7 @@ const CarouselContent = React.forwardRef<
         ref={ref}
         className={cn(
           "flex",
-          orientation === "horizontal" ? "-ml-4" : "-mt-4 flex-col",
+          orientation === "horizontal" ? "" : "-mt-4 flex-col",
           className,
         )}
         {...props}
@@ -198,7 +198,7 @@ const CarouselPrevious = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollPrev, canScrollPrev } = useCarousel();
+  const { scrollPrev, canScrollPrev } = useCarousel();
 
   return (
     <Button
@@ -206,10 +206,7 @@ const CarouselPrevious = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-9 rounded-full border-none dark:border-solid dark:border-neutral-900 dark:hover:bg-opacity-10",
-        orientation === "horizontal"
-          ? "-top-10 right-20 -translate-y-1/2"
-          : "-top-12 left-1/3 -translate-x-1/2 rotate-90",
+        "size-9 rounded-full border-none dark:border-solid dark:border-neutral-900 dark:hover:bg-opacity-10",
 
         className,
       )}
@@ -228,7 +225,7 @@ const CarouselNext = React.forwardRef<
   HTMLButtonElement,
   React.ComponentProps<typeof Button>
 >(({ className, variant = "outline", size = "icon", ...props }, ref) => {
-  const { orientation, scrollNext, canScrollNext } = useCarousel();
+  const { scrollNext, canScrollNext } = useCarousel();
 
   return (
     <Button
@@ -236,10 +233,8 @@ const CarouselNext = React.forwardRef<
       variant={variant}
       size={size}
       className={cn(
-        "absolute size-9 rounded-full border-none dark:border-solid dark:border-neutral-900 dark:hover:bg-opacity-10",
-        orientation === "horizontal"
-          ? "-top-10 right-8 -translate-y-1/2"
-          : "-bottom-12 left-1/2 -translate-x-1/2 rotate-90",
+        "size-9 rounded-full border-none dark:border-solid dark:border-neutral-900 dark:hover:bg-opacity-10",
+
         className,
       )}
       disabled={!canScrollNext}

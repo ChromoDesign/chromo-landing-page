@@ -68,3 +68,235 @@
     background: theme("colors.brand.white / 50%");
   }
 }
+
+/* carousel /////////////////////////////////////////////////*/
+.carousel-buttons-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  bottom: -4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+/* Movil and tablet */
+@media (max-width: 1023px) {
+  .carousel-buttons-container {
+    bottom: -6rem;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+  }
+
+  .carousel-dots {
+    visibility: visible;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .carousel-buttons-container {
+    top: -4rem;
+    right: 2rem;
+    left: auto;
+    transform: translateX(0);
+  }
+  .carousel-dots {
+    visibility: hidden;
+  }
+}
+
+/* GLOW-EFFECTS////////////////////////////////////////////// */
+
+:root {
+  --spread: 40;
+  --border: hsl(281, 10%, 50%);
+  --border-width: 2px;
+  --border-radius: theme(borderRadius.xl);
+}
+
+.none {
+  --border-radius: 0;
+}
+
+.sm {
+  --border-radius: theme(borderRadius.sm);
+}
+
+.md {
+  --border-radius: theme(borderRadius.md);
+}
+
+.lg {
+  --border-radius: theme(borderRadius.lg);
+}
+
+.xl {
+  --border-radius: theme(borderRadius.xl);
+}
+
+.xll {
+  --border-radius: theme(borderRadius.2xl);
+}
+
+.xlll {
+  --border-radius: theme(borderRadius.3xl);
+}
+
+.full {
+  --border-radius: 9999px;
+}
+
+.white {
+  --gradient: #fff;
+  --border-color: rgba(255, 255, 255, 0.15);
+  --glow-color: rgba(255, 255, 255, 0.45);
+}
+
+.red {
+  --gradient: #f00;
+  --border-color: rgba(255, 0, 0, 0.2);
+  --glow-color: rgba(255, 0, 0, 0.45);
+}
+
+.blue {
+  --gradient: #00f;
+  --border-color: rgba(0, 0, 255, 0.2);
+  --glow-color: rgba(0, 0, 255, 0.45);
+}
+
+.green {
+  --gradient: #0f0;
+  --border-color: rgba(0, 255, 0, 0.2);
+  --glow-color: rgba(0, 255, 0, 0.45);
+}
+
+.yellow {
+  --gradient: #ff0;
+  --border-color: rgba(255, 255, 0, 0.2);
+  --glow-color: rgba(255, 255, 0, 0.45);
+}
+
+.orange {
+  --gradient: #ffa500;
+  --border-color: rgba(255, 165, 0, 0.2);
+  --glow-color: rgba(255, 165, 0, 0.45);
+}
+
+.purple {
+  --gradient: #800080;
+  --border-color: rgba(128, 0, 128, 0.2);
+  --glow-color: rgba(128, 0, 128, 0.45);
+}
+
+.cyan {
+  --gradient: #00ffff;
+  --border-color: rgba(0, 255, 255, 0.2);
+  --glow-color: rgba(0, 255, 255, 0.45);
+}
+
+.glow-container {
+  --active: 0.15;
+  --start: 0;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: 1px;
+  position: relative;
+}
+
+.glow-container:is(:hover, :focus-visible) {
+  z-index: 2;
+}
+
+.glow-container .glows {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  filter: blur(calc(var(--blur) * 1px));
+}
+
+.glow-container .glows::after,
+.glow-container .glows::before {
+  --alpha: 0;
+  content: "";
+  background: var(--gradient);
+  background-attachment: fixed;
+  position: absolute;
+  inset: -5px;
+  border: 10px solid transparent;
+  border-radius: var(--border-radius);
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from calc((var(--start) - (var(--spread) * 0.5)) * 1deg),
+      #000 0deg,
+      var(--gradient),
+      #0000 calc(var(--spread) * 1deg)
+    );
+  mask-composite: intersect;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-container::before {
+  position: absolute;
+  inset: 0;
+  border: var(--border-width) solid transparent;
+  content: "";
+  border-radius: var(--border-radius);
+  pointer-events: none;
+  background: var(--glow-color);
+  background-attachment: fixed;
+  border-radius: var(--border-radius);
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 1.5)) *
+            1deg
+        ),
+      hsl(0 0% 100% / 0.15) 0deg,
+      var(--gradient),
+      hsl(0 0% 100% / 0.15) calc(var(--spread) * 2.5deg)
+    );
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+  opacity: var(--active);
+  transition: opacity 1s;
+}
+
+.glow-container::after {
+  --bg-size: 100%;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  background: var(--gradient);
+  background-attachment: fixed;
+  border-radius: var(--border-radius);
+  opacity: var(--active, 0);
+  transition: opacity 1s;
+  --alpha: 0;
+  inset: 0;
+  border: var(--border-width) solid transparent;
+  mask: linear-gradient(#0000, #0000),
+    conic-gradient(
+      from
+        calc(
+          ((var(--start) + (var(--spread) * 0.25)) - (var(--spread) * 0.5)) *
+            1deg
+        ),
+      #0000 0deg,
+      var(--gradient),
+      #0000 calc(var(--spread) * 0.5deg)
+    );
+  filter: brightness(1.5);
+  mask-clip: padding-box, border-box;
+  mask-composite: intersect;
+}
+
+.white-border {
+  border: 2px solid white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.1);
+}
