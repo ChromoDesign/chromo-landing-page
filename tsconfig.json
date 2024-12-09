@@ -13,6 +13,6 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   },
-  "exclude": ["node_modules", "dist", "astro"],
-  "include": ["./src/**/*", "./eslint.config.js"]
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"]
 }
