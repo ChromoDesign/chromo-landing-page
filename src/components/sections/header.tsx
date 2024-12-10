@@ -66,7 +66,9 @@ export const Header: React.FC = () => {
           </div>
 
           <span className="hidden xl:block">
-            <Link href={SECTIONS.CONTACT.href}>Let's chat</Link>
+            <Link href={SECTIONS.CONTACT.href} title="Contact Section">
+              Let's chat
+            </Link>
           </span>
 
           <span className="block xl:hidden">
@@ -86,6 +88,7 @@ export const Header: React.FC = () => {
               />
               <Link
                 href={SECTIONS.CONTACT.href}
+                title="Contact Section"
                 onClick={() => toggleMobileNav()}
               >
                 Let's chat

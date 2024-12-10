@@ -34,6 +34,7 @@ export function TestimonialCard({ testimonial }: Props) {
               className="text-sm transition-colors duration-200 hover:text-black dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
+              title={testimonial.website}
               href={`https://${testimonial.website}`}
             >
               {testimonial.website}

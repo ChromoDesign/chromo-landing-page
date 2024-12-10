@@ -28,6 +28,7 @@ export const LinearNav: React.FC<LinearNavProps> = ({
               className="flex items-center gap-2"
               variant="link"
               onClick={onClick}
+              title={title}
             >
               <Icon icon={svg} className="size-6 fill-current" />
               {title}

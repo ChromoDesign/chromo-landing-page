@@ -26,6 +26,7 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
         <img
           src={logoSrc}
           alt={`${title} Logo`}
+          title={`${title} Logo`}
           title={title}
           loading="lazy"
           class="invert transition-opacity duration-200 group-hover:opacity-0 dark:invert-0"
@@ -33,12 +34,14 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
         <img
           src={demoSrc}
           alt={`${title} Demo`}
+          title={`${title} Demo`}
           loading="lazy"
           class="size-full rounded-2xl bg-white/50 p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 max-sm:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
         />
         <img
           src={colorfulLogoSrc}
           alt={`${title} Logo`}
+          title={`${title} Logo`}
           loading="lazy"
           class="scale-110 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
         />
@@ -55,6 +58,7 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
         href && (
           <a
             href={href}
+            title={`View ${title} project`}
             target="_blank"
             rel="noopener noreferrer"
             class="inline-block rounded-lg bg-white p-1.5 transition duration-200 hover:text-slate-700 group-hover:scale-110 group-hover:shadow dark:bg-transparent dark:text-background-white dark:ring-1 dark:ring-current dark:hover:bg-white/20 dark:hover:text-white"
@@ -68,6 +72,7 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
         figmaHref && (
           <a
             href={figmaHref}
+            title={`View ${title} in Figma`}
             target="_blank"
             title="View in Figma"
             rel="noopener noreferrer"
