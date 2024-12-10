@@ -1,4 +1,6 @@
 ---
+import { GrayText } from "./gray-text";
+
 interface Props {
   subtitle?: string;
 }
@@ -18,7 +20,7 @@ const { subtitle } = Astro.props;
       <div class="size-px"></div>
     </slot>
 
-    {subtitle && <p class="text-center text-brand-gray">{subtitle}</p>}
+    {subtitle && <GrayText className="text-center">{subtitle}</GrayText>}
 
     <slot name="subtitle-center" />
 

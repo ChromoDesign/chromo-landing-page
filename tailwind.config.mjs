@@ -1,3 +1,5 @@
+// @ts-check
+
 const background = {
   white: "#FAFAFA",
   dark: "#010100",
@@ -9,9 +11,9 @@ export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}"],
   theme: {
     fontSize: {
-      xs: [".8125rem", { fontSize: 13 }],
-      sm: ["1rem", { fontSize: 16 }],
-      base: ["1.125rem", { fontSize: 18 }],
+      xs: [".8125rem", {}],
+      sm: ["1rem", {}],
+      base: ["1.125rem", {}],
       lg: ["2.125rem", { fontWeight: 600, lineHeight: "1.2" }],
       xl: ["3.75rem", { fontWeight: 600, lineHeight: "1.2" }],
       "2xl": ["4.375rem", { fontWeight: 600, lineHeight: "1.2" }],

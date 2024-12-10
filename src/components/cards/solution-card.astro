@@ -1,5 +1,6 @@
 ---
 import GlowEffect from "../common/glow-effect.astro";
+import { GrayText } from "../common/gray-text";
 import { Icon } from "../common/icon";
 import type { Solution } from "@/constants/solutions";
 import tw from "@/utils/tw";
@@ -46,18 +47,20 @@ const { title, description, icon, color, bulletPoints } = Astro.props;
         {title}
       </h3>
 
-      <p class="text-sm text-brand-gray">{description}</p>
+      <GrayText className="text-sm">{description}</GrayText>
 
-      <ul class="mt-4 space-y-2.5 text-sm text-brand-gray">
-        {
-          bulletPoints.map((bulletPoint) => (
-            <li class="flex items-center gap-2">
-              <Icon icon={bulletPoint.icon} className="size-4 fill-current" />
-              <span>{bulletPoint.title}</span>
-            </li>
-          ))
-        }
-      </ul>
+      <GrayText component="div">
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            bulletPoints.map((bulletPoint) => (
+              <li class="flex items-center gap-2">
+                <Icon icon={bulletPoint.icon} className="size-4 fill-current" />
+                <span>{bulletPoint.title}</span>
+              </li>
+            ))
+          }
+        </ul>
+      </GrayText>
     </div>
 
     <div

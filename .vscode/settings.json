@@ -3,6 +3,7 @@
     "astro",
     "astrojs",
     "Laravel",
+    "posthog",
     "tailwindcss",
     "torq",
     "tsconfigs",

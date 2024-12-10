@@ -3,6 +3,7 @@ import type { Result } from "@/constants/results";
 import GlowEffect from "../common/glow-effect.astro";
 import tw from "@/utils/tw";
 import { Icon } from "../common/icon";
+import { GrayText } from "../common/gray-text";
 
 interface Props {
   result: Result;
@@ -32,7 +33,7 @@ const { result } = Astro.props;
 
     <h3 class="mb-2 mt-4 text-black dark:text-white">{result.title}</h3>
 
-    <p class="text-sm text-brand-gray">{result.description}</p>
+    <GrayText className="text-sm">{result.description}</GrayText>
 
     <div
       class="absolute left-2 top-1 -z-10 size-full opacity-0 transition-opacity duration-200 group-hover:opacity-100"

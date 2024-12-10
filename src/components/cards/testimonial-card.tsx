@@ -3,6 +3,7 @@ import formatIconSvg from "@material-symbols/svg-400/rounded/format_quote-fill.s
 import kidStarSvg from "@material-symbols/svg-400/rounded/kid_star-fill.svg?raw";
 
 import { GlowEffect } from "../common/glow-effect";
+import { GrayText } from "../common/gray-text";
 import { Icon } from "../common/icon";
 import { Card } from "../ui/card";
 
@@ -28,14 +29,15 @@ export function TestimonialCard({ testimonial }: Props) {
                 ))}
               </ul>
             </div>
-            <a
-              className="text-sm text-brand-gray transition-colors duration-200 hover:text-black dark:hover:text-white"
+            <GrayText
+              component="a"
+              className="text-sm transition-colors duration-200 hover:text-black dark:hover:text-white"
               target="_blank"
               rel="noopener noreferrer"
               href={`https://${testimonial.website}`}
             >
               {testimonial.website}
-            </a>
+            </GrayText>
           </div>
 
           <div className="space-y-2.5">

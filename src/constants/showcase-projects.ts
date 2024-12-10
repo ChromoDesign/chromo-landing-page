@@ -74,7 +74,8 @@ export const SHOWCASE_PROJECTS: ShowcaseProject[] = [
   },
   {
     title: "Web for metal work company",
-    figmaHref: "#",
+    figmaHref:
+      "https://www.figma.com/design/phcCG9Z4PTD1f34iaTjIYS/Website?node-id=0-1&node-type=canvas&t=DXajLMq4yiWMlfbO-0",
     logoSrc: toroLogo.src,
     colorfulLogoSrc: toroColorfulLogo.src,
     demoSrc: toroDemo.src,

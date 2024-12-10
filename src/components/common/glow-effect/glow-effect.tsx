@@ -88,13 +88,8 @@ export const GlowEffect: React.FC<GlowEffectProps> = ({
     const isDarkMode = htmlElement.classList.contains("dark");
 
     if (glowContainerRef.current) {
-      if (isDarkMode) {
-        glowContainerRef.current.classList.add("glow-container");
-        glowContainerRef.current.classList.remove("white-border");
-      } else {
-        glowContainerRef.current.classList.remove("glow-container");
-        glowContainerRef.current.classList.add("white-border");
-      }
+      glowContainerRef.current.classList.toggle("glow-container", isDarkMode);
+      glowContainerRef.current.classList.toggle("white-border", !isDarkMode);
     }
   }, []);
 
