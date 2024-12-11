@@ -36,14 +36,14 @@ const { logoSrc, demoSrc, colorfulLogoSrc, title, href, figmaHref } =
           alt={`${title} Demo`}
           title={`${title} Demo`}
           loading="lazy"
-          class="size-full rounded-2xl bg-white/50 p-0.5 opacity-0 transition-opacity duration-200 group-hover:opacity-55 max-sm:opacity-55 dark:p-0 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
+          class="supports-hover:opacity-0 supports-hover:group-hover:opacity-55 size-full rounded-2xl bg-white/50 p-0.5 brightness-95 transition-opacity duration-200 dark:p-0 dark:brightness-75 dark:group-hover:opacity-100 dark:group-hover:brightness-110 dark:group-hover:contrast-50"
         />
         <img
           src={colorfulLogoSrc}
           alt={`${title} Logo`}
           title={`${title} Logo`}
           loading="lazy"
-          class="scale-110 opacity-0 transition-opacity duration-200 group-hover:opacity-100"
+          class="supports-hover:opacity-0 supports-hover:group-hover:opacity-100 contrast-[1.1] transition-opacity duration-200"
         />
       </div>
     </GlowEffect>

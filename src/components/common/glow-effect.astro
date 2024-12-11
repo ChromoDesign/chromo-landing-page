@@ -86,12 +86,12 @@ const { color = "white", radius = "xl" } = Astro.props;
     }
   };
 
+  // @ts-expect-error que ladilla
+  UPDATE();
+
   function updateGlowContainers() {
     if (!("ontouchstart" in window)) {
       document.body.addEventListener("mousemove", UPDATE);
-
-      // @ts-expect-error que ladilla
-      UPDATE();
     }
   }
 

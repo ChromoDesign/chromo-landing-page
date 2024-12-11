@@ -19,6 +19,9 @@ export default {
       "2xl": ["4.375rem", { fontWeight: 600, lineHeight: "1.2" }],
     },
     extend: {
+      screens: {
+        "supports-hover": { raw: "(hover: hover) and (pointer: fine)" },
+      },
       colors: {
         background: {
           white: background.white,

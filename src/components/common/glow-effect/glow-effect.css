@@ -90,7 +90,6 @@
   --start: 0;
   border-radius: var(--border-radius);
   border: 1px solid var(--border-color);
-  padding: 1px;
   position: relative;
 }
 
